@@ -3,12 +3,13 @@ const navLinks = [
   { href: '#inicio', text: 'Inicio' },
   { href: '#servicios', text: 'Servicios' },
   { href: '#tecnologias', text: 'Tecnologías' },
+  { href: '#ventajas', text: 'Ventajas' },
   { href: '#nosotros', text: 'Nosotros' },
   { href: '#contacto', text: 'Contacto' },
 ];
 ---
 
-<header class="sticky top-0 z-50 bg-white dark:bg-dark-secondary shadow-lg dark:shadow-primary/10 transition-colors duration-300">
+<header class="sticky top-0 z-50 bg-dark-secondary shadow-lg shadow-primary/10 transition-colors duration-300">
   <nav class="container mx-auto px-4 py-4">
     <div class="flex justify-between items-center">
       <!-- Logo -->
@@ -26,23 +27,13 @@ const navLinks = [
           <li>
             <a 
               href={link.href}
-              class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium transition-colors"
+              class="text-gray-300 hover:text-primary font-medium transition-colors"
             >
               {link.text}
             </a>
           </li>
         ))}
       </ul>
-
-      <!-- Theme Toggle -->
-      <button
-        id="themeToggle"
-        class="w-10 h-10 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-dark transition-all duration-300 flex items-center justify-center"
-        aria-label="Toggle dark mode"
-      >
-        <span class="dark-icon hidden dark:inline">☀️</span>
-        <span class="light-icon inline dark:hidden">🌙</span>
-      </button>
 
       <!-- Mobile Menu Button -->
       <button
@@ -63,7 +54,7 @@ const navLinks = [
           <li>
             <a 
               href={link.href}
-              class="block text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium transition-colors"
+              class="block text-gray-300 hover:text-primary font-medium transition-colors"
             >
               {link.text}
             </a>
@@ -75,14 +66,6 @@ const navLinks = [
 </header>
 
 <script>
-  // Theme toggle
-  const themeToggle = document.getElementById('themeToggle');
-  
-  themeToggle?.addEventListener('click', () => {
-    const isDark = document.documentElement.classList.toggle('dark');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  });
-
   // Mobile menu toggle
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
