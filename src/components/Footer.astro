@@ -3,23 +3,26 @@ const currentYear = new Date().getFullYear();
 
 const footerSections = [
   {
-    title: '🚀 DevHub',
+    title: 'DevHub',
+    icon: 'fas fa-rocket',
     links: [
       { text: 'Soluciones Digitales', href: '#' },
-      { text: 'Catamarca, Argentina', href: '#' },
+      { text: 'Catamarca, Argentina', href: '#', icon: 'fas fa-map-marker-alt' },
     ]
   },
   {
     title: 'Servicios',
+    icon: 'fas fa-briefcase',
     links: [
-      { text: 'Landing Pages', href: '#servicios' },
-      { text: 'Webs Corporativas', href: '#servicios' },
-      { text: 'Tiendas Online', href: '#servicios' },
-      { text: 'Sistemas a Medida', href: '#servicios' },
+      { text: 'Landing Pages', href: '#servicios', icon: 'fas fa-rocket' },
+      { text: 'Webs Corporativas', href: '#servicios', icon: 'fas fa-building' },
+      { text: 'Tiendas Online', href: '#servicios', icon: 'fas fa-shopping-cart' },
+      { text: 'Sistemas a Medida', href: '#servicios', icon: 'fas fa-cogs' },
     ]
   },
   {
     title: 'Tecnologías',
+    icon: 'fas fa-code',
     links: [
       { text: 'Astro & Next.js', href: '#tecnologias' },
       { text: 'React & Node.js', href: '#tecnologias' },
@@ -29,10 +32,11 @@ const footerSections = [
   },
   {
     title: 'Contacto',
+    icon: 'fas fa-envelope',
     links: [
-      { text: 'Email', href: 'mailto:contacto@devhub.com.ar' },
-      { text: 'WhatsApp', href: 'https://wa.me/5493834000000' },
-      { text: 'LinkedIn', href: 'https://www.linkedin.com/in/gonzaloromero-/' },
+      { text: 'Email', href: 'mailto:contacto@devhub.com.ar', icon: 'fas fa-envelope' },
+      { text: 'WhatsApp', href: 'https://wa.me/5493834000000', icon: 'fab fa-whatsapp' },
+      { text: 'LinkedIn', href: 'https://www.linkedin.com/in/gonzaloromero-/', icon: 'fab fa-linkedin' },
     ]
   }
 ];
@@ -44,15 +48,19 @@ const footerSections = [
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
       {footerSections.map(section => (
         <div>
-          <h3 class="text-primary font-bold text-lg mb-4">{section.title}</h3>
+          <h3 class="text-primary font-bold text-lg mb-4 flex items-center gap-2 font-display">
+            {section.icon && <i class={section.icon}></i>}
+            <span>{section.title}</span>
+          </h3>
           <ul class="space-y-2">
             {section.links.map(link => (
               <li>
                 <a 
                   href={link.href}
-                  class="text-gray-300 hover:text-primary transition-colors"
+                  class="text-gray-300 hover:text-primary transition-colors flex items-center gap-2"
                 >
-                  {link.text}
+                  {link.icon && <i class={link.icon}></i>}
+                  <span>{link.text}</span>
                 </a>
               </li>
             ))}
@@ -63,7 +71,10 @@ const footerSections = [
 
     <!-- Footer Bottom -->
     <div class="border-t border-dark-tertiary pt-6 text-center text-gray-400">
-      <p>&copy; {currentYear} DevHub - Soluciones Digitales. Catamarca, Argentina.</p>
+      <p class="flex items-center justify-center gap-2">
+        <i class="far fa-copyright"></i>
+        <span>{currentYear} DevHub - Soluciones Digitales. Catamarca, Argentina.</span>
+      </p>
     </div>
   </div>
 </footer>

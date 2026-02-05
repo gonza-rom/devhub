@@ -7,7 +7,7 @@ import TeamMember from '../components/TeamMember.astro';
 
 const services = [
   {
-    icon: '🚀',
+    icon: 'fas fa-rocket',
     title: 'Landing Pages',
     description: 'Sitios simples, rápidos y optimizados para conversión. Perfectos para lanzar tu negocio online.',
     technologies: ['Astro', 'HTML/CSS/JavaScript', 'Tailwind o Bootstrap', 'SEO optimizado', 'Máxima velocidad'],
@@ -15,7 +15,7 @@ const services = [
     priceNote: 'Incluye diseño responsive, SEO y formulario'
   },
   {
-    icon: '🏢',
+    icon: 'fas fa-building',
     title: 'Webs Corporativas',
     description: 'Sitios profesionales para tu empresa con administración de contenido y formularios.',
     technologies: ['Astro o Next.js', 'Hasta 5 secciones', 'Integraciones básicas', 'Formularios de contacto', 'Diseño personalizado'],
@@ -23,7 +23,7 @@ const services = [
     priceNote: 'Diseño a medida y responsive'
   },
   {
-    icon: '🛒',
+    icon: 'fas fa-shopping-cart',
     title: 'Tiendas Online',
     description: 'E-commerce completo con carrito, pagos y panel de administración.',
     technologies: ['Next.js', 'Supabase o SQL', 'Medios de pago', 'Panel administrativo', 'Catálogo y carrito'],
@@ -31,7 +31,7 @@ const services = [
     priceNote: 'Base de datos incluida'
   },
   {
-    icon: '⚙️',
+    icon: 'fas fa-cogs',
     title: 'Sistemas a Medida',
     description: 'Soluciones personalizadas según las necesidades específicas de tu negocio.',
     technologies: ['Next.js', 'Supabase', 'Node.js o PHP', 'Autenticación y roles', 'Escalabilidad'],
@@ -42,32 +42,32 @@ const services = [
 
 const features = [
   {
-    icon: '⚡',
+    icon: 'fas fa-bolt',
     title: 'Rendimiento',
     description: 'Código optimizado y sitios ultra rápidos que mejoran la experiencia del usuario.'
   },
   {
-    icon: '🎯',
+    icon: 'fas fa-award',
     title: 'Calidad',
     description: 'Estándares profesionales en cada proyecto. Código mantenible y escalable.'
   },
   {
-    icon: '🔧',
+    icon: 'fas fa-laptop-code',
     title: 'Tecnología Moderna',
     description: 'Usamos las herramientas más actuales del mercado: Astro, Next.js, Supabase.'
   },
   {
-    icon: '💬',
+    icon: 'fas fa-comments',
     title: 'Comunicación Clara',
     description: 'Mantenemos contacto constante y definimos alcances antes de comenzar.'
   },
   {
-    icon: '📍',
+    icon: 'fas fa-map-marker-alt',
     title: 'Local - Catamarca',
     description: 'Equipo local que entiende el mercado y las necesidades regionales.'
   },
   {
-    icon: '🌐',
+    icon: 'fas fa-server',
     title: 'Hosting Incluido',
     description: 'Configuramos tu sitio en Netlify/Vercel o hosting pago, siempre a tu nombre.'
   }
@@ -88,7 +88,7 @@ const team = [
     linkedinUrl: 'https://www.linkedin.com/in/gonzaloromero-/'
   },
   {
-    avatar: '💼',
+    avatar: '👨‍💻',
     name: 'Gustavo Cativa',
     role: 'Full Stack Developer',
     description: 'Experiencia en el sector comercial aplicando tecnología para optimizar procesos. Comprensión profunda de cómo la tecnología transforma operaciones.',
@@ -102,45 +102,68 @@ const team = [
   <Hero />
 
   <!-- Services Section -->
-  <section id="servicios" class="py-20 bg-white dark:bg-dark">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
-        Nuestros <span class="text-primary">Servicios</span>
+  <section id="servicios" class="py-20 bg-white dark:bg-dark relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 animate-on-scroll opacity-0">
+        Nuestros <span class="text-primary drop-shadow-[0_0_10px_rgba(255,193,7,0.5)]">Servicios</span>
       </h2>
+      <p class="text-center text-gray-600 dark:text-gray-400 mb-16 animate-on-scroll opacity-0" style="animation-delay: 0.2s">
+        Soluciones tecnológicas de primer nivel
+      </p>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {services.map(service => (
-          <ServiceCard {...service} />
+        {services.map((service, index) => (
+          <div class="animate-on-scroll opacity-0" style={`animation-delay: ${index * 0.1}s`}>
+            <ServiceCard {...service} />
+          </div>
         ))}
       </div>
     </div>
   </section>
 
   <!-- Why Choose Us Section -->
-  <section class="py-20 bg-gray-50 dark:bg-dark-secondary">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
-        ¿Por qué <span class="text-primary">DevHub</span>?
+  <section class="py-20 bg-gray-50 dark:bg-dark-secondary relative overflow-hidden">
+    <div class="absolute top-1/4 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse-slow"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 animate-on-scroll opacity-0">
+        ¿Por qué <span class="text-primary drop-shadow-[0_0_10px_rgba(255,193,7,0.5)]">DevHub</span>?
       </h2>
+      <p class="text-center text-gray-600 dark:text-gray-400 mb-16 animate-on-scroll opacity-0" style="animation-delay: 0.2s">
+        Excelencia, innovación y compromiso en cada proyecto
+      </p>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {features.map(feature => (
-          <FeatureCard {...feature} />
+        {features.map((feature, index) => (
+          <div class="animate-on-scroll opacity-0" style={`animation-delay: ${index * 0.15}s`}>
+            <FeatureCard {...feature} />
+          </div>
         ))}
       </div>
     </div>
   </section>
 
   <!-- Technologies Section -->
-  <section id="tecnologias" class="py-20 bg-white dark:bg-dark">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
-        Tecnologías que <span class="text-primary">Dominamos</span>
+  <section id="tecnologias" class="py-20 bg-white dark:bg-dark relative overflow-hidden">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 animate-on-scroll opacity-0">
+        Tecnologías que <span class="text-primary drop-shadow-[0_0_10px_rgba(255,193,7,0.5)]">Dominamos</span>
       </h2>
+      <p class="text-center text-gray-600 dark:text-gray-400 mb-16 animate-on-scroll opacity-0" style="animation-delay: 0.2s">
+        Stack moderno y herramientas de vanguardia
+      </p>
       
       <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-        {technologies.map(tech => (
-          <span class="px-6 py-3 bg-gray-100 dark:bg-dark-secondary text-dark dark:text-white font-semibold rounded-full border-2 border-transparent hover:border-primary transition-all duration-300 hover:scale-105">
+        {technologies.map((tech, index) => (
+          <span 
+            class="px-6 py-3 bg-gray-100 dark:bg-dark-secondary text-dark dark:text-white font-semibold rounded-full border-2 border-transparent hover:border-primary transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/30 cursor-pointer animate-on-scroll opacity-0"
+            style={`animation-delay: ${index * 0.05}s`}
+          >
             {tech}
           </span>
         ))}
@@ -149,68 +172,136 @@ const team = [
   </section>
 
   <!-- About Us / Team Section -->
-  <section id="nosotros" class="py-20 bg-gray-50 dark:bg-dark-secondary">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-8">
-        Sobre <span class="text-primary">DevHub</span>
+  <section id="nosotros" class="py-20 bg-gray-50 dark:bg-dark-secondary relative overflow-hidden">
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 animate-on-scroll opacity-0">
+        Sobre <span class="text-primary drop-shadow-[0_0_10px_rgba(255,193,7,0.5)]">DevHub</span>
       </h2>
       
-      <p class="text-center text-lg max-w-3xl mx-auto mb-16 text-gray-700 dark:text-gray-300">
+      <p class="text-center text-lg max-w-3xl mx-auto mb-16 text-gray-700 dark:text-gray-300 animate-on-scroll opacity-0" style="animation-delay: 0.2s">
         Somos un equipo de desarrolladores Full Stack de Catamarca, Argentina. Nos especializamos en crear soluciones digitales modernas, rápidas y funcionales para empresas y emprendedores.
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
-        {team.map(member => (
-          <TeamMember {...member} />
+        {team.map((member, index) => (
+          <div class="animate-on-scroll opacity-0" style={`animation-delay: ${index * 0.2}s`}>
+            <TeamMember {...member} />
+          </div>
         ))}
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contacto" class="py-20 bg-white dark:bg-dark">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
-        ¿Listo para comenzar <span class="text-primary">tu proyecto</span>?
+  <section id="contacto" class="py-20 bg-white dark:bg-dark relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 animate-on-scroll opacity-0">
+        ¿Listo para comenzar <span class="text-primary drop-shadow-[0_0_10px_rgba(255,193,7,0.5)]">tu proyecto</span>?
       </h2>
+      <p class="text-center text-gray-600 dark:text-gray-400 mb-16 animate-on-scroll opacity-0" style="animation-delay: 0.2s">
+        Contactanos y llevemos tu idea al siguiente nivel
+      </p>
       
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
-        <div class="text-center p-8 bg-gray-50 dark:bg-dark-secondary rounded-xl border-2 border-transparent hover:border-primary transition-all duration-300">
-          <div class="text-5xl mb-4">📱</div>
-          <h3 class="text-xl font-bold mb-2">WhatsApp</h3>
+        <div class="group text-center p-8 bg-gray-50 dark:bg-dark-secondary rounded-xl border-2 border-transparent hover:border-primary transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/20 animate-on-scroll opacity-0" style="animation-delay: 0.1s">
+          <div class="text-5xl mb-4 transition-all duration-300 group-hover:scale-110">
+            <i class="fab fa-whatsapp text-primary"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2 font-display">WhatsApp</h3>
           <p class="text-gray-600 dark:text-gray-400 mb-4">Chateá con nosotros</p>
-          <a href="https://wa.me/5493834000000" class="text-primary font-semibold hover:underline">
+          <a href="https://wa.me/5493834946767" class="text-primary font-semibold hover:underline transition-all duration-300 group-hover:scale-110 inline-block">
             Enviar mensaje
           </a>
         </div>
 
-        <div class="text-center p-8 bg-gray-50 dark:bg-dark-secondary rounded-xl border-2 border-transparent hover:border-primary transition-all duration-300">
-          <div class="text-5xl mb-4">📧</div>
-          <h3 class="text-xl font-bold mb-2">Email</h3>
+        <div class="group text-center p-8 bg-gray-50 dark:bg-dark-secondary rounded-xl border-2 border-transparent hover:border-primary transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/20 animate-on-scroll opacity-0" style="animation-delay: 0.2s">
+          <div class="text-5xl mb-4 transition-all duration-300 group-hover:scale-110">
+            <i class="fas fa-envelope text-primary"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2 font-display">Email</h3>
           <p class="text-gray-600 dark:text-gray-400 mb-4">Escribinos a</p>
-          <a href="mailto:contacto@devhub.com.ar" class="text-primary font-semibold hover:underline">
+          <a href="mailto:contacto@devhub.com.ar" class="text-primary font-semibold hover:underline transition-all duration-300 group-hover:scale-110 inline-block">
             contacto@devhub.com.ar
           </a>
         </div>
 
-        <div class="text-center p-8 bg-gray-50 dark:bg-dark-secondary rounded-xl border-2 border-transparent hover:border-primary transition-all duration-300">
-          <div class="text-5xl mb-4">💬</div>
-          <h3 class="text-xl font-bold mb-2">Consulta</h3>
+        <div class="group text-center p-8 bg-gray-50 dark:bg-dark-secondary rounded-xl border-2 border-transparent hover:border-primary transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/20 animate-on-scroll opacity-0" style="animation-delay: 0.3s">
+          <div class="text-5xl mb-4 transition-all duration-300 group-hover:scale-110">
+            <i class="fas fa-comment-dots text-primary"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2 font-display">Consulta</h3>
           <p class="text-gray-600 dark:text-gray-400 mb-4">Contanos tu idea</p>
-          <a href="#contacto" class="text-primary font-semibold hover:underline">
+          <a href="#contacto" class="text-primary font-semibold hover:underline transition-all duration-300 group-hover:scale-110 inline-block">
             Formulario de contacto
           </a>
         </div>
       </div>
 
-      <div class="text-center">
+      <div class="text-center animate-on-scroll opacity-0" style="animation-delay: 0.4s">
         <a 
           href="#servicios"
-          class="inline-block px-10 py-5 bg-primary text-dark font-bold text-lg rounded-lg hover:bg-primary-dark hover:scale-105 transition-all duration-300 shadow-lg"
+          class="group relative inline-flex items-center gap-3 px-10 py-5 bg-primary text-dark font-bold text-lg rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-2xl hover:shadow-primary/50 font-display"
         >
-          Cotizar mi Proyecto
+          <i class="fas fa-rocket"></i>
+          <span class="relative z-10">Cotizar mi Proyecto</span>
+          <div class="absolute inset-0 bg-gradient-to-r from-primary-dark to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </a>
       </div>
     </div>
   </section>
 </Layout>
+
+<style>
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.6;
+      transform: scale(1.05);
+    }
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+  }
+
+  @keyframes scroll-reveal {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-on-scroll {
+    animation: scroll-reveal 0.8s ease-out forwards;
+  }
+</style>
+
+<script>
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-on-scroll');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.animate-on-scroll').forEach(el => {
+    observer.observe(el);
+  });
+</script>
