@@ -1,0 +1,69 @@
+---
+const currentYear = new Date().getFullYear();
+
+const footerSections = [
+  {
+    title: '🚀 DevHub',
+    links: [
+      { text: 'Soluciones Digitales', href: '#' },
+      { text: 'Catamarca, Argentina', href: '#' },
+    ]
+  },
+  {
+    title: 'Servicios',
+    links: [
+      { text: 'Landing Pages', href: '#servicios' },
+      { text: 'Webs Corporativas', href: '#servicios' },
+      { text: 'Tiendas Online', href: '#servicios' },
+      { text: 'Sistemas a Medida', href: '#servicios' },
+    ]
+  },
+  {
+    title: 'Tecnologías',
+    links: [
+      { text: 'Astro & Next.js', href: '#tecnologias' },
+      { text: 'React & Node.js', href: '#tecnologias' },
+      { text: 'Supabase & SQL', href: '#tecnologias' },
+      { text: 'Tailwind CSS', href: '#tecnologias' },
+    ]
+  },
+  {
+    title: 'Contacto',
+    links: [
+      { text: 'Email', href: 'mailto:contacto@devhub.com.ar' },
+      { text: 'WhatsApp', href: 'https://wa.me/5493834000000' },
+      { text: 'LinkedIn', href: 'https://www.linkedin.com/in/gonzaloromero-/' },
+    ]
+  }
+];
+---
+
+<footer class="bg-dark dark:bg-black text-white mt-20">
+  <div class="container mx-auto px-4 py-12">
+    <!-- Footer Content Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+      {footerSections.map(section => (
+        <div>
+          <h3 class="text-primary font-bold text-lg mb-4">{section.title}</h3>
+          <ul class="space-y-2">
+            {section.links.map(link => (
+              <li>
+                <a 
+                  href={link.href}
+                  class="text-gray-300 hover:text-primary transition-colors"
+                >
+                  {link.text}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="border-t border-dark-tertiary pt-6 text-center text-gray-400">
+      <p>&copy; {currentYear} DevHub - Soluciones Digitales. Catamarca, Argentina.</p>
+    </div>
+  </div>
+</footer>

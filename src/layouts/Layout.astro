@@ -1,0 +1,48 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'DevHub - Desarrollo Web y Software a medida en Catamarca, Argentina' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-white dark:bg-dark text-gray-900 dark:text-white transition-colors duration-300">
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    
+    <script>
+      // Dark mode toggle functionality
+      const initTheme = () => {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      };
+
+      // Initialize on page load
+      initTheme();
+
+      // Listen for theme toggle events
+      document.addEventListener('astro:page-load', initTheme);
+    </script>
+  </body>
+</html>
