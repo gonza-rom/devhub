@@ -36,7 +36,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || url).toString();
     <meta name="author" content="DevHub - Soluciones Digitales" />
     <link rel="canonical" href={canonicalURL} />
     
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={siteTitle} />
@@ -44,6 +44,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || url).toString();
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="DevHub - Soluciones Digitales" />
     <meta property="og:site_name" content="DevHub - Soluciones Digitales" />
     <meta property="og:locale" content="es_AR" />
     
@@ -53,6 +54,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || url).toString();
     <meta name="twitter:title" content={siteTitle} />
     <meta name="twitter:description" content={siteDescription} />
     <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content="DevHub - Soluciones Digitales" />
     
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -69,7 +71,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || url).toString();
         "description": "Desarrollo Web y Software a medida en Catamarca, Argentina",
         "url": "https://devhub-cta.vercel.app/",
         "logo": "https://devhub-cta.vercel.app/logo.png",
-        "image": "https://devhub-cta.vercel.app/logo.png",
+        "image": "https://devhub-cta.vercel.app/og-image.png",
         "email": "contacto@devhub.com.ar",
         "address": {
           "@type": "PostalAddress",
