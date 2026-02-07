@@ -153,14 +153,51 @@ const team = [
     name: 'Gonzalo Romero',
     role: 'Full Stack Developer',
     description: 'Apasionado por crear aplicaciones web modernas, rápidas y funcionales. Especializado en desarrollo frontend y backend con tecnologías de vanguardia.',
-    linkedinUrl: 'https://www.linkedin.com/in/gonzaloromero-/'
+    linkedinUrl: 'https://www.linkedin.com/in/gonzaloromero-/',
+    instagramUrl: 'https://www.instagram.com/gonza.romer0/'
   },
   {
     avatar: '👨‍💻',
     name: 'Gustavo Cativa',
     role: 'Full Stack Developer',
     description: 'Experiencia en el sector comercial aplicando tecnología para optimizar procesos. Comprensión profunda de cómo la tecnología transforma operaciones.',
-    linkedinUrl: 'https://www.linkedin.com/in/gustavo-cativa-a50363213/'
+    linkedinUrl: 'https://www.linkedin.com/in/gustavo-cativa-a50363213/',
+    instagramUrl: 'https://www.instagram.com/gustavocativa/'
+  },
+  {
+    avatar: '👩‍💻',
+    name: 'Tania Quiroga',
+    role: 'Full Stack Developer & QA Tester',
+    description: 'Especializada en el desarrollo de soluciones web modernas y escalables. Experiencia en frontend con Angular y JavaScript, integración backend y bases de datos.',
+    linkedinUrl: 'https://www.linkedin.com/in/taniaquiroga/',
+    instagramUrl: 'https://www.instagram.com/tani_q96/'
+  }
+];
+
+const projects = [
+  {
+    icon: 'fas fa-shopping-bag',
+    title: 'JMR E-commerce',
+    description: 'Tienda online completa con carrito de compras, gestión de productos y pasarela de pagos. Desarrollada con Next.js y base de datos SQL.',
+    technologies: ['Next.js', 'React', 'Tailwind CSS', 'SQL', 'Vercel'],
+    demoUrl: 'https://jmr-ecommerce.vercel.app/',
+    category: 'E-commerce'
+  },
+  {
+    icon: 'fas fa-boxes',
+    title: 'JMR Stock',
+    description: 'Sistema de gestión de inventario en tiempo real. Control de stock, alertas de bajo inventario y reportes detallados para optimizar el control de mercadería.',
+    technologies: ['Next.js', 'Supabase', 'React', 'TypeScript', 'Vercel'],
+    demoUrl: 'https://jmr-stock.vercel.app/',
+    category: 'Sistema de Gestión'
+  },
+  {
+    icon: 'fas fa-rocket',
+    title: 'DevHub CTA',
+    description: 'Landing page corporativa con diseño moderno, animaciones fluidas y formulario de contacto. Optimizada para conversión y velocidad de carga.',
+    technologies: ['Astro', 'Tailwind CSS', 'JavaScript', 'Vercel'],
+    demoUrl: 'https://devhub-cta.vercel.app/',
+    category: 'Landing Page'
   }
 ];
 ---
@@ -303,6 +340,71 @@ const team = [
     </div>
   </section>
 
+  <!-- Projects Section -->
+  <section id="proyectos" class="py-20 bg-dark relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 animate-on-scroll opacity-0">
+        Nuestros <span class="text-primary drop-shadow-[0_0_10px_rgba(255,193,7,0.5)]">Proyectos</span>
+      </h2>
+      <p class="text-center text-gray-400 mb-16 animate-on-scroll opacity-0" style="animation-delay: 0.2s">
+        Proyectos reales que demuestran nuestra experiencia
+      </p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {projects.map((project, index) => (
+          <div class="group bg-dark-secondary p-8 rounded-xl shadow-lg shadow-primary/10 border-2 border-transparent hover:border-primary transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/30 relative overflow-hidden animate-on-scroll opacity-0" style={`animation-delay: ${index * 0.15}s`}>
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary-dark/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            
+            <div class="relative z-10">
+              <div class="flex items-start justify-between mb-4">
+                <div class="text-4xl transition-all duration-500 group-hover:scale-110">
+                  <i class={`${project.icon} text-primary`}></i>
+                </div>
+                <span class="text-xs px-3 py-1 bg-primary/20 text-primary rounded-full border border-primary/30">
+                  {project.category}
+                </span>
+              </div>
+              
+              <h3 class="text-2xl font-bold text-primary mb-3 font-display">{project.title}</h3>
+              
+              <p class="text-gray-300 mb-4 text-sm">{project.description}</p>
+              
+              <div class="flex flex-wrap gap-2 mb-6">
+                {project.technologies.map((tech) => (
+                  <span class="text-xs px-3 py-1 bg-dark rounded-full text-gray-400 border border-dark-tertiary">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              
+              <a 
+                href={project.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-primary font-semibold hover:underline transition-all duration-300 group-hover:scale-105"
+              >
+                <i class="fas fa-external-link-alt"></i>
+                <span>Ver proyecto en vivo</span>
+              </a>
+            </div>
+            
+            <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-primary/20 rounded-full blur-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 text-center animate-on-scroll opacity-0" style="animation-delay: 0.6s">
+        <p class="text-gray-400 flex items-center justify-center gap-2">
+          <i class="fas fa-lock text-primary"></i>
+          <span>Proyectos protegidos - No compartimos código fuente públicamente</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- About Us / Team Section -->
   <section id="nosotros" class="py-20 bg-dark relative overflow-hidden">
     <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
@@ -316,7 +418,7 @@ const team = [
         Somos un equipo de desarrolladores Full Stack de Catamarca, Argentina. Nos especializamos en crear soluciones digitales modernas, rápidas y funcionales para empresas y emprendedores.
       </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
         {team.map((member, index) => (
           <div class="animate-on-scroll opacity-0" style={`animation-delay: ${index * 0.2}s`}>
             <TeamMember {...member} />

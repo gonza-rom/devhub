@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://devhub-cta.vercel.app/sitemap-index.xml
+
+# Bloquear directorios innecesarios
+Disallow: /api/
+Disallow: /_astro/
+Disallow: /admin/
