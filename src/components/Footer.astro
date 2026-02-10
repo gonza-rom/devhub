@@ -1,80 +1,94 @@
 ---
 const currentYear = new Date().getFullYear();
-
-const footerSections = [
-  {
-    title: 'DevHub',
-    icon: 'fas fa-rocket',
-    links: [
-      { text: 'Soluciones Digitales', href: '#' },
-      { text: 'Catamarca, Argentina', href: '#', icon: 'fas fa-map-marker-alt' },
-    ]
-  },
-  {
-    title: 'Servicios',
-    icon: 'fas fa-briefcase',
-    links: [
-      { text: 'Landing Pages', href: '#servicios', icon: 'fas fa-rocket' },
-      { text: 'Webs Corporativas', href: '#servicios', icon: 'fas fa-building' },
-      { text: 'Tiendas Online', href: '#servicios', icon: 'fas fa-shopping-cart' },
-      { text: 'Sistemas a Medida', href: '#servicios', icon: 'fas fa-cogs' },
-    ]
-  },
-  {
-    title: 'Tecnologías',
-    icon: 'fas fa-code',
-    links: [
-      { text: 'Astro & Next.js', href: '#tecnologias' },
-      { text: 'React & Node.js', href: '#tecnologias' },
-      { text: 'Supabase & SQL', href: '#tecnologias' },
-      { text: 'Tailwind CSS', href: '#tecnologias' },
-    ]
-  },
-  {
-    title: 'Contacto',
-    icon: 'fas fa-envelope',
-    links: [
-      { text: 'Email', href: 'mailto:contacto@devhub.com.ar', icon: 'fas fa-envelope' },
-      { text: 'WhatsApp', href: 'https://wa.me/5493834946767', icon: 'fab fa-whatsapp' },
-      { text: 'LinkedIn', href: 'https://www.linkedin.com/in/gonzaloromero-/', icon: 'fab fa-linkedin' },
-    ]
-  }
-];
 ---
 
-<footer class="bg-black text-white mt-20">
+<footer class="bg-black text-white mt-20 border-t border-dark-tertiary">
   <div class="container mx-auto px-4 py-12">
-    <!-- Footer Content Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-      {footerSections.map(section => (
-        <div>
-          <h3 class="text-primary font-bold text-lg mb-4 flex items-center gap-2 font-display">
-            {section.icon && <i class={section.icon}></i>}
-            <span>{section.title}</span>
-          </h3>
-          <ul class="space-y-2">
-            {section.links.map(link => (
-              <li>
-                <a 
-                  href={link.href}
-                  class="text-gray-300 hover:text-primary transition-colors flex items-center gap-2"
-                >
-                  {link.icon && <i class={link.icon}></i>}
-                  <span>{link.text}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
+
+      <!-- Brand -->
+      <div>
+        <a href="/" class="flex items-center gap-2 mb-4 group">
+          <img src="/logo-bg.png" alt="DevHub" class="h-10 group-hover:drop-shadow-[0_0_10px_rgba(255,193,7,0.7)] transition-all" />
+        </a>
+        <p class="text-gray-400 text-sm mb-3">Desarrollo Web y Software a medida desde Catamarca, Argentina.</p>
+        <p class="flex items-center gap-2 text-gray-500 text-sm">
+          <i class="fas fa-map-marker-alt text-primary"></i>
+          <span>Catamarca Capital, Argentina</span>
+        </p>
+      </div>
+
+      <!-- Servicios -->
+      <div>
+        <h3 class="text-primary font-bold text-lg mb-4 flex items-center gap-2 font-display">
+          <i class="fas fa-briefcase"></i>
+          <span>Servicios</span>
+        </h3>
+        <ul class="space-y-2">
+          <li><a href="/servicios#landing" class="text-gray-300 hover:text-primary transition-colors text-sm flex items-center gap-2"><i class="fas fa-rocket text-xs"></i>Landing Pages</a></li>
+          <li><a href="/servicios#corporativa" class="text-gray-300 hover:text-primary transition-colors text-sm flex items-center gap-2"><i class="fas fa-building text-xs"></i>Webs Corporativas</a></li>
+          <li><a href="/servicios#ecommerce" class="text-gray-300 hover:text-primary transition-colors text-sm flex items-center gap-2"><i class="fas fa-shopping-cart text-xs"></i>Tiendas Online</a></li>
+          <li><a href="/servicios#sistema" class="text-gray-300 hover:text-primary transition-colors text-sm flex items-center gap-2"><i class="fas fa-cogs text-xs"></i>Sistemas a Medida</a></li>
+        </ul>
+      </div>
+
+      <!-- Navegación -->
+      <div>
+        <h3 class="text-primary font-bold text-lg mb-4 flex items-center gap-2 font-display">
+          <i class="fas fa-sitemap"></i>
+          <span>Navegación</span>
+        </h3>
+        <ul class="space-y-2">
+          <li><a href="/" class="text-gray-300 hover:text-primary transition-colors text-sm">Inicio</a></li>
+          <li><a href="/proyectos" class="text-gray-300 hover:text-primary transition-colors text-sm">Proyectos</a></li>
+          <li><a href="/nosotros" class="text-gray-300 hover:text-primary transition-colors text-sm">Nosotros</a></li>
+          <li><a href="/blog" class="text-gray-300 hover:text-primary transition-colors text-sm">Blog</a></li>
+          <li><a href="/contacto" class="text-gray-300 hover:text-primary transition-colors text-sm">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Contacto -->
+      <div>
+        <h3 class="text-primary font-bold text-lg mb-4 flex items-center gap-2 font-display">
+          <i class="fas fa-envelope"></i>
+          <span>Contacto</span>
+        </h3>
+        <ul class="space-y-2">
+          <li>
+            <a href="mailto:contacto@devhub.com.ar" class="text-gray-300 hover:text-primary transition-colors text-sm flex items-center gap-2">
+              <i class="fas fa-envelope text-primary"></i>
+              contacto@devhub.com.ar
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/5493834946767" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-primary transition-colors text-sm flex items-center gap-2">
+              <i class="fab fa-whatsapp text-primary"></i>
+              +54 9 383 4946767
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/gonzaloromero-/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-primary transition-colors text-sm flex items-center gap-2">
+              <i class="fab fa-linkedin text-primary"></i>
+              LinkedIn
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <!-- Footer Bottom -->
-    <div class="border-t border-dark-tertiary pt-6 text-center text-gray-400">
-      <p class="flex items-center justify-center gap-2">
+    <div class="border-t border-dark-tertiary pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400 text-sm">
+      <p class="flex items-center gap-2">
         <i class="far fa-copyright"></i>
         <span>{currentYear} DevHub - Soluciones Digitales. Catamarca, Argentina.</span>
       </p>
+      <div class="flex items-center gap-4">
+        <span class="text-gray-600">Hecho con</span>
+        <span class="text-primary font-semibold flex items-center gap-1">
+          <i class="fas fa-rocket"></i> Astro
+        </span>
+        <span class="text-gray-600">+</span>
+        <span class="text-primary font-semibold">Tailwind CSS</span>
+      </div>
     </div>
   </div>
 </footer>

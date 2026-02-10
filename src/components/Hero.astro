@@ -2,23 +2,22 @@
 ---
 
 <section id="inicio" class="relative overflow-hidden bg-gradient-to-br from-dark-secondary to-dark py-20 md:py-32">
-  <!-- Animated Background Circles with Neon Glow -->
+  <!-- Animated Background Circles -->
   <div class="absolute inset-0 overflow-hidden pointer-events-none">
     <div class="absolute top-20 left-10 w-72 h-72 bg-primary/30 rounded-full blur-3xl animate-pulse-slow"></div>
     <div class="absolute bottom-20 right-10 w-96 h-96 bg-primary-light/20 rounded-full blur-3xl animate-float"></div>
     <div class="absolute top-1/2 left-1/3 w-64 h-64 bg-primary/20 rounded-full blur-2xl animate-float-delayed"></div>
   </div>
 
-  <!-- Grid Pattern Overlay -->
+  <!-- Grid Pattern -->
   <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(rgba(255,193,7,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,193,7,0.3) 1px, transparent 1px); background-size: 50px 50px;"></div>
 
   <div class="container mx-auto px-4 relative z-10">
     <div class="max-w-5xl mx-auto text-center">
-      <!-- Logo with Neon Glow Effect -->
       <div class="mb-8 flex justify-center animate-fade-in">
-        <img 
-          src="/logo-bg.png" 
-          alt="DevHub" 
+        <img
+          src="/logo-bg.png"
+          alt="DevHub"
           class="h-32 md:h-40 drop-shadow-[0_0_40px_rgba(255,193,7,1)] animate-glow"
         />
       </div>
@@ -28,12 +27,12 @@
         <span class="text-primary animate-pulse"> | </span>
         <span class="inline-block hover:scale-110 transition-transform duration-300">Soluciones Digitales</span>
       </h1>
-      
+
       <p class="text-xl md:text-2xl lg:text-3xl mb-4 text-white opacity-90 animate-slide-up-delayed font-light flex items-center justify-center gap-3 flex-wrap">
         <i class="fas fa-laptop-code text-primary"></i>
         <span>Desarrollo Web & Software de calidad</span>
       </p>
-      
+
       <p class="text-lg md:text-xl mb-2 text-white opacity-80 animate-slide-up-delayed-2">
         <span class="inline-flex items-center gap-3 px-6 py-3 bg-primary/10 rounded-full backdrop-blur-sm">
           <i class="fas fa-code text-primary"></i>
@@ -45,27 +44,29 @@
         <i class="fas fa-map-marker-alt text-primary"></i>
         <span>Catamarca, Argentina</span>
       </p>
-      
+
       <div class="flex flex-wrap justify-center gap-6 animate-slide-up-delayed-4">
-        <a 
-          href="#servicios"
+        <a
+          href="/servicios"
           class="group relative px-8 py-4 bg-primary text-dark font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-primary flex items-center gap-3"
         >
           <i class="fas fa-briefcase"></i>
-          <span class="relative z-10">Ver Servicios</span>
+          <span class="relative z-10">Ver Servicios y Precios</span>
           <div class="absolute inset-0 bg-gradient-to-r from-primary to-primary-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </a>
-        <a 
-          href="#contacto"
+        <a
+          href="https://wa.me/5493834946767"
+          target="_blank"
+          rel="noopener noreferrer"
           class="group relative px-8 py-4 bg-transparent border-2 border-primary text-primary font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/30 flex items-center gap-3"
         >
-          <i class="fas fa-paper-plane"></i>
-          <span class="relative z-10">Contactar</span>
+          <i class="fab fa-whatsapp"></i>
+          <span class="relative z-10">WhatsApp</span>
           <div class="absolute inset-0 bg-primary opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
         </a>
       </div>
 
-      <!-- Animated Tech Stack Decoration -->
+      <!-- Tech Stack -->
       <div class="mt-16 flex justify-center gap-4 opacity-40 animate-fade-in-delayed flex-wrap">
         <span class="px-4 py-2 bg-primary/5 rounded-lg font-mono text-sm backdrop-blur-sm border border-primary/20 flex items-center gap-2">
           <i class="fab fa-react text-primary"></i>
@@ -79,11 +80,15 @@
           <i class="fab fa-node-js text-primary"></i>
           <span>Node.js</span>
         </span>
+        <span class="px-4 py-2 bg-primary/5 rounded-lg font-mono text-sm backdrop-blur-sm border border-primary/20 hidden md:flex items-center gap-2">
+          <i class="fas fa-forward text-primary"></i>
+          <span>Next.js</span>
+        </span>
       </div>
     </div>
   </div>
 
-  <!-- Bottom Wave Effect -->
+  <!-- Bottom Wave -->
   <div class="absolute bottom-0 left-0 right-0">
     <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
       <path d="M0 0L60 10C120 20 240 40 360 46.7C480 53 600 47 720 43.3C840 40 960 40 1080 46.7C1200 53 1320 67 1380 73.3L1440 80V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0V0Z" class="fill-dark"/>
@@ -92,119 +97,22 @@
 </section>
 
 <style>
-  @keyframes pulse-slow {
-    0%, 100% {
-      opacity: 0.3;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.5;
-      transform: scale(1.1);
-    }
-  }
+  @keyframes pulse-slow { 0%, 100% { opacity: 0.3; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.1); } }
+  @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+  @keyframes float-delayed { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(15px); } }
+  @keyframes glow { 0%, 100% { filter: drop-shadow(0 0 30px rgba(255,193,7,0.9)); } 50% { filter: drop-shadow(0 0 50px rgba(255,193,7,1)); } }
+  @keyframes fade-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes slide-up { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px) translateX(0px);
-    }
-    33% {
-      transform: translateY(-20px) translateX(10px);
-    }
-    66% {
-      transform: translateY(10px) translateX(-10px);
-    }
-  }
-
-  @keyframes float-delayed {
-    0%, 100% {
-      transform: translateY(0px) translateX(0px);
-    }
-    33% {
-      transform: translateY(15px) translateX(-15px);
-    }
-    66% {
-      transform: translateY(-10px) translateX(15px);
-    }
-  }
-
-  @keyframes glow {
-    0%, 100% {
-      filter: drop-shadow(0 0 30px rgba(255,193,7,0.9));
-    }
-    50% {
-      filter: drop-shadow(0 0 50px rgba(255,193,7,1));
-    }
-  }
-
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes slide-up {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .animate-pulse-slow {
-    animation: pulse-slow 4s ease-in-out infinite;
-  }
-
-  .animate-float {
-    animation: float 8s ease-in-out infinite;
-  }
-
-  .animate-float-delayed {
-    animation: float-delayed 10s ease-in-out infinite;
-  }
-
-  .animate-glow {
-    animation: glow 3s ease-in-out infinite;
-    filter: drop-shadow(0 0 40px rgba(255,193,7,1));
-  }
-
-  .animate-fade-in {
-    animation: fade-in 1s ease-out forwards;
-  }
-
-  .animate-fade-in-delayed {
-    animation: fade-in 1s ease-out 0.8s forwards;
-    opacity: 0;
-  }
-
-  .animate-slide-up {
-    animation: slide-up 0.8s ease-out forwards;
-  }
-
-  .animate-slide-up-delayed {
-    animation: slide-up 0.8s ease-out 0.2s forwards;
-    opacity: 0;
-  }
-
-  .animate-slide-up-delayed-2 {
-    animation: slide-up 0.8s ease-out 0.4s forwards;
-    opacity: 0;
-  }
-
-  .animate-slide-up-delayed-3 {
-    animation: slide-up 0.8s ease-out 0.6s forwards;
-    opacity: 0;
-  }
-
-  .animate-slide-up-delayed-4 {
-    animation: slide-up 0.8s ease-out 0.8s forwards;
-    opacity: 0;
-  }
+  .animate-pulse-slow { animation: pulse-slow 4s ease-in-out infinite; }
+  .animate-float { animation: float 8s ease-in-out infinite; }
+  .animate-float-delayed { animation: float-delayed 10s ease-in-out infinite; }
+  .animate-glow { animation: glow 3s ease-in-out infinite; filter: drop-shadow(0 0 40px rgba(255,193,7,1)); }
+  .animate-fade-in { animation: fade-in 1s ease-out forwards; }
+  .animate-fade-in-delayed { animation: fade-in 1s ease-out 0.8s forwards; opacity: 0; }
+  .animate-slide-up { animation: slide-up 0.8s ease-out forwards; }
+  .animate-slide-up-delayed { animation: slide-up 0.8s ease-out 0.2s forwards; opacity: 0; }
+  .animate-slide-up-delayed-2 { animation: slide-up 0.8s ease-out 0.4s forwards; opacity: 0; }
+  .animate-slide-up-delayed-3 { animation: slide-up 0.8s ease-out 0.6s forwards; opacity: 0; }
+  .animate-slide-up-delayed-4 { animation: slide-up 0.8s ease-out 0.8s forwards; opacity: 0; }
 </style>

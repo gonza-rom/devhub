@@ -1,0 +1,110 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Desarrollo Web en Catamarca: Ventajas de un Equipo Local | DevHub"
+  description="Por qué trabajar con un equipo de desarrollo web local en Catamarca tiene ventajas concretas sobre agencias de Buenos Aires o plataformas genéricas."
+  type="article"
+>
+  <section class="py-16 bg-gradient-to-br from-dark-secondary to-dark">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <a href="/blog" class="text-primary hover:underline text-sm flex items-center gap-1 mb-6">
+        <i class="fas fa-arrow-left text-xs"></i> Blog
+      </a>
+      <div class="flex flex-wrap gap-3 mb-4">
+        <span class="text-xs px-3 py-1 bg-primary/20 text-primary rounded-full border border-primary/30">Local</span>
+        <span class="text-xs px-3 py-1 bg-dark-secondary text-gray-400 rounded-full border border-dark-tertiary"><i class="fas fa-clock mr-1"></i>7 min lectura</span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold mb-6 font-display">
+        Desarrollo Web en Catamarca: <span class="text-primary">Ventajas del Equipo Local</span>
+      </h1>
+      <p class="text-xl text-gray-300">Lo que una agencia de Buenos Aires o una plataforma genérica no puede darte.</p>
+    </div>
+  </section>
+
+  <article class="py-16 bg-dark">
+    <div class="container mx-auto px-4 max-w-4xl space-y-10">
+
+      <p class="text-gray-300 text-lg leading-relaxed">
+        Cuando buscás un desarrollador web, tenés básicamente tres opciones: una agencia grande de Buenos Aires, un freelancer online o un equipo local. Acá explicamos por qué, en muchos casos, el equipo local gana.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        {[
+          {
+            icon: 'fas fa-map-marker-alt',
+            title: 'Podemos reunirnos en persona',
+            desc: 'A veces una reunión de 30 minutos vale más que 10 llamadas por Zoom. Si sos de Catamarca, podemos definir tu proyecto cara a cara, ver tus instalaciones, entender mejor tu negocio. Eso se nota en el resultado final.',
+          },
+          {
+            icon: 'fas fa-clock',
+            title: 'Misma zona horaria, mismo horario',
+            desc: 'Trabajamos en el mismo huso horario que vos. Sin retrasos de comunicación, sin "hablar mañana porque ya cerré". Cuando tenés una urgencia, estamos disponibles en horario normal de trabajo.',
+          },
+          {
+            icon: 'fas fa-store',
+            title: 'Entendemos el mercado local',
+            desc: 'Sabemos cómo funciona Catamarca. Conocemos los rubros que están creciendo, los hábitos de consumo locales y qué mensajes resuenan en el mercado regional. Una agencia porteña no tiene eso.',
+          },
+          {
+            icon: 'fas fa-handshake',
+            title: 'Relación a largo plazo',
+            desc: 'No somos una plataforma anónima. Somos personas reales de Catamarca que construimos nuestra reputación en la misma ciudad que vos. Eso implica un nivel de compromiso diferente.',
+          },
+          {
+            icon: 'fas fa-dollar-sign',
+            title: 'Precios justos sin overhead de agencia grande',
+            desc: 'Las agencias grandes de Buenos Aires cobran lo mismo que pagan en sueldos y alquiler de oficinas premium. Nosotros tenemos estructura pequeña y eficiente, eso se refleja en precios más accesibles.',
+          },
+          {
+            icon: 'fas fa-graduation-cap',
+            title: 'Tecnología de nivel global, atención local',
+            desc: 'Usamos las mismas tecnologías que las mejores agencias del mundo (Next.js, Astro, Supabase) pero con la atención personalizada de un equipo pequeño y local.',
+          },
+        ].map(item => (
+          <div class="group flex gap-4 p-6 bg-dark-secondary rounded-xl border-2 border-transparent hover:border-primary transition-all duration-300 hover:-translate-y-1">
+            <div class="text-3xl flex-shrink-0 group-hover:scale-110 transition-transform">
+              <i class={`${item.icon} text-primary`}></i>
+            </div>
+            <div>
+              <h3 class="text-white font-bold mb-2 font-display">{item.title}</h3>
+              <p class="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="bg-dark-secondary p-8 rounded-2xl border-2 border-primary/20">
+        <h3 class="text-2xl font-bold text-primary mb-4 font-display">¿Cuándo conviene una agencia grande?</h3>
+        <p class="text-gray-300 mb-4 leading-relaxed">
+          Para ser honestos: si tenés un proyecto de más de $2 millones que requiere un equipo de 10+ personas durante 6+ meses, probablemente una agencia grande sea la opción correcta.
+        </p>
+        <p class="text-gray-300 leading-relaxed">
+          Para el 95% de los negocios de Catamarca (emprendimientos, PyMEs, profesionales), un equipo local eficiente ofrece mejor relación calidad-precio y más atención personalizada.
+        </p>
+      </div>
+
+      <div class="bg-gradient-to-r from-primary/10 to-primary-dark/10 border-2 border-primary/30 rounded-2xl p-8 text-center">
+        <h3 class="text-2xl font-bold mb-3 font-display">¿Hablamos de tu proyecto?</h3>
+        <p class="text-gray-300 mb-6">Si sos de Catamarca, podemos reunirnos en persona. Si no, trabajamos de forma remota con la misma atención.</p>
+        <a href="https://wa.me/5493834946767" target="_blank" rel="noopener noreferrer"
+          class="px-8 py-4 bg-primary text-dark font-bold rounded-lg hover:bg-primary-dark transition-all hover:scale-105 inline-flex items-center gap-2">
+          <i class="fab fa-whatsapp"></i>
+          Contactar al equipo DevHub
+        </a>
+      </div>
+
+      <div class="flex justify-between items-center border-t border-dark-tertiary pt-8">
+        <a href="/blog" class="flex items-center gap-2 text-primary hover:underline font-semibold">
+          <i class="fas fa-arrow-left"></i>
+          Volver al Blog
+        </a>
+        <a href="/nosotros" class="flex items-center gap-2 text-primary hover:underline font-semibold">
+          Conocé al equipo
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </article>
+</Layout>

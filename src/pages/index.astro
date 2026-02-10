@@ -2,8 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import ServiceCard from '../components/ServiceCard.astro';
-import FeatureCard from '../components/FeatureCard.astro';
-import TeamMember from '../components/TeamMember.astro';
 
 const services = [
   {
@@ -40,625 +38,229 @@ const services = [
   }
 ];
 
-const features = [
-  {
-    icon: 'fas fa-bolt',
-    title: 'Rendimiento',
-    description: 'Código optimizado y sitios ultra rápidos que mejoran la experiencia del usuario.'
-  },
-  {
-    icon: 'fas fa-award',
-    title: 'Calidad',
-    description: 'Estándares profesionales en cada proyecto. Código mantenible y escalable.'
-  },
-  {
-    icon: 'fas fa-laptop-code',
-    title: 'Tecnología Moderna',
-    description: 'Usamos las herramientas más actuales del mercado: Astro, Next.js, Supabase.'
-  },
-  {
-    icon: 'fas fa-comments',
-    title: 'Comunicación Clara',
-    description: 'Mantenemos contacto constante y definimos alcances antes de comenzar.'
-  },
-  {
-    icon: 'fas fa-map-marker-alt',
-    title: 'Local - Catamarca',
-    description: 'Equipo local que entiende el mercado y las necesidades regionales.'
-  },
-  {
-    icon: 'fas fa-server',
-    title: 'Hosting Incluido',
-    description: 'Configuramos tu sitio en Netlify/Vercel o hosting pago, siempre a tu nombre.'
-  }
-];
-
-const technologies = [
-  { name: 'Astro', icon: 'fas fa-rocket' },
-  { name: 'Next.js', icon: 'fas fa-forward' },
-  { name: 'React', icon: 'fab fa-react' },
-  { name: 'Node.js', icon: 'fab fa-node-js' },
-  { name: 'Supabase', icon: 'fas fa-database' },
-  { name: 'Tailwind CSS', icon: 'fas fa-paint-brush' },
-  { name: 'Bootstrap', icon: 'fab fa-bootstrap' },
-  { name: 'JavaScript', icon: 'fab fa-js' },
-  { name: 'TypeScript', icon: 'fas fa-code' },
-  { name: 'PHP', icon: 'fab fa-php' },
-  { name: 'SQL', icon: 'fas fa-database' },
-  { name: 'Git', icon: 'fab fa-git-alt' },
-  { name: 'Netlify', icon: 'fas fa-cloud' },
-  { name: 'Vercel', icon: 'fas fa-server' }
-];
-
-// ✨ REDUCIDO DE 9 A 6 VENTAJAS MÁS IMPACTANTES
-const advantages = [
-  {
-    icon: 'fas fa-tachometer-alt',
-    title: 'Velocidad Superior',
-    description: 'Sitios hasta 10x más rápidos que Wix o Tienda Nube. Google premia la velocidad con mejor ranking SEO.',
-    comparison: 'vs. sitios lentos y pesados',
-    stat: '+300%'
-  },
-  {
-    icon: 'fas fa-crown',
-    title: 'Sos el Dueño',
-    description: 'El código es 100% tuyo. No dependés de plataformas que pueden cerrar, cambiar precios o limitar funcionalidades.',
-    comparison: 'vs. rehén de la plataforma',
-    stat: '100%'
-  },
-  {
-    icon: 'fas fa-search',
-    title: 'SEO Profesional',
-    description: 'Optimización técnica profunda que las plantillas no pueden ofrecer. Mejores posiciones en Google garantizadas.',
-    comparison: 'vs. SEO básico e ineficiente',
-    stat: 'Top 10'
-  },
-  {
-    icon: 'fas fa-dollar-sign',
-    title: 'Inversión Inteligente',
-    description: 'Pago único vs. suscripciones mensuales eternas. En 1-2 años ya ahorraste dinero y tenés un activo propio.',
-    comparison: 'vs. $5.000-$20.000/mes perpetuos',
-    stat: '0$/mes'
-  },
-  {
-    icon: 'fas fa-infinity',
-    title: 'Sin Límites',
-    description: 'Crecé sin restricciones. Agregá funcionalidades, productos o usuarios sin pagar más por "planes premium".',
-    comparison: 'vs. límites artificiales y costos ocultos',
-    stat: '∞'
-  },
-  {
-    icon: 'fas fa-wrench',
-    title: 'Escalabilidad Real',
-    description: 'Sistemas que crecen con tu negocio. Integraciones con cualquier herramienta, API o servicio que necesites.',
-    comparison: 'vs. funcionalidades bloqueadas',
-    stat: 'Custom'
-  }
-];
-
-const team = [
-  {
-    avatar: '👨‍💻',
-    name: 'Gonzalo Romero',
-    role: 'Full Stack Developer',
-    description: 'Apasionado por crear aplicaciones web modernas, rápidas y funcionales. Especializado en desarrollo frontend y backend con tecnologías de vanguardia.',
-    linkedinUrl: 'https://www.linkedin.com/in/gonzaloromero-/',
-    instagramUrl: 'https://www.instagram.com/gonza.romer0/'
-  },
-  {
-    avatar: '👨‍💻',
-    name: 'Gustavo Cativa',
-    role: 'Full Stack Developer',
-    description: 'Experiencia en el sector comercial aplicando tecnología para optimizar procesos. Comprensión profunda de cómo la tecnología transforma operaciones.',
-    linkedinUrl: 'https://www.linkedin.com/in/gustavo-cativa-a50363213/',
-    instagramUrl: 'https://www.instagram.com/gustavocativa/'
-  },
-  {
-    avatar: '👩‍💻',
-    name: 'Tania Quiroga',
-    role: 'Full Stack Developer & QA Tester',
-    description: 'Especializada en el desarrollo de soluciones web modernas y escalables. Experiencia en frontend con Angular y JavaScript, integración backend y bases de datos.',
-    linkedinUrl: 'https://www.linkedin.com/in/taniaquiroga/',
-    instagramUrl: 'https://www.instagram.com/tani_q96/'
-  }
-];
-
-// ✨ AGREGADOS: BlackBurger Catálogo y Vista Montaña
 const projects = [
   {
     icon: 'fas fa-shopping-bag',
     title: 'JMR E-commerce',
-    description: 'Tienda online completa con carrito de compras, gestión de productos y pasarela de pagos. Desarrollada con Next.js y base de datos SQL.',
-    technologies: ['Next.js', 'React', 'Tailwind CSS', 'SQL', 'Vercel'],
+    category: 'E-commerce',
+    technologies: ['Next.js', 'SQL', 'Tailwind'],
     demoUrl: 'https://www.jmrmarroquineria.com.ar/',
-    category: 'E-commerce'
   },
   {
     icon: 'fas fa-boxes',
     title: 'JMR Stock',
-    description: 'Sistema de gestión de inventario en tiempo real. Control de stock, alertas de bajo inventario y reportes detallados para optimizar el control de mercadería.',
-    technologies: ['Next.js', 'Supabase', 'React', 'TypeScript', 'Vercel'],
+    category: 'Sistema de Gestión',
+    technologies: ['Next.js', 'Supabase', 'TypeScript'],
     demoUrl: 'https://jmr-stock.vercel.app/',
-    category: 'Sistema de Gestión'
-  },
-  {
-    icon: 'fas fa-hamburger',
-    title: 'BlackBurger Catálogo',
-    description: 'Landing page de menú digital para hamburguesería. Catálogo completo de productos con imágenes, descripciones y precios actualizables.',
-    technologies: ['HTML', 'CSS', 'JavaScript', 'Responsive', 'Netlify'],
-    demoUrl: 'https://blackburger-catalogo.netlify.app/',
-    category: 'Landing Page'
   },
   {
     icon: 'fas fa-home',
-    title: 'Vista Montaña Hospedaje',
-    description: 'Sitio web de alquileres vacacionales con galería de imágenes, información de cabañas y sistema de consultas vía WhatsApp para reservas.',
-    technologies: ['Next.js', 'React', 'Tailwind CSS', 'WhatsApp API', 'Vercel'],
+    title: 'Vista Montaña',
+    category: 'Web Corporativa',
+    technologies: ['Next.js', 'Tailwind', 'WhatsApp API'],
     demoUrl: 'https://vista-montana.vercel.app/',
-    category: 'Web Corporativa'
   },
-  {
-    icon: 'fas fa-rocket',
-    title: 'DevHub Institucional',
-    description: 'Sitio corporativo profesional con portfolio de proyectos, presentación de equipo y formulario de contacto. Optimizado para conversión y velocidad.',
-    technologies: ['Astro', 'Tailwind CSS', 'JavaScript', 'SEO', 'Vercel'],
-    demoUrl: 'https://devhub-cta.vercel.app/',
-    category: 'Web Institucional'
-  }
 ];
 ---
 
 <Layout title="DevHub | Soluciones Digitales - Desarrollo Web en Catamarca">
-  <!-- Hero Section -->
   <Hero />
 
-  <!-- Services Section -->
-  <section id="servicios" class="py-20 bg-dark relative overflow-hidden">
+  <!-- Servicios preview -->
+  <section class="py-20 bg-dark relative overflow-hidden">
     <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
-    
     <div class="container mx-auto px-4 relative z-10">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 animate-on-scroll opacity-0">
-        Nuestros <span class="text-primary drop-shadow-[0_0_10px_rgba(255,193,7,0.5)]">Servicios</span>
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 animate-on-scroll opacity-0 font-display">
+        Nuestros <span class="text-primary">Servicios</span>
       </h2>
-      <p class="text-center text-gray-400 mb-16 animate-on-scroll opacity-0" style="animation-delay: 0.2s">
-        Soluciones tecnológicas de primer nivel
+      <p class="text-center text-gray-400 mb-16 animate-on-scroll opacity-0">
+        Soluciones tecnológicas a medida para cada necesidad
       </p>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {services.map((service, index) => (
-          <div class="animate-on-scroll opacity-0" style={`animation-delay: ${index * 0.1}s`}>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        {services.map((service, i) => (
+          <div class="animate-on-scroll opacity-0" style={`animation-delay: ${i * 0.1}s`}>
             <ServiceCard {...service} />
           </div>
         ))}
       </div>
+      <div class="text-center animate-on-scroll opacity-0">
+        <a href="/servicios" class="inline-flex items-center gap-2 px-8 py-4 bg-primary text-dark font-bold rounded-lg hover:bg-primary-dark transition-all duration-300 hover:scale-105">
+          <i class="fas fa-arrow-right"></i>
+          Ver todos los servicios con detalles
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- Why Choose Us Section -->
+  <!-- Por qué DevHub - versión compacta -->
   <section class="py-20 bg-dark-secondary relative overflow-hidden">
-    <div class="absolute top-1/4 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse-slow"></div>
-    
-    <div class="container mx-auto px-4 relative z-10">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 animate-on-scroll opacity-0">
-        ¿Por qué <span class="text-primary drop-shadow-[0_0_10px_rgba(255,193,7,0.5)]">DevHub</span>?
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 animate-on-scroll opacity-0 font-display">
+        ¿Por qué <span class="text-primary">DevHub</span>?
       </h2>
-      <p class="text-center text-gray-400 mb-16 animate-on-scroll opacity-0" style="animation-delay: 0.2s">
-        Excelencia, innovación y compromiso en cada proyecto
+      <p class="text-center text-gray-400 mb-16 animate-on-scroll opacity-0">
+        La diferencia entre una plantilla y un sitio a medida
       </p>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {features.map((feature, index) => (
-          <div class="animate-on-scroll opacity-0" style={`animation-delay: ${index * 0.15}s`}>
-            <FeatureCard {...feature} />
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Advantages Over Templates Section - REDUCIDO A 6 -->
-  <section id="ventajas" class="py-20 bg-dark relative overflow-hidden">
-    <div class="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
-    
-    <div class="container mx-auto px-4 relative z-10">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 animate-on-scroll opacity-0">
-        <span class="text-primary drop-shadow-[0_0_10px_rgba(255,193,7,0.5)]">6 Razones</span> para elegirnos
-      </h2>
-      <p class="text-center text-gray-400 mb-6 animate-on-scroll opacity-0" style="animation-delay: 0.2s">
-        Desarrollo a medida vs. Plantillas genéricas
-      </p>
-      <p class="text-center text-primary text-lg mb-16 animate-on-scroll opacity-0" style="animation-delay: 0.3s">
-        <i class="fas fa-times-circle text-red-500"></i> Adiós Wix, Tienda Nube, WordPress genérico
-      </p>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {advantages.map((advantage, index) => (
-          <div class="group bg-dark-secondary p-8 rounded-xl shadow-lg shadow-primary/10 border-2 border-transparent hover:border-primary transition-all duration-500 hover:-translate-y-3 text-center relative overflow-hidden hover:shadow-2xl hover:shadow-primary/30 animate-on-scroll opacity-0" style={`animation-delay: ${index * 0.1}s`}>
-            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary-dark/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            
-            <div class="relative z-10">
-              <!-- Stat Badge -->
-              <div class="absolute top-0 right-0 bg-primary/20 text-primary px-3 py-1 rounded-bl-lg rounded-tr-lg font-bold text-sm border border-primary/30">
-                {advantage.stat}
-              </div>
-
-              <div class="text-5xl mb-4 transition-all duration-500 group-hover:scale-110 inline-block mt-4">
-                <i class={`${advantage.icon} text-primary`}></i>
-              </div>
-              <h3 class="text-2xl font-bold text-primary mb-3 font-display">{advantage.title}</h3>
-              <p class="text-gray-300 mb-4">{advantage.description}</p>
-              <p class="text-sm text-gray-500 italic border-t border-dark-tertiary pt-4">
-                <i class="fas fa-arrow-right text-primary"></i> {advantage.comparison}
-              </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+        {[
+          { icon: 'fas fa-tachometer-alt', stat: '+300%', title: 'Velocidad', desc: 'Hasta 10x más rápidos que Wix o Tienda Nube. Google premia la velocidad.' },
+          { icon: 'fas fa-crown', stat: '100%', title: 'Tuyo', desc: 'El código es 100% tuyo. No dependés de plataformas que cambian precios o cierran.' },
+          { icon: 'fas fa-dollar-sign', stat: '0$/mes', title: 'Sin suscripción', desc: 'Pago único vs. suscripciones mensuales eternas. En 1-2 años ya ahorraste.' },
+          { icon: 'fas fa-search', stat: 'Top 10', title: 'SEO Profesional', desc: 'Optimización técnica profunda imposible con plantillas genéricas.' },
+          { icon: 'fas fa-infinity', stat: '∞', title: 'Sin Límites', desc: 'Crecé sin restricciones. Sin planes premium ni funciones bloqueadas.' },
+          { icon: 'fas fa-map-marker-alt', stat: 'Local', title: 'Equipo Catamarca', desc: 'Reuniones presenciales posibles. Entendemos el mercado local.' },
+        ].map((item, i) => (
+          <div class="group bg-dark p-6 rounded-xl border-2 border-transparent hover:border-primary transition-all duration-500 hover:-translate-y-2 animate-on-scroll opacity-0 relative overflow-hidden" style={`animation-delay: ${i * 0.1}s`}>
+            <div class="absolute top-0 right-0 bg-primary/20 text-primary px-3 py-1 rounded-bl-lg rounded-tr-lg font-bold text-sm border border-primary/30">
+              {item.stat}
             </div>
-            
-            <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-primary/20 rounded-full blur-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+            <div class="text-4xl mb-3 mt-3 group-hover:scale-110 transition-transform duration-300 inline-block">
+              <i class={`${item.icon} text-primary`}></i>
+            </div>
+            <h3 class="text-lg font-bold text-primary mb-2 font-display">{item.title}</h3>
+            <p class="text-gray-400 text-sm">{item.desc}</p>
           </div>
         ))}
       </div>
-
-      <!-- Highlight Box -->
-      <div class="mt-16 max-w-4xl mx-auto bg-gradient-to-r from-primary/10 to-primary-dark/10 border-2 border-primary/30 rounded-2xl p-8 text-center animate-on-scroll opacity-0" style="animation-delay: 0.8s">
-        <h3 class="text-2xl md:text-3xl font-bold mb-4 text-primary font-display">
-          <i class="fas fa-chart-line"></i> La diferencia es real
-        </h3>
-        <p class="text-lg text-gray-300">
-          Un sitio web profesional a medida es una <strong class="text-primary">inversión inteligente</strong> que se paga sola, mientras que con plantillas seguís pagando eternamente sin ser dueño de nada.
-        </p>
+      <div class="text-center animate-on-scroll opacity-0">
+        <a href="/servicios#ventajas" class="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
+          <i class="fas fa-chart-line"></i>
+          Ver comparación completa vs. Wix y Tienda Nube
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Technologies Section -->
-  <section id="tecnologias" class="py-20 bg-dark-secondary relative overflow-hidden">
-    <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
-    
-    <div class="container mx-auto px-4 relative z-10">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 animate-on-scroll opacity-0">
-        Tecnologías que <span class="text-primary drop-shadow-[0_0_10px_rgba(255,193,7,0.5)]">Dominamos</span>
+  <!-- Proyectos preview -->
+  <section class="py-20 bg-dark relative overflow-hidden">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 animate-on-scroll opacity-0 font-display">
+        Proyectos <span class="text-primary">Reales</span>
       </h2>
-      <p class="text-center text-gray-400 mb-16 animate-on-scroll opacity-0" style="animation-delay: 0.2s">
-        Stack moderno y herramientas de vanguardia
+      <p class="text-center text-gray-400 mb-16 animate-on-scroll opacity-0">
+        Resultados concretos para negocios reales
       </p>
-      
-      <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-        {technologies.map((tech, index) => (
-          <span 
-            class="px-6 py-3 bg-dark text-white font-semibold rounded-full border-2 border-transparent hover:border-primary transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/30 cursor-pointer animate-on-scroll opacity-0 flex items-center gap-2"
-            style={`animation-delay: ${index * 0.05}s`}
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
+        {projects.map((p, i) => (
+          <a
+            href={p.demoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group bg-dark-secondary p-6 rounded-xl border-2 border-transparent hover:border-primary transition-all duration-500 hover:-translate-y-3 hover:shadow-xl hover:shadow-primary/20 animate-on-scroll opacity-0 block"
+            style={`animation-delay: ${i * 0.12}s`}
           >
-            <i class={`${tech.icon} text-primary`}></i>
-            <span>{tech.name}</span>
+            <div class="flex items-start justify-between mb-4">
+              <div class="text-4xl group-hover:scale-110 transition-transform duration-300">
+                <i class={`${p.icon} text-primary`}></i>
+              </div>
+              <span class="text-xs px-3 py-1 bg-primary/20 text-primary rounded-full border border-primary/30">
+                {p.category}
+              </span>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3 font-display">{p.title}</h3>
+            <div class="flex flex-wrap gap-2 mb-4">
+              {p.technologies.map(t => (
+                <span class="text-xs px-2 py-1 bg-dark rounded-full text-gray-400 border border-dark-tertiary">{t}</span>
+              ))}
+            </div>
+            <span class="inline-flex items-center gap-2 text-primary text-sm font-semibold group-hover:underline">
+              <i class="fas fa-external-link-alt text-xs"></i>
+              Ver en vivo
+            </span>
+          </a>
+        ))}
+      </div>
+      <div class="text-center animate-on-scroll opacity-0">
+        <a href="/proyectos" class="inline-flex items-center gap-2 px-8 py-4 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-dark transition-all duration-300 hover:scale-105">
+          <i class="fas fa-folder-open"></i>
+          Ver portfolio completo (5 proyectos)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog preview -->
+  <section class="py-20 bg-dark-secondary relative overflow-hidden">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 animate-on-scroll opacity-0 font-display">
+        Del <span class="text-primary">Blog</span>
+      </h2>
+      <p class="text-center text-gray-400 mb-16 animate-on-scroll opacity-0">
+        Recursos y guías para negocios que quieren crecer online
+      </p>
+      <div class="max-w-3xl mx-auto">
+        <a href="/blog/wix-vs-desarrollo-a-medida" class="group bg-dark p-8 rounded-2xl border-2 border-transparent hover:border-primary transition-all duration-500 hover:shadow-xl hover:shadow-primary/20 block animate-on-scroll opacity-0">
+          <div class="flex flex-wrap gap-3 mb-4">
+            <span class="text-xs px-3 py-1 bg-primary/20 text-primary rounded-full border border-primary/30">⭐ Artículo Destacado</span>
+            <span class="text-xs px-3 py-1 bg-dark-secondary text-gray-400 rounded-full border border-dark-tertiary">15 min lectura</span>
+            <span class="text-xs px-3 py-1 bg-dark-secondary text-gray-400 rounded-full border border-dark-tertiary">SEO</span>
+          </div>
+          <h3 class="text-2xl font-bold text-primary mb-3 group-hover:underline font-display">
+            ¿Wix, Tienda Nube o Desarrollo a Medida? La Guía Definitiva 2025
+          </h3>
+          <p class="text-gray-300 mb-4">
+            Comparamos en detalle las 3 opciones para que puedas tomar la mejor decisión para tu negocio. Velocidad, SEO, costos reales y casos de uso concretos.
+          </p>
+          <span class="inline-flex items-center gap-2 text-primary font-semibold">
+            Leer artículo completo <i class="fas fa-arrow-right"></i>
           </span>
-        ))}
+        </a>
+      </div>
+      <div class="text-center mt-8 animate-on-scroll opacity-0">
+        <a href="/blog" class="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
+          <i class="fas fa-newspaper"></i>
+          Ver todos los artículos
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Projects Section - AHORA CON 5 PROYECTOS -->
-  <section id="proyectos" class="py-20 bg-dark relative overflow-hidden">
-    <div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
-    
-    <div class="container mx-auto px-4 relative z-10">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 animate-on-scroll opacity-0">
-        Nuestros <span class="text-primary drop-shadow-[0_0_10px_rgba(255,193,7,0.5)]">Proyectos</span>
+  <!-- CTA Final -->
+  <section class="py-20 bg-dark relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl"></div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+      <h2 class="text-4xl md:text-6xl font-bold mb-6 animate-on-scroll opacity-0 font-display">
+        ¿Listo para tener tu <span class="text-primary">sitio profesional</span>?
       </h2>
-      <p class="text-center text-gray-400 mb-16 animate-on-scroll opacity-0" style="animation-delay: 0.2s">
-        Portfolio de proyectos reales que demuestran nuestra experiencia
+      <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto animate-on-scroll opacity-0">
+        Contanos tu idea y te respondemos en menos de 24hs con una propuesta personalizada.
       </p>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-        {projects.map((project, index) => (
-          <div class="group bg-dark-secondary p-8 rounded-xl shadow-lg shadow-primary/10 border-2 border-transparent hover:border-primary transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/30 relative overflow-hidden animate-on-scroll opacity-0" style={`animation-delay: ${index * 0.12}s`}>
-            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary-dark/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            
-            <div class="relative z-10">
-              <div class="flex items-start justify-between mb-4">
-                <div class="text-4xl transition-all duration-500 group-hover:scale-110">
-                  <i class={`${project.icon} text-primary`}></i>
-                </div>
-                <span class="text-xs px-3 py-1 bg-primary/20 text-primary rounded-full border border-primary/30">
-                  {project.category}
-                </span>
-              </div>
-              
-              <h3 class="text-2xl font-bold text-primary mb-3 font-display">{project.title}</h3>
-              
-              <p class="text-gray-300 mb-4 text-sm">{project.description}</p>
-              
-              <div class="flex flex-wrap gap-2 mb-6">
-                {project.technologies.map((tech) => (
-                  <span class="text-xs px-3 py-1 bg-dark rounded-full text-gray-400 border border-dark-tertiary">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              
-              <a 
-                href={project.demoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 text-primary font-semibold hover:underline transition-all duration-300 group-hover:scale-105"
-              >
-                <i class="fas fa-external-link-alt"></i>
-                <span>Ver proyecto en vivo</span>
-              </a>
-            </div>
-            
-            <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-primary/20 rounded-full blur-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
-          </div>
-        ))}
-      </div>
-
-      <div class="mt-12 text-center animate-on-scroll opacity-0" style="animation-delay: 0.7s">
-        <p class="text-gray-400 flex items-center justify-center gap-2">
-          <i class="fas fa-lock text-primary"></i>
-          <span>Proyectos protegidos - No compartimos código fuente públicamente</span>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Us / Team Section -->
-  <section id="nosotros" class="py-20 bg-dark-secondary relative overflow-hidden">
-    <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
-    
-    <div class="container mx-auto px-4 relative z-10">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 animate-on-scroll opacity-0">
-        Sobre <span class="text-primary drop-shadow-[0_0_10px_rgba(255,193,7,0.5)]">DevHub</span>
-      </h2>
-      
-      <p class="text-center text-lg max-w-3xl mx-auto mb-16 text-gray-300 animate-on-scroll opacity-0" style="animation-delay: 0.2s">
-        Somos un equipo de desarrolladores Full Stack de Catamarca, Argentina. Nos especializamos en crear soluciones digitales modernas, rápidas y funcionales para empresas y emprendedores.
-      </p>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
-        {team.map((member, index) => (
-          <div class="animate-on-scroll opacity-0" style={`animation-delay: ${index * 0.2}s`}>
-            <TeamMember {...member} />
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contacto" class="py-20 bg-dark relative overflow-hidden">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl"></div>
-    
-    <div class="container mx-auto px-4 relative z-10">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 animate-on-scroll opacity-0">
-        ¿Listo para comenzar <span class="text-primary drop-shadow-[0_0_10px_rgba(255,193,7,0.5)]">tu proyecto</span>?
-      </h2>
-      <p class="text-center text-gray-400 mb-16 animate-on-scroll opacity-0" style="animation-delay: 0.2s">
-        Contactanos y llevemos tu idea al siguiente nivel
-      </p>
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
-        <div class="group text-center p-8 bg-dark-secondary rounded-xl border-2 border-transparent hover:border-primary transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/20 animate-on-scroll opacity-0" style="animation-delay: 0.1s">
-          <div class="text-5xl mb-4 transition-all duration-300 group-hover:scale-110">
-            <i class="fab fa-whatsapp text-primary"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-2 font-display">WhatsApp</h3>
-          <p class="text-gray-400 mb-4">Chateá con nosotros</p>
-          <a href="https://wa.me/5493834946767" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline transition-all duration-300 group-hover:scale-110 inline-block">
-            Enviar mensaje
-          </a>
-        </div>
-
-        <div class="group text-center p-8 bg-dark-secondary rounded-xl border-2 border-transparent hover:border-primary transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/20 animate-on-scroll opacity-0" style="animation-delay: 0.2s">
-          <div class="text-5xl mb-4 transition-all duration-300 group-hover:scale-110">
-            <i class="fas fa-envelope text-primary"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-2 font-display">Email</h3>
-          <p class="text-gray-400 mb-4">Escribinos a</p>
-          <a href="mailto:contacto@devhub.com.ar" class="text-primary font-semibold hover:underline transition-all duration-300 group-hover:scale-110 inline-block">
-            contacto@devhub.com.ar
-          </a>
-        </div>
-
-        <div class="group text-center p-8 bg-dark-secondary rounded-xl border-2 border-transparent hover:border-primary transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/20 animate-on-scroll opacity-0" style="animation-delay: 0.3s">
-          <div class="text-5xl mb-4 transition-all duration-300 group-hover:scale-110">
-            <i class="fab fa-linkedin text-primary"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-2 font-display">LinkedIn</h3>
-          <p class="text-gray-400 mb-4">Conectá con nosotros</p>
-          <a href="https://www.linkedin.com/in/gonzaloromero-/" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline transition-all duration-300 group-hover:scale-110 inline-block">
-            Ver perfil
-          </a>
-        </div>
-      </div>
-
-      <!-- Contact Form -->
-      <div class="max-w-2xl mx-auto bg-dark-secondary p-8 rounded-2xl border-2 border-primary/20 shadow-2xl shadow-primary/10 animate-on-scroll opacity-0" style="animation-delay: 0.4s">
-        <h3 class="text-2xl font-bold text-center mb-6 text-primary font-display">
-          <i class="fas fa-paper-plane"></i> Formulario de Contacto
-        </h3>
-        
-        <form id="contactForm" class="space-y-6">
-          <div>
-            <label for="name" class="block text-sm font-medium mb-2 text-gray-300">
-              <i class="fas fa-user text-primary"></i> Nombre completo
-            </label>
-            <input 
-              type="text" 
-              id="name" 
-              name="name" 
-              required
-              class="w-full px-4 py-3 bg-dark border-2 border-dark-tertiary rounded-lg focus:border-primary focus:outline-none transition-colors text-white"
-              placeholder="Tu nombre"
-            />
-          </div>
-
-          <div>
-            <label for="email" class="block text-sm font-medium mb-2 text-gray-300">
-              <i class="fas fa-envelope text-primary"></i> Email
-            </label>
-            <input 
-              type="email" 
-              id="email" 
-              name="email" 
-              required
-              class="w-full px-4 py-3 bg-dark border-2 border-dark-tertiary rounded-lg focus:border-primary focus:outline-none transition-colors text-white"
-              placeholder="tu@email.com"
-            />
-          </div>
-
-          <div>
-            <label for="phone" class="block text-sm font-medium mb-2 text-gray-300">
-              <i class="fas fa-phone text-primary"></i> Teléfono (opcional)
-            </label>
-            <input 
-              type="tel" 
-              id="phone" 
-              name="phone"
-              class="w-full px-4 py-3 bg-dark border-2 border-dark-tertiary rounded-lg focus:border-primary focus:outline-none transition-colors text-white"
-              placeholder="+54 9 383 4000000"
-            />
-          </div>
-
-          <div>
-            <label for="service" class="block text-sm font-medium mb-2 text-gray-300">
-              <i class="fas fa-briefcase text-primary"></i> Servicio de interés
-            </label>
-            <select 
-              id="service" 
-              name="service" 
-              required
-              class="w-full px-4 py-3 bg-dark border-2 border-dark-tertiary rounded-lg focus:border-primary focus:outline-none transition-colors text-white"
-            >
-              <option value="">Seleccioná un servicio</option>
-              <option value="landing">Landing Page</option>
-              <option value="corporativa">Web Corporativa</option>
-              <option value="ecommerce">Tienda Online</option>
-              <option value="sistema">Sistema a Medida</option>
-              <option value="consulta">Consulta General</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="message" class="block text-sm font-medium mb-2 text-gray-300">
-              <i class="fas fa-comment-dots text-primary"></i> Mensaje
-            </label>
-            <textarea 
-              id="message" 
-              name="message" 
-              rows="5" 
-              required
-              class="w-full px-4 py-3 bg-dark border-2 border-dark-tertiary rounded-lg focus:border-primary focus:outline-none transition-colors text-white resize-none"
-              placeholder="Contanos sobre tu proyecto..."
-            ></textarea>
-          </div>
-
-          <button 
-            type="submit"
-            class="w-full bg-primary text-dark font-bold py-4 px-6 rounded-lg hover:bg-primary-dark transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-primary/50 flex items-center justify-center gap-3 text-lg"
-          >
-            <i class="fas fa-paper-plane"></i>
-            <span>Enviar Mensaje</span>
-          </button>
-        </form>
-
-        <div id="formMessage" class="mt-4 p-4 rounded-lg hidden"></div>
+      <div class="flex flex-wrap justify-center gap-4 animate-on-scroll opacity-0">
+        <a
+          href="https://wa.me/5493834946767"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-10 py-5 bg-primary text-dark font-bold rounded-xl text-lg hover:bg-primary-dark transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-primary/50 flex items-center gap-3"
+        >
+          <i class="fab fa-whatsapp text-xl"></i>
+          Hablar por WhatsApp
+        </a>
+        <a
+          href="/contacto"
+          class="px-10 py-5 border-2 border-primary text-primary font-bold rounded-xl text-lg hover:bg-primary/10 transition-all duration-300 hover:scale-105 flex items-center gap-3"
+        >
+          <i class="fas fa-paper-plane"></i>
+          Enviar consulta
+        </a>
       </div>
     </div>
   </section>
 </Layout>
 
 <style>
-  @keyframes pulse-slow {
-    0%, 100% {
-      opacity: 0.3;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.6;
-      transform: scale(1.05);
-    }
-  }
-
-  .animate-pulse-slow {
-    animation: pulse-slow 4s ease-in-out infinite;
-  }
-
   @keyframes scroll-reveal {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
   }
-
-  .animate-on-scroll {
-    animation: scroll-reveal 0.8s ease-out forwards;
-  }
+  .animate-on-scroll { animation: scroll-reveal 0.8s ease-out forwards; }
 </style>
 
 <script>
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-  };
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate-on-scroll');
-      }
+      if (entry.isIntersecting) entry.target.classList.add('animate-on-scroll');
     });
-  }, observerOptions);
+  }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
 
-  document.querySelectorAll('.animate-on-scroll').forEach(el => {
-    observer.observe(el);
-  });
-
-  // Contact form handler
-  const contactForm = document.getElementById('contactForm') as HTMLFormElement;
-  const formMessage = document.getElementById('formMessage');
-
-  contactForm?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    const formData = new FormData(contactForm);
-    const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      phone: formData.get('phone'),
-      service: formData.get('service'),
-      message: formData.get('message')
-    };
-
-    const subject = `Nueva consulta de ${data.name} - ${data.service}`;
-    const body = `
-Nombre: ${data.name}
-Email: ${data.email}
-Teléfono: ${data.phone || 'No proporcionado'}
-Servicio: ${data.service}
-
-Mensaje:
-${data.message}
-    `.trim();
-
-    const mailtoLink = `mailto:gonzalorom2001@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
-    window.location.href = mailtoLink;
-
-    if (formMessage) {
-      formMessage.className = 'mt-4 p-4 rounded-lg bg-primary/20 border-2 border-primary text-white';
-      formMessage.textContent = '¡Abriendo tu cliente de email! Si no se abre automáticamente, escribinos a contacto@devhub.com.ar';
-      formMessage.classList.remove('hidden');
-      
-      contactForm.reset();
-      
-      setTimeout(() => {
-        formMessage.classList.add('hidden');
-      }, 5000);
-    }
-  });
+  document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 </script>

@@ -1,0 +1,371 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    id: 'landing',
+    icon: 'fas fa-rocket',
+    title: 'Landing Pages',
+    tagline: 'Tu negocio online en 7 días',
+    description: 'Sitios simples, ultra rápidos y enfocados en convertir visitantes en clientes. Ideal para lanzar una propuesta, captar leads o presentar un servicio.',
+    technologies: ['Astro o HTML/CSS/JS puro', 'Tailwind CSS o Bootstrap', 'SEO técnico completo', 'Formulario de contacto', 'Google Analytics'],
+    includes: [
+      '1 página completa con todas las secciones',
+      'Diseño responsive (mobile, tablet, desktop)',
+      'Optimización de velocidad (90+ PageSpeed)',
+      'SEO básico (meta tags, og, sitemap)',
+      'Formulario de contacto funcional',
+      'Deploy en Vercel/Netlify (dominio a tu nombre)',
+      '1 mes de soporte post-lanzamiento',
+    ],
+    price: '$150.000',
+    priceNote: 'Pago único. Sin suscripciones.',
+    timeEstimate: '5-7 días hábiles',
+    idealFor: 'Emprendedores, freelancers, locales comerciales, profesionales',
+    color: 'from-yellow-500/20 to-yellow-600/10',
+  },
+  {
+    id: 'corporativa',
+    icon: 'fas fa-building',
+    title: 'Webs Corporativas',
+    tagline: 'La presencia digital que tu empresa merece',
+    description: 'Sitio institucional multi-sección con diseño personalizado, identidad visual propia y todo lo necesario para representar tu empresa profesionalmente.',
+    technologies: ['Astro o Next.js', 'Diseño UI/UX personalizado', 'Múltiples secciones', 'Blog o novedades (opcional)', 'Integraciones básicas'],
+    includes: [
+      'Hasta 5 secciones personalizadas',
+      'Diseño desde cero (o adaptamos tu branding)',
+      'Blog/novedades simple (opcional)',
+      'Formularios avanzados',
+      'SEO completo con Schema.org',
+      'Open Graph para redes sociales',
+      'Deploy + configuración de dominio',
+      '2 meses de soporte post-lanzamiento',
+    ],
+    price: '$300.000',
+    priceNote: 'Pago en 2 cuotas: 50% al inicio, 50% al finalizar.',
+    timeEstimate: '10-15 días hábiles',
+    idealFor: 'PyMEs, estudios profesionales, consultoras, empresas de servicios',
+    color: 'from-blue-500/20 to-blue-600/10',
+  },
+  {
+    id: 'ecommerce',
+    icon: 'fas fa-shopping-cart',
+    title: 'Tiendas Online',
+    tagline: 'Vendé 24/7 sin comisiones de terceros',
+    description: 'E-commerce completo con carrito de compras, pasarela de pagos y panel de administración. Sin comisiones por venta, 100% a tu nombre.',
+    technologies: ['Next.js + React', 'Supabase o PostgreSQL', 'Mercado Pago / Stripe', 'Panel admin para productos', 'Sistema de órdenes'],
+    includes: [
+      'Catálogo de productos ilimitado',
+      'Carrito de compras completo',
+      'Integración Mercado Pago / Stripe',
+      'Panel administrativo para gestionar productos',
+      'Sistema de órdenes y seguimiento',
+      'Autenticación de usuarios (opcional)',
+      'SEO para e-commerce',
+      '3 meses de soporte',
+    ],
+    price: '$450.000',
+    priceNote: 'Base de datos incluida. Sin comisiones por venta.',
+    timeEstimate: '20-30 días hábiles',
+    idealFor: 'Comercios, emprendedores, negocios con catálogo de productos',
+    color: 'from-green-500/20 to-green-600/10',
+  },
+  {
+    id: 'sistema',
+    icon: 'fas fa-cogs',
+    title: 'Sistemas a Medida',
+    tagline: 'Software que se adapta a tu negocio',
+    description: 'Aplicaciones web personalizadas para resolver procesos específicos de tu empresa: gestión de stock, reservas, turnos, CRM, reportes y más.',
+    technologies: ['Next.js o Node.js', 'Supabase / PostgreSQL / SQL', 'Autenticación con roles', 'APIs e integraciones', 'Dashboard y reportes'],
+    includes: [
+      'Análisis de requerimientos detallado',
+      'Diseño de base de datos',
+      'Sistema de autenticación y roles de usuario',
+      'Dashboard con métricas y reportes',
+      'Integraciones con APIs externas (según necesidad)',
+      'Documentación del sistema',
+      'Capacitación para el equipo',
+      '6 meses de soporte',
+    ],
+    price: 'A cotizar',
+    priceNote: 'Presupuesto personalizado según complejidad.',
+    timeEstimate: 'Según alcance (desde 30 días)',
+    idealFor: 'Empresas que necesitan automatizar procesos internos',
+    color: 'from-purple-500/20 to-purple-600/10',
+  },
+];
+
+const faqs = [
+  {
+    q: '¿Cuánto tarda en estar listo mi sitio?',
+    a: 'Depende del servicio. Una landing page la tenemos lista en 5-7 días. Una web corporativa entre 10-15 días. Una tienda online puede llevar entre 20-30 días. Los sistemas a medida varían según la complejidad.',
+  },
+  {
+    q: '¿Incluyen el dominio y el hosting?',
+    a: 'Hacemos el deploy en Netlify o Vercel (ambos tienen planes gratuitos excelentes). El dominio se registra a tu nombre. Si querés hosting pago, lo configuramos también. No cobramos hosting en la mayoría de los proyectos.',
+  },
+  {
+    q: '¿Puedo pedir cambios después de que esté listo?',
+    a: 'Sí. Incluimos soporte post-lanzamiento (1-6 meses según el proyecto). Después de ese período, los cambios se cotizan por hora o paquete.',
+  },
+  {
+    q: '¿Necesito saber de tecnología para comunicarme con ustedes?',
+    a: 'Para nada. Explicamos todo en términos simples. Vos nos contás qué necesita tu negocio y nosotros lo traducimos a tecnología.',
+  },
+  {
+    q: '¿Qué pasa si ya tengo un logo o diseño?',
+    a: 'Perfecto. Adaptamos el desarrollo a tu identidad visual existente. Si no tenés, también podemos asesorarte.',
+  },
+  {
+    q: '¿Cómo es la forma de pago?',
+    a: 'Landing pages: pago único. Proyectos más grandes: 50% al inicio + 50% al finalizar. Sistemas a medida: por etapas acordadas. Aceptamos transferencia bancaria.',
+  },
+];
+---
+
+<Layout
+  title="Servicios - DevHub | Desarrollo Web Catamarca"
+  description="Landing pages, webs corporativas, tiendas online y sistemas a medida. Precios claros, tecnología moderna y código que es 100% tuyo. Catamarca, Argentina."
+>
+  <!-- Hero de servicios -->
+  <section class="py-20 bg-gradient-to-br from-dark-secondary to-dark relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(rgba(255,193,7,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,193,7,0.3) 1px, transparent 1px); background-size: 50px 50px;"></div>
+    <div class="container mx-auto px-4 relative z-10 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-primary text-sm font-semibold mb-6">
+        <i class="fas fa-briefcase"></i>
+        Nuestros Servicios
+      </div>
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 font-display">
+        Soluciones <span class="text-primary">a medida</span>
+      </h1>
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
+        Desarrollamos exactamente lo que tu negocio necesita. Sin plantillas genéricas, sin suscripciones eternas, sin límites artificiales.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://wa.me/5493834946767" target="_blank" rel="noopener noreferrer"
+          class="px-8 py-4 bg-primary text-dark font-bold rounded-lg hover:bg-primary-dark transition-all hover:scale-105 flex items-center gap-2">
+          <i class="fab fa-whatsapp"></i>
+          Consultar ahora
+        </a>
+        <a href="#servicios-lista"
+          class="px-8 py-4 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary/10 transition-all flex items-center gap-2">
+          <i class="fas fa-list"></i>
+          Ver todos
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lista de servicios -->
+  <section id="servicios-lista" class="py-20 bg-dark">
+    <div class="container mx-auto px-4">
+      <div class="space-y-12 max-w-5xl mx-auto">
+        {services.map((s, i) => (
+          <div id={s.id} class="group bg-dark-secondary rounded-2xl border-2 border-dark-tertiary hover:border-primary transition-all duration-500 overflow-hidden animate-on-scroll opacity-0" style={`animation-delay: ${i * 0.15}s`}>
+            <div class={`bg-gradient-to-r ${s.color} p-8 border-b border-dark-tertiary`}>
+              <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                <div class="flex items-center gap-4">
+                  <div class="text-5xl">
+                    <i class={`${s.icon} text-primary`}></i>
+                  </div>
+                  <div>
+                    <h2 class="text-3xl font-bold text-primary font-display">{s.title}</h2>
+                    <p class="text-gray-300 font-medium">{s.tagline}</p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <div class="text-4xl font-bold text-primary font-display">{s.price}</div>
+                  <div class="text-sm text-gray-400">{s.priceNote}</div>
+                  <div class="text-sm text-gray-500 flex items-center gap-1 justify-end mt-1">
+                    <i class="fas fa-clock text-primary"></i>
+                    {s.timeEstimate}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-8">
+              <p class="text-gray-300 text-lg mb-8">{s.description}</p>
+
+              <div class="grid md:grid-cols-2 gap-8">
+                <!-- Tecnologías -->
+                <div>
+                  <h3 class="text-primary font-bold mb-4 flex items-center gap-2 font-display">
+                    <i class="fas fa-code"></i> Tecnologías
+                  </h3>
+                  <ul class="space-y-2">
+                    {s.technologies.map(t => (
+                      <li class="flex items-center gap-2 text-gray-300 text-sm">
+                        <i class="fas fa-chevron-right text-primary text-xs"></i>
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <!-- Incluye -->
+                <div>
+                  <h3 class="text-primary font-bold mb-4 flex items-center gap-2 font-display">
+                    <i class="fas fa-check-circle"></i> Incluye
+                  </h3>
+                  <ul class="space-y-2">
+                    {s.includes.map(item => (
+                      <li class="flex items-start gap-2 text-gray-300 text-sm">
+                        <i class="fas fa-check text-primary text-xs mt-1 flex-shrink-0"></i>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div class="mt-6 pt-6 border-t border-dark-tertiary flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div>
+                  <span class="text-gray-400 text-sm flex items-center gap-2">
+                    <i class="fas fa-user text-primary"></i>
+                    <strong class="text-gray-300">Ideal para:</strong> {s.idealFor}
+                  </span>
+                </div>
+                <a
+                  href={`https://wa.me/5493834946767?text=${encodeURIComponent(`Hola! Me interesa una ${s.title}. ¿Podemos hablar?`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex-shrink-0 px-6 py-3 bg-primary text-dark font-bold rounded-lg hover:bg-primary-dark transition-all hover:scale-105 flex items-center gap-2"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                  Consultar por {s.title}
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Ventajas vs Templates -->
+  <section id="ventajas" class="py-20 bg-dark-secondary relative overflow-hidden">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 animate-on-scroll opacity-0 font-display">
+        Desarrollo a Medida <span class="text-primary">vs. Plantillas</span>
+      </h2>
+      <p class="text-center text-gray-400 mb-4 animate-on-scroll opacity-0">La comparación que nadie te hace</p>
+      <p class="text-center text-primary mb-12 animate-on-scroll opacity-0">
+        <i class="fas fa-times-circle text-red-500"></i> Wix · Tienda Nube · WordPress genérico
+      </p>
+
+      <div class="max-w-4xl mx-auto overflow-x-auto animate-on-scroll opacity-0">
+        <table class="w-full">
+          <thead>
+            <tr>
+              <th class="text-left p-4 text-gray-400 font-medium">Característica</th>
+              <th class="p-4 bg-primary/10 border-t-2 border-x-2 border-primary rounded-t-lg">
+                <div class="flex items-center justify-center gap-2 text-primary font-bold">
+                  <i class="fas fa-code"></i>
+                  DevHub
+                </div>
+              </th>
+              <th class="p-4 text-gray-500 font-medium">Wix / Tienda Nube</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['Velocidad de carga', '90-100/100 🚀', '40-60/100 🐌'],
+              ['Propietario del código', '✅ 100% tuyo', '❌ Es de ellos'],
+              ['SEO técnico', '✅ Completo', '⚠️ Básico y limitado'],
+              ['Costo mensual', '✅ $0/mes', '❌ $5.000-$20.000/mes'],
+              ['Funcionalidades', '✅ Sin límites', '❌ Bloqueadas por plan'],
+              ['Diseño', '✅ Único y a medida', '⚠️ Plantilla que usan todos'],
+              ['Escalabilidad', '✅ Ilimitada', '❌ Depende del plan'],
+              ['Si la plataforma cierra', '✅ Tu sitio sigue', '❌ Perdés todo'],
+            ].map(([feat, devhub, template]) => (
+              <tr class="border-t border-dark-tertiary hover:bg-dark/50 transition-colors">
+                <td class="p-4 text-gray-300 text-sm">{feat}</td>
+                <td class="p-4 text-center bg-primary/5 border-x-2 border-primary/50 text-sm font-medium text-green-400">{devhub}</td>
+                <td class="p-4 text-center text-sm text-gray-500">{template}</td>
+              </tr>
+            ))}
+          </tbody>
+          <tfoot>
+            <tr>
+              <td></td>
+              <td class="p-4 bg-primary/10 border-b-2 border-x-2 border-primary rounded-b-lg text-center">
+                <a href="https://wa.me/5493834946767" target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-primary font-bold text-sm hover:underline">
+                  <i class="fab fa-whatsapp"></i> Empezar con DevHub
+                </a>
+              </td>
+              <td></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-dark">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <h2 class="text-4xl font-bold text-center mb-16 animate-on-scroll opacity-0 font-display">
+        Preguntas <span class="text-primary">Frecuentes</span>
+      </h2>
+      <div class="space-y-4">
+        {faqs.map((faq, i) => (
+          <div class="bg-dark-secondary rounded-xl border-2 border-dark-tertiary hover:border-primary/50 transition-all duration-300 overflow-hidden animate-on-scroll opacity-0" style={`animation-delay: ${i * 0.08}s`}>
+            <details class="group">
+              <summary class="p-6 cursor-pointer flex items-center justify-between text-white font-semibold hover:text-primary transition-colors list-none">
+                <span class="flex items-center gap-3">
+                  <i class="fas fa-question-circle text-primary"></i>
+                  {faq.q}
+                </span>
+                <i class="fas fa-chevron-down text-primary transition-transform duration-300 group-open:rotate-180"></i>
+              </summary>
+              <div class="px-6 pb-6 text-gray-300 border-t border-dark-tertiary pt-4">
+                {faq.a}
+              </div>
+            </details>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-dark-secondary">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-4xl font-bold mb-6 font-display animate-on-scroll opacity-0">
+        ¿No sabés cuál servicio necesitás?
+      </h2>
+      <p class="text-xl text-gray-300 mb-10 max-w-xl mx-auto animate-on-scroll opacity-0">
+        Contanos tu idea por WhatsApp y te ayudamos a definir la mejor solución sin compromiso.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4 animate-on-scroll opacity-0">
+        <a href="https://wa.me/5493834946767" target="_blank" rel="noopener noreferrer"
+          class="px-10 py-5 bg-primary text-dark font-bold rounded-xl text-lg hover:bg-primary-dark transition-all hover:scale-105 flex items-center gap-3">
+          <i class="fab fa-whatsapp text-xl"></i>
+          Consultar gratis por WhatsApp
+        </a>
+        <a href="/contacto"
+          class="px-10 py-5 border-2 border-primary text-primary font-bold rounded-xl text-lg hover:bg-primary/10 transition-all flex items-center gap-3">
+          <i class="fas fa-envelope"></i>
+          Formulario de contacto
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @keyframes scroll-reveal {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-on-scroll { animation: scroll-reveal 0.8s ease-out forwards; }
+</style>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('animate-on-scroll'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
+  document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+</script>

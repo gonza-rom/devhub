@@ -1,0 +1,178 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const posts = [
+  {
+    slug: 'wix-vs-desarrollo-a-medida',
+    title: '¿Wix, Tienda Nube o Desarrollo a Medida? La Guía Definitiva 2025',
+    description: 'Comparamos en detalle las 3 opciones para que puedas tomar la mejor decisión para tu negocio. Velocidad, SEO, costos reales y casos de uso concretos.',
+    category: 'SEO & Negocios',
+    readTime: '15 min',
+    date: '2025-01-15',
+    featured: true,
+    tags: ['wix', 'tienda nube', 'desarrollo a medida', 'comparación'],
+  },
+  {
+    slug: 'senales-negocio-necesita-sitio-web',
+    title: '5 Señales de que tu Negocio Necesita un Sitio Web Profesional',
+    description: 'Si tu negocio tiene alguna de estas señales, es momento de invertir en una presencia digital profesional. Sin excusas.',
+    category: 'Negocios',
+    readTime: '8 min',
+    date: '2025-01-22',
+    featured: false,
+    tags: ['sitio web', 'negocios', 'presencia digital'],
+  },
+  {
+    slug: 'por-que-sitio-web-carga-lento',
+    title: 'Por qué tu Sitio Web Carga Lento (y Cómo Arreglarlo)',
+    description: 'Los 5 errores más comunes que hacen que un sitio cargue lento y cómo afectan tu SEO y conversiones. Con soluciones concretas.',
+    category: 'Performance',
+    readTime: '10 min',
+    date: '2025-02-01',
+    featured: false,
+    tags: ['velocidad', 'performance', 'SEO', 'core web vitals'],
+  },
+  {
+    slug: 'desarrollo-web-catamarca-ventajas-equipo-local',
+    title: 'Desarrollo Web en Catamarca: Por Qué Trabajar con un Equipo Local',
+    description: 'Las ventajas concretas de contratar un equipo de desarrollo web local vs. una agencia de Buenos Aires o plataformas genéricas.',
+    category: 'Local',
+    readTime: '7 min',
+    date: '2025-02-10',
+    featured: false,
+    tags: ['catamarca', 'local', 'equipo', 'desarrollo web'],
+  },
+];
+
+const categories = ['Todos', ...new Set(posts.map(p => p.category))];
+const featuredPost = posts.find(p => p.featured);
+const regularPosts = posts.filter(p => !p.featured);
+---
+
+<Layout
+  title="Blog - DevHub | Recursos sobre Desarrollo Web y Negocios"
+  description="Artículos sobre desarrollo web, SEO, negocios digitales y tecnología. Guías para tomar mejores decisiones para tu presencia online."
+>
+  <!-- Hero -->
+  <section class="py-20 bg-gradient-to-br from-dark-secondary to-dark relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(rgba(255,193,7,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,193,7,0.3) 1px, transparent 1px); background-size: 50px 50px;"></div>
+    <div class="container mx-auto px-4 relative z-10 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-primary text-sm font-semibold mb-6">
+        <i class="fas fa-newspaper"></i>
+        Blog DevHub
+      </div>
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 font-display">
+        Recursos para <span class="text-primary">crecer online</span>
+      </h1>
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+        Artículos prácticos sobre desarrollo web, SEO y estrategia digital para negocios que quieren más que una plantilla genérica.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contenido del blog -->
+  <section class="py-20 bg-dark">
+    <div class="container mx-auto px-4 max-w-5xl">
+
+      <!-- Artículo destacado -->
+      {featuredPost && (
+        <div class="mb-16 animate-on-scroll opacity-0">
+          <a href={`/blog/${featuredPost.slug}`}
+            class="group block bg-dark-secondary rounded-2xl border-2 border-primary/30 hover:border-primary transition-all duration-500 overflow-hidden hover:shadow-2xl hover:shadow-primary/20">
+            <div class="p-8 md:p-10">
+              <div class="flex flex-wrap gap-3 mb-4">
+                <span class="inline-flex items-center gap-2 text-sm px-3 py-1 bg-primary/20 text-primary rounded-full border border-primary/30 font-semibold">
+                  <i class="fas fa-star"></i> Artículo Destacado
+                </span>
+                <span class="text-sm px-3 py-1 bg-dark text-gray-400 rounded-full border border-dark-tertiary">
+                  {featuredPost.category}
+                </span>
+                <span class="text-sm px-3 py-1 bg-dark text-gray-400 rounded-full border border-dark-tertiary">
+                  <i class="fas fa-clock mr-1"></i>{featuredPost.readTime} lectura
+                </span>
+              </div>
+              <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 group-hover:underline font-display">
+                {featuredPost.title}
+              </h2>
+              <p class="text-gray-300 text-lg mb-6">{featuredPost.description}</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                {featuredPost.tags.map(tag => (
+                  <span class="text-xs px-3 py-1 bg-dark rounded-full text-gray-500 border border-dark-tertiary">#{tag}</span>
+                ))}
+              </div>
+              <span class="inline-flex items-center gap-2 text-primary font-bold text-lg group-hover:gap-3 transition-all">
+                Leer artículo completo <i class="fas fa-arrow-right"></i>
+              </span>
+            </div>
+          </a>
+        </div>
+      )}
+
+      <!-- Más artículos -->
+      <h2 class="text-2xl font-bold mb-8 font-display text-gray-300 animate-on-scroll opacity-0">
+        Más artículos
+      </h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {regularPosts.map((post, i) => (
+          <a href={`/blog/${post.slug}`}
+            class="group block bg-dark-secondary p-6 rounded-xl border-2 border-transparent hover:border-primary transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/20 animate-on-scroll opacity-0"
+            style={`animation-delay: ${i * 0.1}s`}
+          >
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs px-3 py-1 bg-primary/20 text-primary rounded-full border border-primary/30">
+                {post.category}
+              </span>
+              <span class="text-xs px-2 py-1 bg-dark text-gray-500 rounded-full border border-dark-tertiary">
+                {post.readTime}
+              </span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-3 group-hover:text-primary transition-colors font-display leading-tight">
+              {post.title}
+            </h3>
+            <p class="text-gray-400 text-sm mb-4 leading-relaxed">{post.description}</p>
+            <span class="inline-flex items-center gap-2 text-primary text-sm font-semibold group-hover:underline">
+              Leer <i class="fas fa-arrow-right text-xs"></i>
+            </span>
+          </a>
+        ))}
+
+        <!-- Próximamente -->
+        <div class="bg-dark-secondary/50 p-6 rounded-xl border-2 border-dashed border-dark-tertiary flex flex-col items-center justify-center text-center animate-on-scroll opacity-0" style="animation-delay: 0.3s">
+          <i class="fas fa-pencil-alt text-primary text-3xl mb-3 opacity-50"></i>
+          <p class="text-gray-500 font-medium">Más artículos próximamente</p>
+          <p class="text-gray-600 text-sm mt-1">Publicamos regularmente</p>
+        </div>
+      </div>
+
+      <!-- Suscripción CTA -->
+      <div class="mt-16 bg-gradient-to-r from-primary/10 to-primary-dark/10 border-2 border-primary/30 rounded-2xl p-8 text-center animate-on-scroll opacity-0">
+        <h3 class="text-2xl font-bold mb-3 font-display">
+          <i class="fas fa-bell text-primary"></i> ¿Querés más contenido como este?
+        </h3>
+        <p class="text-gray-300 mb-6">
+          Seguinos en LinkedIn para no perderte ningún artículo nuevo.
+        </p>
+        <a href="https://www.linkedin.com/in/gonzaloromero-/" target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-8 py-4 bg-primary text-dark font-bold rounded-lg hover:bg-primary-dark transition-all hover:scale-105">
+          <i class="fab fa-linkedin"></i>
+          Seguir en LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @keyframes scroll-reveal {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-on-scroll { animation: scroll-reveal 0.8s ease-out forwards; }
+</style>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('animate-on-scroll'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+</script>

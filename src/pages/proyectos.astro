@@ -1,0 +1,228 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const projects = [
+  {
+    image: 'proyectos/jmr-ecommerce.png',
+    title: 'JMR E-commerce',
+    description: 'Tienda online completa para una marroquinería con carrito de compras, gestión de productos y pasarela de pagos. Desarrollada con Next.js y base de datos SQL.',
+    technologies: ['Next.js', 'React', 'Tailwind CSS', 'SQL', 'Vercel'],
+    demoUrl: 'https://www.jmrmarroquineria.com.ar/',
+    category: 'E-commerce',
+    highlights: ['Catálogo de +100 productos', 'Carrito de compras', 'Checkout completo', 'Panel de admin'],
+  },
+  {
+    image: 'proyectos/jmr-pos.png',
+    title: 'JMR Stock',
+    description: 'Sistema de gestión de inventario en tiempo real para la misma empresa. Control de stock, alertas de bajo inventario y reportes para optimizar el negocio.',
+    technologies: ['Next.js', 'Supabase', 'React', 'TypeScript', 'Vercel'],
+    demoUrl: 'https://jmr-stock.vercel.app/',
+    category: 'Sistema de Gestión',
+    highlights: ['Stock en tiempo real', 'Alertas automáticas', 'Reportes y métricas', 'Multi-usuario'],
+  },
+  {
+    image: 'proyectos/black-burguer.png',
+    title: 'BlackBurger Catálogo',
+    description: 'Landing page de menú digital para hamburguesería artesanal. Catálogo de productos con imágenes, descripciones y precios fáciles de actualizar.',
+    technologies: ['HTML', 'CSS', 'JavaScript', 'Responsive', 'Netlify'],
+    demoUrl: 'https://blackburger-catalogo.netlify.app/',
+    category: 'Landing Page',
+    highlights: ['Menú digital completo', 'Diseño oscuro premium', 'Carga ultra rápida', 'SEO local'],
+  },
+  {
+    image: 'proyectos/vista-montana.png',
+    title: 'Vista Montaña Hospedaje',
+    description: 'Sitio de alquileres vacacionales con galería de imágenes, info detallada de cabañas y sistema de consultas vía WhatsApp para facilitar reservas.',
+    technologies: ['Next.js', 'React', 'Tailwind CSS', 'WhatsApp API', 'Vercel'],
+    demoUrl: 'https://vista-montana.vercel.app/',
+    category: 'Web Corporativa',
+    highlights: ['Galería de fotos', 'Consultas por WhatsApp', 'Responsive perfecto', 'SEO turístico'],
+  },
+  {
+    image: 'proyectos/devhub.png',
+    title: 'DevHub Institucional',
+    description: 'El sitio que estás viendo ahora. Web corporativa con portfolio de proyectos, equipo y formulario de contacto. Optimizado para conversión y velocidad máxima.',
+    technologies: ['Astro', 'Tailwind CSS', 'JavaScript', 'SEO', 'Vercel'],
+    demoUrl: 'https://devhub-cta.vercel.app/',
+    category: 'Web Institucional',
+    highlights: ['100/100 PageSpeed', 'SEO completo', 'Schema.org', 'Open Graph'],
+  },
+];
+
+const categories = ['Todos', ...new Set(projects.map(p => p.category))];
+---
+
+<Layout
+  title="Proyectos - DevHub | Portfolio de Desarrollo Web"
+  description="Portfolio de proyectos reales: e-commerce, sistemas de gestión, landing pages y webs corporativas. Ver demos en vivo de nuestro trabajo."
+>
+  <!-- Hero -->
+  <section class="py-20 bg-gradient-to-br from-dark-secondary to-dark relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(rgba(255,193,7,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,193,7,0.3) 1px, transparent 1px); background-size: 50px 50px;"></div>
+    <div class="container mx-auto px-4 relative z-10 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-primary text-sm font-semibold mb-6">
+        <i class="fas fa-folder-open"></i>
+        Portfolio
+      </div>
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 font-display">
+        Proyectos <span class="text-primary">Reales</span>
+      </h1>
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+        Resultados concretos para negocios reales. Todos los proyectos tienen demo en vivo para que puedas ver la calidad.
+      </p>
+    </div>
+  </section>
+
+  <!-- Filtros + Proyectos -->
+  <section class="py-20 bg-dark">
+    <div class="container mx-auto px-4">
+
+      <!-- Filtros -->
+      <div class="flex flex-wrap justify-center gap-3 mb-12" id="filtros">
+        {categories.map(cat => (
+          <button
+            data-filter={cat}
+            class={`px-5 py-2 rounded-full border-2 font-semibold text-sm transition-all duration-300 hover:scale-105 filter-btn ${
+              cat === 'Todos'
+                ? 'bg-primary border-primary text-dark'
+                : 'border-dark-tertiary text-gray-400 hover:border-primary hover:text-primary'
+            }`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      <!-- Grid de proyectos -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto" id="projects-grid">
+        {projects.map((p, i) => (
+          <div
+            class="group bg-dark-secondary rounded-xl shadow-lg shadow-primary/5 border-2 border-transparent hover:border-primary transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/20 relative overflow-hidden animate-on-scroll opacity-0 project-card"
+            data-category={p.category}
+            style={`animation-delay: ${i * 0.1}s`}
+          >
+            <!-- Screenshot -->
+            <div class="relative overflow-hidden h-48 bg-dark-secondary">
+              <img
+                src={p.image}
+                alt={`Screenshot de ${p.title}`}
+                class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+              />
+              <span class="absolute top-3 right-3 text-xs px-3 py-1 bg-dark/80 backdrop-blur-sm text-primary rounded-full border border-primary/40 font-semibold">
+                {p.category}
+              </span>
+              <div class="absolute inset-0 bg-gradient-to-t from-dark-secondary/60 to-transparent"></div>
+            </div>
+
+            <div class="relative z-10 p-6">
+              <h3 class="text-xl font-bold text-primary mb-2 font-display">{p.title}</h3>
+              <p class="text-gray-300 mb-4 text-sm leading-relaxed">{p.description}</p>
+
+              <!-- Highlights -->
+              <div class="grid grid-cols-2 gap-1.5 mb-4">
+                {p.highlights.map(h => (
+                  <div class="text-xs flex items-center gap-1.5 text-gray-400">
+                    <i class="fas fa-check text-primary text-xs flex-shrink-0"></i>
+                    {h}
+                  </div>
+                ))}
+              </div>
+
+              <!-- Tech stack -->
+              <div class="flex flex-wrap gap-1.5 mb-5">
+                {p.technologies.map(t => (
+                  <span class="text-xs px-2.5 py-1 bg-dark rounded-full text-gray-400 border border-dark-tertiary">{t}</span>
+                ))}
+              </div>
+
+              <a
+                href={p.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary/10 border border-primary/30 text-primary font-semibold rounded-lg hover:bg-primary hover:text-dark transition-all duration-300 text-sm w-full justify-center"
+              >
+                <i class="fas fa-external-link-alt"></i>
+                Ver demo en vivo
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 text-center">
+        <p class="text-gray-500 flex items-center justify-center gap-2 text-sm">
+          <i class="fas fa-lock text-primary"></i>
+          Código fuente protegido — No compartimos repositorios privados
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-dark-secondary">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-4xl font-bold mb-6 font-display">
+        ¿Querés un proyecto como estos?
+      </h2>
+      <p class="text-xl text-gray-300 mb-10 max-w-xl mx-auto">
+        Cada proyecto es único. Contanos tu idea y te armamos una propuesta.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://wa.me/5493834946767" target="_blank" rel="noopener noreferrer"
+          class="px-10 py-5 bg-primary text-dark font-bold rounded-xl text-lg hover:bg-primary-dark transition-all hover:scale-105 flex items-center gap-3">
+          <i class="fab fa-whatsapp text-xl"></i>
+          Hablar por WhatsApp
+        </a>
+        <a href="/servicios"
+          class="px-10 py-5 border-2 border-primary text-primary font-bold rounded-xl text-lg hover:bg-primary/10 transition-all flex items-center gap-3">
+          <i class="fas fa-briefcase"></i>
+          Ver servicios y precios
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @keyframes scroll-reveal {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-on-scroll { animation: scroll-reveal 0.8s ease-out forwards; }
+  .project-card.hidden-card { display: none; }
+</style>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('animate-on-scroll'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+  // Filtros
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.project-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+
+      filterBtns.forEach(b => {
+        b.classList.remove('bg-primary', 'border-primary', 'text-dark');
+        b.classList.add('border-dark-tertiary', 'text-gray-400');
+      });
+      btn.classList.add('bg-primary', 'border-primary', 'text-dark');
+      btn.classList.remove('border-dark-tertiary', 'text-gray-400');
+
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        if (filter === 'Todos' || cat === filter) {
+          (card as HTMLElement).style.display = '';
+        } else {
+          (card as HTMLElement).style.display = 'none';
+        }
+      });
+    });
+  });
+</script>

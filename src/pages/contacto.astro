@@ -1,0 +1,241 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Contacto - DevHub | Hablemos de tu Proyecto"
+  description="Contactá al equipo DevHub para tu proyecto web. Respondemos en menos de 24hs. WhatsApp, email o formulario. Catamarca, Argentina."
+>
+  <!-- Hero -->
+  <section class="py-20 bg-gradient-to-br from-dark-secondary to-dark relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(rgba(255,193,7,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,193,7,0.3) 1px, transparent 1px); background-size: 50px 50px;"></div>
+    <div class="container mx-auto px-4 relative z-10 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-primary text-sm font-semibold mb-6">
+        <i class="fas fa-paper-plane"></i>
+        Contacto
+      </div>
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 font-display">
+        Hablemos de tu <span class="text-primary">proyecto</span>
+      </h1>
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+        Respondemos en menos de 24 horas. Contanos tu idea y te damos una propuesta sin compromiso.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contacto principal -->
+  <section class="py-20 bg-dark">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+
+        <!-- Info de contacto -->
+        <div class="space-y-6 animate-on-scroll opacity-0">
+          <h2 class="text-3xl font-bold font-display">Canales de <span class="text-primary">Contacto</span></h2>
+          <p class="text-gray-400">Elegí el canal que más te convenga. Por WhatsApp respondemos más rápido.</p>
+
+          <div class="space-y-4">
+            <a href="https://wa.me/5493834946767" target="_blank" rel="noopener noreferrer"
+              class="group flex items-center gap-4 p-5 bg-dark-secondary rounded-xl border-2 border-transparent hover:border-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/20">
+              <div class="w-14 h-14 bg-green-500/20 rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">
+                <i class="fab fa-whatsapp text-green-400"></i>
+              </div>
+              <div>
+                <div class="text-white font-bold">WhatsApp</div>
+                <div class="text-primary text-sm">+54 9 383 4946767</div>
+                <div class="text-gray-500 text-xs">Respuesta más rápida ⚡</div>
+              </div>
+              <i class="fas fa-chevron-right text-primary ml-auto opacity-0 group-hover:opacity-100 transition-opacity"></i>
+            </a>
+
+            <a href="mailto:contacto@devhub.com.ar"
+              class="group flex items-center gap-4 p-5 bg-dark-secondary rounded-xl border-2 border-transparent hover:border-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/20">
+              <div class="w-14 h-14 bg-primary/20 rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">
+                <i class="fas fa-envelope text-primary"></i>
+              </div>
+              <div>
+                <div class="text-white font-bold">Email</div>
+                <div class="text-primary text-sm">contacto@devhub.com.ar</div>
+                <div class="text-gray-500 text-xs">Respuesta en &lt; 24hs</div>
+              </div>
+              <i class="fas fa-chevron-right text-primary ml-auto opacity-0 group-hover:opacity-100 transition-opacity"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/gonzaloromero-/" target="_blank" rel="noopener noreferrer"
+              class="group flex items-center gap-4 p-5 bg-dark-secondary rounded-xl border-2 border-transparent hover:border-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/20">
+              <div class="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">
+                <i class="fab fa-linkedin text-blue-400"></i>
+              </div>
+              <div>
+                <div class="text-white font-bold">LinkedIn</div>
+                <div class="text-primary text-sm">DevHub Team</div>
+                <div class="text-gray-500 text-xs">Para contacto profesional</div>
+              </div>
+              <i class="fas fa-chevron-right text-primary ml-auto opacity-0 group-hover:opacity-100 transition-opacity"></i>
+            </a>
+          </div>
+
+          <!-- Ubicación -->
+          <div class="p-5 bg-dark-secondary rounded-xl border-2 border-dark-tertiary">
+            <h3 class="text-white font-bold mb-3 flex items-center gap-2">
+              <i class="fas fa-map-marker-alt text-primary"></i>
+              Ubicación
+            </h3>
+            <p class="text-gray-400 text-sm mb-2">Catamarca Capital, Argentina 🇦🇷</p>
+            <p class="text-gray-500 text-xs">
+              Trabajamos de forma remota con clientes de toda Argentina. Si sos de Catamarca, podemos reunirnos en persona.
+            </p>
+          </div>
+
+          <!-- Horarios -->
+          <div class="p-5 bg-dark-secondary rounded-xl border-2 border-dark-tertiary">
+            <h3 class="text-white font-bold mb-3 flex items-center gap-2">
+              <i class="fas fa-clock text-primary"></i>
+              Horarios de atención
+            </h3>
+            <div class="space-y-1 text-sm text-gray-400">
+              <div class="flex justify-between">
+                <span>Lunes - Viernes</span>
+                <span class="text-primary">9:00 - 18:00</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Sábados</span>
+                <span class="text-primary">9:00 - 13:00</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Domingos</span>
+                <span class="text-gray-500">Cerrado</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulario -->
+        <div class="animate-on-scroll opacity-0" style="animation-delay: 0.2s">
+          <div class="bg-dark-secondary p-8 rounded-2xl border-2 border-primary/20">
+            <h2 class="text-2xl font-bold text-center mb-6 text-primary font-display">
+              <i class="fas fa-paper-plane"></i> Formulario de Contacto
+            </h2>
+
+            <form id="contactForm" class="space-y-5">
+              <div>
+                <label for="name" class="block text-sm font-medium mb-2 text-gray-300">
+                  <i class="fas fa-user text-primary mr-1"></i> Nombre completo *
+                </label>
+                <input type="text" id="name" name="name" required
+                  class="w-full px-4 py-3 bg-dark border-2 border-dark-tertiary rounded-lg focus:border-primary focus:outline-none transition-colors text-white placeholder-gray-600"
+                  placeholder="Tu nombre" />
+              </div>
+
+              <div>
+                <label for="email" class="block text-sm font-medium mb-2 text-gray-300">
+                  <i class="fas fa-envelope text-primary mr-1"></i> Email *
+                </label>
+                <input type="email" id="email" name="email" required
+                  class="w-full px-4 py-3 bg-dark border-2 border-dark-tertiary rounded-lg focus:border-primary focus:outline-none transition-colors text-white placeholder-gray-600"
+                  placeholder="tu@email.com" />
+              </div>
+
+              <div>
+                <label for="phone" class="block text-sm font-medium mb-2 text-gray-300">
+                  <i class="fas fa-phone text-primary mr-1"></i> Teléfono / WhatsApp
+                </label>
+                <input type="tel" id="phone" name="phone"
+                  class="w-full px-4 py-3 bg-dark border-2 border-dark-tertiary rounded-lg focus:border-primary focus:outline-none transition-colors text-white placeholder-gray-600"
+                  placeholder="+54 9 383 4000000" />
+              </div>
+
+              <div>
+                <label for="service" class="block text-sm font-medium mb-2 text-gray-300">
+                  <i class="fas fa-briefcase text-primary mr-1"></i> Servicio de interés *
+                </label>
+                <select id="service" name="service" required
+                  class="w-full px-4 py-3 bg-dark border-2 border-dark-tertiary rounded-lg focus:border-primary focus:outline-none transition-colors text-white">
+                  <option value="">Seleccioná un servicio</option>
+                  <option value="Landing Page">Landing Page</option>
+                  <option value="Web Corporativa">Web Corporativa</option>
+                  <option value="Tienda Online">Tienda Online</option>
+                  <option value="Sistema a Medida">Sistema a Medida</option>
+                  <option value="Consulta General">Consulta General</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="budget" class="block text-sm font-medium mb-2 text-gray-300">
+                  <i class="fas fa-dollar-sign text-primary mr-1"></i> Presupuesto aproximado
+                </label>
+                <select id="budget" name="budget"
+                  class="w-full px-4 py-3 bg-dark border-2 border-dark-tertiary rounded-lg focus:border-primary focus:outline-none transition-colors text-white">
+                  <option value="">Prefiero discutirlo</option>
+                  <option value="Hasta $150.000">Hasta $150.000</option>
+                  <option value="$150.000 - $300.000">$150.000 - $300.000</option>
+                  <option value="$300.000 - $500.000">$300.000 - $500.000</option>
+                  <option value="Más de $500.000">Más de $500.000</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="message" class="block text-sm font-medium mb-2 text-gray-300">
+                  <i class="fas fa-comment-dots text-primary mr-1"></i> Mensaje *
+                </label>
+                <textarea id="message" name="message" rows="4" required
+                  class="w-full px-4 py-3 bg-dark border-2 border-dark-tertiary rounded-lg focus:border-primary focus:outline-none transition-colors text-white resize-none placeholder-gray-600"
+                  placeholder="Contanos sobre tu proyecto..."></textarea>
+              </div>
+
+              <button type="submit"
+                class="w-full bg-primary text-dark font-bold py-4 px-6 rounded-lg hover:bg-primary-dark transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-primary/50 flex items-center justify-center gap-3 text-lg">
+                <i class="fas fa-paper-plane"></i>
+                Enviar Mensaje
+              </button>
+            </form>
+
+            <div id="formMessage" class="mt-4 p-4 rounded-lg hidden"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @keyframes scroll-reveal {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-on-scroll { animation: scroll-reveal 0.8s ease-out forwards; }
+</style>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('animate-on-scroll'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+  const contactForm = document.getElementById('contactForm') as HTMLFormElement;
+  const formMessage = document.getElementById('formMessage');
+
+  contactForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = new FormData(contactForm);
+    const name = data.get('name');
+    const email = data.get('email');
+    const phone = data.get('phone') || 'No proporcionado';
+    const service = data.get('service');
+    const budget = data.get('budget') || 'A discutir';
+    const message = data.get('message');
+
+    const subject = `Nueva consulta de ${name} - ${service}`;
+    const body = `Nombre: ${name}\nEmail: ${email}\nTeléfono: ${phone}\nServicio: ${service}\nPresupuesto: ${budget}\n\nMensaje:\n${message}`.trim();
+    const mailtoLink = `mailto:contacto@devhub.com.ar?subject=${encodeURIComponent(subject as string)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoLink;
+
+    if (formMessage) {
+      formMessage.className = 'mt-4 p-4 rounded-lg bg-primary/20 border-2 border-primary text-white text-center';
+      formMessage.innerHTML = '<i class="fas fa-check-circle text-primary mr-2"></i>¡Abriendo tu cliente de email! Si no se abre, escribinos a <strong>contacto@devhub.com.ar</strong>';
+      formMessage.classList.remove('hidden');
+      contactForm.reset();
+      setTimeout(() => formMessage.classList.add('hidden'), 6000);
+    }
+  });
+</script>
