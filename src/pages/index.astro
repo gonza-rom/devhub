@@ -90,60 +90,49 @@ const technologies = [
   { name: 'Vercel', icon: 'fas fa-server' }
 ];
 
+// ✨ REDUCIDO DE 9 A 6 VENTAJAS MÁS IMPACTANTES
 const advantages = [
-  {
-    icon: 'fas fa-code',
-    title: 'Código Personalizado',
-    description: 'A diferencia de las plantillas genéricas, cada línea de código está pensada específicamente para tu negocio.',
-    comparison: 'vs. plantillas limitadas y rígidas'
-  },
   {
     icon: 'fas fa-tachometer-alt',
     title: 'Velocidad Superior',
-    description: 'Sitios hasta 10x más rápidos que Wix o Tienda Nube. Google premia la velocidad con mejor ranking.',
-    comparison: 'vs. sitios lentos y pesados'
+    description: 'Sitios hasta 10x más rápidos que Wix o Tienda Nube. Google premia la velocidad con mejor ranking SEO.',
+    comparison: 'vs. sitios lentos y pesados',
+    stat: '+300%'
+  },
+  {
+    icon: 'fas fa-crown',
+    title: 'Sos el Dueño',
+    description: 'El código es 100% tuyo. No dependés de plataformas que pueden cerrar, cambiar precios o limitar funcionalidades.',
+    comparison: 'vs. rehén de la plataforma',
+    stat: '100%'
+  },
+  {
+    icon: 'fas fa-search',
+    title: 'SEO Profesional',
+    description: 'Optimización técnica profunda que las plantillas no pueden ofrecer. Mejores posiciones en Google garantizadas.',
+    comparison: 'vs. SEO básico e ineficiente',
+    stat: 'Top 10'
+  },
+  {
+    icon: 'fas fa-dollar-sign',
+    title: 'Inversión Inteligente',
+    description: 'Pago único vs. suscripciones mensuales eternas. En 1-2 años ya ahorraste dinero y tenés un activo propio.',
+    comparison: 'vs. $5.000-$20.000/mes perpetuos',
+    stat: '0$/mes'
   },
   {
     icon: 'fas fa-infinity',
     title: 'Sin Límites',
     description: 'Crecé sin restricciones. Agregá funcionalidades, productos o usuarios sin pagar más por "planes premium".',
-    comparison: 'vs. límites artificiales y costos ocultos'
-  },
-  {
-    icon: 'fas fa-search',
-    title: 'SEO Real',
-    description: 'Optimización técnica profunda que las plantillas no pueden ofrecer. Mejores posiciones en Google garantizadas.',
-    comparison: 'vs. SEO básico e ineficiente'
-  },
-  {
-    icon: 'fas fa-crown',
-    title: 'Sos el Dueño',
-    description: 'El código es 100% tuyo. No dependés de plataformas que pueden cerrar o cambiar precios.',
-    comparison: 'vs. rehén de la plataforma'
+    comparison: 'vs. límites artificiales y costos ocultos',
+    stat: '∞'
   },
   {
     icon: 'fas fa-wrench',
     title: 'Escalabilidad Real',
-    description: 'Sistemas que crecen con tu negocio. Integraciones con cualquier herramienta que necesites.',
-    comparison: 'vs. funcionalidades bloqueadas'
-  },
-  {
-    icon: 'fas fa-dollar-sign',
-    title: 'Mejor Inversión',
-    description: 'Pago único vs. suscripciones mensuales eternas. En 1-2 años ya ahorraste dinero.',
-    comparison: 'vs. $5.000-$20.000/mes perpetuos'
-  },
-  {
-    icon: 'fas fa-shield-alt',
-    title: 'Seguridad Premium',
-    description: 'Código limpio, actualizado y seguro. No heredás vulnerabilidades de plantillas masivas.',
-    comparison: 'vs. código con agujeros de seguridad'
-  },
-  {
-    icon: 'fas fa-mobile-alt',
-    title: 'Diseño Único',
-    description: 'Tu marca se destaca. No te confundís con otros 10.000 sitios que usan la misma plantilla.',
-    comparison: 'vs. sitios clonados genéricos'
+    description: 'Sistemas que crecen con tu negocio. Integraciones con cualquier herramienta, API o servicio que necesites.',
+    comparison: 'vs. funcionalidades bloqueadas',
+    stat: 'Custom'
   }
 ];
 
@@ -174,13 +163,14 @@ const team = [
   }
 ];
 
+// ✨ AGREGADOS: BlackBurger Catálogo y Vista Montaña
 const projects = [
   {
     icon: 'fas fa-shopping-bag',
     title: 'JMR E-commerce',
     description: 'Tienda online completa con carrito de compras, gestión de productos y pasarela de pagos. Desarrollada con Next.js y base de datos SQL.',
     technologies: ['Next.js', 'React', 'Tailwind CSS', 'SQL', 'Vercel'],
-    demoUrl: 'https://jmr-ecommerce.vercel.app/',
+    demoUrl: 'https://www.jmrmarroquineria.com.ar/',
     category: 'E-commerce'
   },
   {
@@ -192,12 +182,28 @@ const projects = [
     category: 'Sistema de Gestión'
   },
   {
-    icon: 'fas fa-rocket',
-    title: 'DevHub CTA',
-    description: 'Landing page corporativa con diseño moderno, animaciones fluidas y formulario de contacto. Optimizada para conversión y velocidad de carga.',
-    technologies: ['Astro', 'Tailwind CSS', 'JavaScript', 'Vercel'],
-    demoUrl: 'https://devhub-cta.vercel.app/',
+    icon: 'fas fa-hamburger',
+    title: 'BlackBurger Catálogo',
+    description: 'Landing page de menú digital para hamburguesería. Catálogo completo de productos con imágenes, descripciones y precios actualizables.',
+    technologies: ['HTML', 'CSS', 'JavaScript', 'Responsive', 'Netlify'],
+    demoUrl: 'https://blackburger-catalogo.netlify.app/',
     category: 'Landing Page'
+  },
+  {
+    icon: 'fas fa-home',
+    title: 'Vista Montaña Hospedaje',
+    description: 'Sitio web de alquileres vacacionales con galería de imágenes, información de cabañas y sistema de consultas vía WhatsApp para reservas.',
+    technologies: ['Next.js', 'React', 'Tailwind CSS', 'WhatsApp API', 'Vercel'],
+    demoUrl: 'https://vista-montana.vercel.app/',
+    category: 'Web Corporativa'
+  },
+  {
+    icon: 'fas fa-rocket',
+    title: 'DevHub Institucional',
+    description: 'Sitio corporativo profesional con portfolio de proyectos, presentación de equipo y formulario de contacto. Optimizado para conversión y velocidad.',
+    technologies: ['Astro', 'Tailwind CSS', 'JavaScript', 'SEO', 'Vercel'],
+    demoUrl: 'https://devhub-cta.vercel.app/',
+    category: 'Web Institucional'
   }
 ];
 ---
@@ -251,14 +257,14 @@ const projects = [
     </div>
   </section>
 
-  <!-- Advantages Over Templates Section -->
+  <!-- Advantages Over Templates Section - REDUCIDO A 6 -->
   <section id="ventajas" class="py-20 bg-dark relative overflow-hidden">
     <div class="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
     <div class="absolute bottom-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
     
     <div class="container mx-auto px-4 relative z-10">
       <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 animate-on-scroll opacity-0">
-        <span class="text-primary drop-shadow-[0_0_10px_rgba(255,193,7,0.5)]">9 Razones</span> para elegirnos
+        <span class="text-primary drop-shadow-[0_0_10px_rgba(255,193,7,0.5)]">6 Razones</span> para elegirnos
       </h2>
       <p class="text-center text-gray-400 mb-6 animate-on-scroll opacity-0" style="animation-delay: 0.2s">
         Desarrollo a medida vs. Plantillas genéricas
@@ -267,13 +273,18 @@ const projects = [
         <i class="fas fa-times-circle text-red-500"></i> Adiós Wix, Tienda Nube, WordPress genérico
       </p>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {advantages.map((advantage, index) => (
           <div class="group bg-dark-secondary p-8 rounded-xl shadow-lg shadow-primary/10 border-2 border-transparent hover:border-primary transition-all duration-500 hover:-translate-y-3 text-center relative overflow-hidden hover:shadow-2xl hover:shadow-primary/30 animate-on-scroll opacity-0" style={`animation-delay: ${index * 0.1}s`}>
             <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary-dark/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             
             <div class="relative z-10">
-              <div class="text-5xl mb-4 transition-all duration-500 group-hover:scale-110 inline-block">
+              <!-- Stat Badge -->
+              <div class="absolute top-0 right-0 bg-primary/20 text-primary px-3 py-1 rounded-bl-lg rounded-tr-lg font-bold text-sm border border-primary/30">
+                {advantage.stat}
+              </div>
+
+              <div class="text-5xl mb-4 transition-all duration-500 group-hover:scale-110 inline-block mt-4">
                 <i class={`${advantage.icon} text-primary`}></i>
               </div>
               <h3 class="text-2xl font-bold text-primary mb-3 font-display">{advantage.title}</h3>
@@ -289,27 +300,13 @@ const projects = [
       </div>
 
       <!-- Highlight Box -->
-      <div class="mt-16 max-w-4xl mx-auto bg-gradient-to-r from-primary/10 to-primary-dark/10 border-2 border-primary/30 rounded-2xl p-8 text-center animate-on-scroll opacity-0" style="animation-delay: 1s">
+      <div class="mt-16 max-w-4xl mx-auto bg-gradient-to-r from-primary/10 to-primary-dark/10 border-2 border-primary/30 rounded-2xl p-8 text-center animate-on-scroll opacity-0" style="animation-delay: 0.8s">
         <h3 class="text-2xl md:text-3xl font-bold mb-4 text-primary font-display">
           <i class="fas fa-chart-line"></i> La diferencia es real
         </h3>
-        <p class="text-lg text-gray-300 mb-4">
-          Un sitio web profesional a medida es una <strong class="text-primary">inversión inteligente</strong> que se paga sola en menos de 2 años, mientras que con plantillas seguís pagando eternamente sin ser dueño de nada.
+        <p class="text-lg text-gray-300">
+          Un sitio web profesional a medida es una <strong class="text-primary">inversión inteligente</strong> que se paga sola, mientras que con plantillas seguís pagando eternamente sin ser dueño de nada.
         </p>
-        <div class="flex flex-wrap justify-center gap-6 mt-6">
-          <div class="bg-dark-secondary px-6 py-4 rounded-lg border border-primary/20">
-            <p class="text-3xl font-bold text-primary mb-2">+300%</p>
-            <p class="text-sm text-gray-400">Más rápido que plantillas</p>
-          </div>
-          <div class="bg-dark-secondary px-6 py-4 rounded-lg border border-primary/20">
-            <p class="text-3xl font-bold text-primary mb-2">100%</p>
-            <p class="text-sm text-gray-400">Tuyo para siempre</p>
-          </div>
-          <div class="bg-dark-secondary px-6 py-4 rounded-lg border border-primary/20">
-            <p class="text-3xl font-bold text-primary mb-2">∞</p>
-            <p class="text-sm text-gray-400">Sin límites</p>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -340,7 +337,7 @@ const projects = [
     </div>
   </section>
 
-  <!-- Projects Section -->
+  <!-- Projects Section - AHORA CON 5 PROYECTOS -->
   <section id="proyectos" class="py-20 bg-dark relative overflow-hidden">
     <div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
     <div class="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
@@ -350,12 +347,12 @@ const projects = [
         Nuestros <span class="text-primary drop-shadow-[0_0_10px_rgba(255,193,7,0.5)]">Proyectos</span>
       </h2>
       <p class="text-center text-gray-400 mb-16 animate-on-scroll opacity-0" style="animation-delay: 0.2s">
-        Proyectos reales que demuestran nuestra experiencia
+        Portfolio de proyectos reales que demuestran nuestra experiencia
       </p>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {projects.map((project, index) => (
-          <div class="group bg-dark-secondary p-8 rounded-xl shadow-lg shadow-primary/10 border-2 border-transparent hover:border-primary transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/30 relative overflow-hidden animate-on-scroll opacity-0" style={`animation-delay: ${index * 0.15}s`}>
+          <div class="group bg-dark-secondary p-8 rounded-xl shadow-lg shadow-primary/10 border-2 border-transparent hover:border-primary transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/30 relative overflow-hidden animate-on-scroll opacity-0" style={`animation-delay: ${index * 0.12}s`}>
             <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary-dark/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             
             <div class="relative z-10">
@@ -396,7 +393,7 @@ const projects = [
         ))}
       </div>
 
-      <div class="mt-12 text-center animate-on-scroll opacity-0" style="animation-delay: 0.6s">
+      <div class="mt-12 text-center animate-on-scroll opacity-0" style="animation-delay: 0.7s">
         <p class="text-gray-400 flex items-center justify-center gap-2">
           <i class="fas fa-lock text-primary"></i>
           <span>Proyectos protegidos - No compartimos código fuente públicamente</span>
@@ -406,7 +403,7 @@ const projects = [
   </section>
 
   <!-- About Us / Team Section -->
-  <section id="nosotros" class="py-20 bg-dark relative overflow-hidden">
+  <section id="nosotros" class="py-20 bg-dark-secondary relative overflow-hidden">
     <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
     
     <div class="container mx-auto px-4 relative z-10">
@@ -429,7 +426,7 @@ const projects = [
   </section>
 
   <!-- Contact Section -->
-  <section id="contacto" class="py-20 bg-dark-secondary relative overflow-hidden">
+  <section id="contacto" class="py-20 bg-dark relative overflow-hidden">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl"></div>
     
     <div class="container mx-auto px-4 relative z-10">
@@ -441,7 +438,7 @@ const projects = [
       </p>
       
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
-        <div class="group text-center p-8 bg-dark rounded-xl border-2 border-transparent hover:border-primary transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/20 animate-on-scroll opacity-0" style="animation-delay: 0.1s">
+        <div class="group text-center p-8 bg-dark-secondary rounded-xl border-2 border-transparent hover:border-primary transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/20 animate-on-scroll opacity-0" style="animation-delay: 0.1s">
           <div class="text-5xl mb-4 transition-all duration-300 group-hover:scale-110">
             <i class="fab fa-whatsapp text-primary"></i>
           </div>
@@ -452,7 +449,7 @@ const projects = [
           </a>
         </div>
 
-        <div class="group text-center p-8 bg-dark rounded-xl border-2 border-transparent hover:border-primary transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/20 animate-on-scroll opacity-0" style="animation-delay: 0.2s">
+        <div class="group text-center p-8 bg-dark-secondary rounded-xl border-2 border-transparent hover:border-primary transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/20 animate-on-scroll opacity-0" style="animation-delay: 0.2s">
           <div class="text-5xl mb-4 transition-all duration-300 group-hover:scale-110">
             <i class="fas fa-envelope text-primary"></i>
           </div>
@@ -463,7 +460,7 @@ const projects = [
           </a>
         </div>
 
-        <div class="group text-center p-8 bg-dark rounded-xl border-2 border-transparent hover:border-primary transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/20 animate-on-scroll opacity-0" style="animation-delay: 0.3s">
+        <div class="group text-center p-8 bg-dark-secondary rounded-xl border-2 border-transparent hover:border-primary transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/20 animate-on-scroll opacity-0" style="animation-delay: 0.3s">
           <div class="text-5xl mb-4 transition-all duration-300 group-hover:scale-110">
             <i class="fab fa-linkedin text-primary"></i>
           </div>
@@ -476,7 +473,7 @@ const projects = [
       </div>
 
       <!-- Contact Form -->
-      <div class="max-w-2xl mx-auto bg-dark p-8 rounded-2xl border-2 border-primary/20 shadow-2xl shadow-primary/10 animate-on-scroll opacity-0" style="animation-delay: 0.4s">
+      <div class="max-w-2xl mx-auto bg-dark-secondary p-8 rounded-2xl border-2 border-primary/20 shadow-2xl shadow-primary/10 animate-on-scroll opacity-0" style="animation-delay: 0.4s">
         <h3 class="text-2xl font-bold text-center mb-6 text-primary font-display">
           <i class="fas fa-paper-plane"></i> Formulario de Contacto
         </h3>
@@ -491,7 +488,7 @@ const projects = [
               id="name" 
               name="name" 
               required
-              class="w-full px-4 py-3 bg-dark-secondary border-2 border-dark-tertiary rounded-lg focus:border-primary focus:outline-none transition-colors text-white"
+              class="w-full px-4 py-3 bg-dark border-2 border-dark-tertiary rounded-lg focus:border-primary focus:outline-none transition-colors text-white"
               placeholder="Tu nombre"
             />
           </div>
@@ -505,7 +502,7 @@ const projects = [
               id="email" 
               name="email" 
               required
-              class="w-full px-4 py-3 bg-dark-secondary border-2 border-dark-tertiary rounded-lg focus:border-primary focus:outline-none transition-colors text-white"
+              class="w-full px-4 py-3 bg-dark border-2 border-dark-tertiary rounded-lg focus:border-primary focus:outline-none transition-colors text-white"
               placeholder="tu@email.com"
             />
           </div>
@@ -518,7 +515,7 @@ const projects = [
               type="tel" 
               id="phone" 
               name="phone"
-              class="w-full px-4 py-3 bg-dark-secondary border-2 border-dark-tertiary rounded-lg focus:border-primary focus:outline-none transition-colors text-white"
+              class="w-full px-4 py-3 bg-dark border-2 border-dark-tertiary rounded-lg focus:border-primary focus:outline-none transition-colors text-white"
               placeholder="+54 9 383 4000000"
             />
           </div>
@@ -531,7 +528,7 @@ const projects = [
               id="service" 
               name="service" 
               required
-              class="w-full px-4 py-3 bg-dark-secondary border-2 border-dark-tertiary rounded-lg focus:border-primary focus:outline-none transition-colors text-white"
+              class="w-full px-4 py-3 bg-dark border-2 border-dark-tertiary rounded-lg focus:border-primary focus:outline-none transition-colors text-white"
             >
               <option value="">Seleccioná un servicio</option>
               <option value="landing">Landing Page</option>
@@ -551,7 +548,7 @@ const projects = [
               name="message" 
               rows="5" 
               required
-              class="w-full px-4 py-3 bg-dark-secondary border-2 border-dark-tertiary rounded-lg focus:border-primary focus:outline-none transition-colors text-white resize-none"
+              class="w-full px-4 py-3 bg-dark border-2 border-dark-tertiary rounded-lg focus:border-primary focus:outline-none transition-colors text-white resize-none"
               placeholder="Contanos sobre tu proyecto..."
             ></textarea>
           </div>
@@ -637,7 +634,6 @@ const projects = [
       message: formData.get('message')
     };
 
-    // Crear el mailto link
     const subject = `Nueva consulta de ${data.name} - ${data.service}`;
     const body = `
 Nombre: ${data.name}
@@ -649,21 +645,17 @@ Mensaje:
 ${data.message}
     `.trim();
 
-    const mailtoLink = `mailto:contacto@devhub.com.ar?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:gonzalorom2001@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     
-    // Abrir cliente de email
     window.location.href = mailtoLink;
 
-    // Mostrar mensaje de éxito
     if (formMessage) {
       formMessage.className = 'mt-4 p-4 rounded-lg bg-primary/20 border-2 border-primary text-white';
       formMessage.textContent = '¡Abriendo tu cliente de email! Si no se abre automáticamente, escribinos a contacto@devhub.com.ar';
       formMessage.classList.remove('hidden');
       
-      // Limpiar formulario
       contactForm.reset();
       
-      // Ocultar mensaje después de 5 segundos
       setTimeout(() => {
         formMessage.classList.add('hidden');
       }, 5000);
