@@ -10,6 +10,7 @@ const projects = [
     demoUrl: 'https://www.jmrmarroquineria.com.ar/',
     category: 'E-commerce',
     highlights: ['Catálogo de +100 productos', 'Carrito de compras', 'Checkout completo', 'Panel de admin'],
+    wip: false,
   },
   {
     image: 'proyectos/jmr-pos.png',
@@ -19,6 +20,7 @@ const projects = [
     demoUrl: 'https://jmr-stock.vercel.app/',
     category: 'Sistema de Gestión',
     highlights: ['Stock en tiempo real', 'Alertas automáticas', 'Reportes y métricas', 'Multi-usuario'],
+    wip: false,
   },
   {
     image: 'proyectos/black-burguer.png',
@@ -28,6 +30,7 @@ const projects = [
     demoUrl: 'https://blackburger-catalogo.netlify.app/',
     category: 'Landing Page',
     highlights: ['Menú digital completo', 'Diseño oscuro premium', 'Carga ultra rápida', 'SEO local'],
+    wip: false,
   },
   {
     image: 'proyectos/vista-montana.png',
@@ -37,6 +40,7 @@ const projects = [
     demoUrl: 'https://vista-montana.vercel.app/',
     category: 'Web Corporativa',
     highlights: ['Galería de fotos', 'Consultas por WhatsApp', 'Responsive perfecto', 'SEO turístico'],
+    wip: false,
   },
   {
     image: 'proyectos/devhub.png',
@@ -46,6 +50,7 @@ const projects = [
     demoUrl: 'https://devhub-cta.vercel.app/',
     category: 'Web Institucional',
     highlights: ['100/100 PageSpeed', 'SEO completo', 'Schema.org', 'Open Graph'],
+    wip: false,
   },
   {
     image: 'proyectos/devhub-pos.png',
@@ -55,6 +60,7 @@ const projects = [
     demoUrl: 'https://devhub-pos.vercel.app/',
     category: 'Sistema de Gestión',
     highlights: ['Multi-tenant SaaS', 'Ventas en tiempo real', 'Control de stock y caja', 'Acceso desde cualquier dispositivo'],
+    wip: false,
   },
   {
     image: 'proyectos/gonzalo-portfolio.png',
@@ -64,15 +70,17 @@ const projects = [
     demoUrl: 'https://gonzalo-romero.vercel.app/',
     category: 'Landing Page',
     highlights: ['Diseño moderno', 'SEO optimizado', 'Carga ultra rápida', 'Responsive perfecto'],
+    wip: false,
   },
   {
     image: 'proyectos/hoky.png',
     title: 'Hoky Indumentarias E-commerce',
     description: 'Tienda online completa para una tienda de ropa con carrito de compras, gestión de productos y pasarela de pagos. Desarrollada con Next.js y base de datos SQL.',
     technologies: ['Next.js', 'Tailwind CSS', 'JavaScript', 'SEO', 'Vercel'],
-    demoUrl: '',
-    category: 'Tienda Online',
+    demoUrl: null,
+    category: 'E-commerce',
     highlights: ['Catálogo de +100 productos', 'Carrito de compras', 'Checkout completo', 'Panel de admin'],
+    wip: true,
   },
 ];
 
@@ -134,12 +142,18 @@ const categories = ['Todos', ...new Set(projects.map(p => p.category))];
               <img
                 src={p.image}
                 alt={`Screenshot de ${p.title}`}
-                class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                class={`w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105 ${p.wip ? 'opacity-50' : ''}`}
                 loading="lazy"
               />
               <span class="absolute top-3 right-3 text-xs px-3 py-1 bg-dark/80 backdrop-blur-sm text-primary rounded-full border border-primary/40 font-semibold">
                 {p.category}
               </span>
+              {p.wip && (
+                <span class="absolute top-3 left-3 text-xs px-3 py-1 bg-yellow-500/20 backdrop-blur-sm text-yellow-400 rounded-full border border-yellow-400/40 font-semibold flex items-center gap-1.5">
+                  <i class="fas fa-hammer text-xs"></i>
+                  En construcción
+                </span>
+              )}
               <div class="absolute inset-0 bg-gradient-to-t from-dark-secondary/60 to-transparent"></div>
             </div>
 
@@ -164,15 +178,22 @@ const categories = ['Todos', ...new Set(projects.map(p => p.category))];
                 ))}
               </div>
 
-              <a
-                href={p.demoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary/10 border border-primary/30 text-primary font-semibold rounded-lg hover:bg-primary hover:text-dark transition-all duration-300 text-sm w-full justify-center"
-              >
-                <i class="fas fa-external-link-alt"></i>
-                Ver demo en vivo
-              </a>
+              {p.wip ? (
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 bg-yellow-500/10 border border-yellow-400/30 text-yellow-400 font-semibold rounded-lg text-sm w-full justify-center cursor-default">
+                  <i class="fas fa-clock"></i>
+                  Próximamente
+                </div>
+              ) : (
+                <a
+                  href={p.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary/10 border border-primary/30 text-primary font-semibold rounded-lg hover:bg-primary hover:text-dark transition-all duration-300 text-sm w-full justify-center"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                  Ver demo en vivo
+                </a>
+              )}
             </div>
           </div>
         ))}

@@ -54,13 +54,13 @@ import Layout from '../layouts/Layout.astro';
               </div>
               <div>
                 <div class="text-white font-bold">Email</div>
-                <div class="text-primary text-sm">contacto@devhub.com.ar</div>
+                <div class="text-primary text-sm">devhub.cta@gmail.com</div>
                 <div class="text-gray-500 text-xs">Respuesta en &lt; 24hs</div>
               </div>
               <i class="fas fa-chevron-right text-primary ml-auto opacity-0 group-hover:opacity-100 transition-opacity"></i>
             </a>
 
-            <a href="https://www.linkedin.com/in/gonzaloromero-/" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.linkedin.com/company/devhub-cta" target="_blank" rel="noopener noreferrer"
               class="group flex items-center gap-4 p-5 bg-dark-secondary rounded-xl border-2 border-transparent hover:border-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/20">
               <div class="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">
                 <i class="fab fa-linkedin text-blue-400"></i>
@@ -95,11 +95,11 @@ import Layout from '../layouts/Layout.astro';
             <div class="space-y-1 text-sm text-gray-400">
               <div class="flex justify-between">
                 <span>Lunes - Viernes</span>
-                <span class="text-primary">9:00 - 18:00</span>
+                <span class="text-primary">9:00 - 22:00</span>
               </div>
               <div class="flex justify-between">
                 <span>Sábados</span>
-                <span class="text-primary">9:00 - 13:00</span>
+                <span class="text-primary">9:00 - 22:00</span>
               </div>
               <div class="flex justify-between">
                 <span>Domingos</span>
@@ -226,13 +226,13 @@ import Layout from '../layouts/Layout.astro';
 
     const subject = `Nueva consulta de ${name} - ${service}`;
     const body = `Nombre: ${name}\nEmail: ${email}\nTeléfono: ${phone}\nServicio: ${service}\nPresupuesto: ${budget}\n\nMensaje:\n${message}`.trim();
-    const mailtoLink = `mailto:contacto@devhub.com.ar?subject=${encodeURIComponent(subject as string)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:devhub.cta@gmail.com?subject=${encodeURIComponent(subject as string)}&body=${encodeURIComponent(body)}`;
 
     window.location.href = mailtoLink;
 
     if (formMessage) {
       formMessage.className = 'mt-4 p-4 rounded-lg bg-primary/20 border-2 border-primary text-white text-center';
-      formMessage.innerHTML = '<i class="fas fa-check-circle text-primary mr-2"></i>¡Abriendo tu cliente de email! Si no se abre, escribinos a <strong>contacto@devhub.com.ar</strong>';
+      formMessage.innerHTML = '<i class="fas fa-check-circle text-primary mr-2"></i>¡Abriendo tu cliente de email! Si no se abre, escribinos a <strong>devhub.cta@gmail.com</strong>';
       formMessage.classList.remove('hidden');
       contactForm.reset();
       setTimeout(() => formMessage.classList.add('hidden'), 6000);
