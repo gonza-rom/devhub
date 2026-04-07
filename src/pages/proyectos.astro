@@ -47,7 +47,35 @@ const projects = [
     category: 'Web Institucional',
     highlights: ['100/100 PageSpeed', 'SEO completo', 'Schema.org', 'Open Graph'],
   },
+  {
+    image: 'proyectos/devhub-pos.png',
+    title: 'DevHub POS',
+    description: 'Sistema de punto de venta SaaS multi-tenant. Gestión de ventas, productos, stock y caja en tiempo real. Pensado para negocios que necesitan control total desde cualquier dispositivo.',
+    technologies: ['Next.js', 'TypeScript', 'Supabase', 'Cloudinary', 'Tailwind CSS'],
+    demoUrl: 'https://devhub-pos.vercel.app/',
+    category: 'Sistema de Gestión',
+    highlights: ['Multi-tenant SaaS', 'Ventas en tiempo real', 'Control de stock y caja', 'Acceso desde cualquier dispositivo'],
+  },
+  {
+    image: 'proyectos/gonzalo-portfolio.png',
+    title: 'Portfolio Personal',
+    description: 'Portfolio personal de desarrollador web fullstack. Presentación de proyectos, skills y experiencia. Diseño moderno optimizado para velocidad y conversión.',
+    technologies: ['Astro', 'Tailwind CSS', 'JavaScript', 'SEO', 'Vercel'],
+    demoUrl: 'https://gonzalo-romero.vercel.app/',
+    category: 'Landing Page',
+    highlights: ['Diseño moderno', 'SEO optimizado', 'Carga ultra rápida', 'Responsive perfecto'],
+  },
+  {
+    image: 'proyectos/hoky.png',
+    title: 'Hoky Indumentarias E-commerce',
+    description: 'Tienda online completa para una tienda de ropa con carrito de compras, gestión de productos y pasarela de pagos. Desarrollada con Next.js y base de datos SQL.',
+    technologies: ['Next.js', 'Tailwind CSS', 'JavaScript', 'SEO', 'Vercel'],
+    demoUrl: '',
+    category: 'Tienda Online',
+    highlights: ['Catálogo de +100 productos', 'Carrito de compras', 'Checkout completo', 'Panel de admin'],
+  },
 ];
+
 
 const categories = ['Todos', ...new Set(projects.map(p => p.category))];
 ---
