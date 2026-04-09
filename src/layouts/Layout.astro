@@ -13,7 +13,7 @@ interface Props {
 
 const {
   title,
-  description = 'DevHub - Desarrollo Web y Software a medida. Landing pages, tiendas online y sistemas personalizados en Catamarca, Argentina. Tecnologías modernas: Astro, Next.js, React, Node.js.',
+  description = 'Agencia de desarrollo web y software a medida en Argentina. Landing pages, tiendas online y sistemas personalizados. Trabajamos de forma 100% remota con empresas y emprendedores de Buenos Aires, Córdoba, Rosario , Catamarca y todo el país.',
   image = '/og-image.png',
   url = 'https://devhub.com.ar',
   type = 'website'
@@ -35,7 +35,10 @@ const ogImage = image.startsWith('http') ? image : new URL(image, Astro.site || 
     <meta name="keywords" content="desarrollo web, software a medida, landing pages, tiendas online, ecommerce, Catamarca, Argentina, Astro, Next.js, React, Node.js, programadores Catamarca" />
     <meta name="author" content="DevHub - Soluciones Digitales" />
     <link rel="canonical" href={canonicalURL} />
-
+    <meta name="geo.region" content="AR" />
+  <meta name="geo.placename" content="Argentina" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:locale:alternate" content="es_AR" />
     <!-- Open Graph -->
     <meta property="og:type" content={type} />
     <meta property="og:url" content={canonicalURL} />
@@ -62,15 +65,33 @@ const ogImage = image.startsWith('http') ? image : new URL(image, Astro.site || 
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
+        "@type": ["Organization", "ProfessionalService"],
         "name": "DevHub - Soluciones Digitales",
-        "description": "Desarrollo Web y Software a medida en Catamarca, Argentina",
+        "description": "Agencia de desarrollo web y software a medida. Trabajamos de forma remota con clientes en toda Argentina.",
         "url": "https://devhub.com.ar",
         "logo": "https://devhub.com.ar/logo-bg.png",
-        "email": "contacto@devhub.com.ar",
+        "email": "devhub.cta@gmail.com",
+        "telephone": "+5493834946767",
+        "areaServed": {
+          "@type": "Country",
+          "name": "Argentina"
+        },
+        "serviceArea": {
+          "@type": "Country",
+          "name": "Argentina"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Servicios de desarrollo web",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Landing Pages" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Webs Corporativas" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tiendas Online" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sistemas a Medida" } }
+          ]
+        },
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Catamarca",
           "addressRegion": "Catamarca",
           "addressCountry": "AR"
         },
@@ -81,7 +102,6 @@ const ogImage = image.startsWith('http') ? image : new URL(image, Astro.site || 
         ]
       }
     </script>
-
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
