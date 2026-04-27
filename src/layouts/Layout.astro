@@ -58,6 +58,7 @@ const ogImage = image.startsWith('http') ? image : new URL(image, Astro.site || 
     <meta name="twitter:image" content={ogImage} />
 
     <!-- Favicons -->
+    <link rel="icon" href="/logo.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
@@ -120,10 +121,10 @@ const ogImage = image.startsWith('http') ? image : new URL(image, Astro.site || 
     <Footer />
 
     <!-- Vercel Analytics -->
-     <script>
-      // @vercel/analytics - inject via script tag (no npm needed for static sites)
-      // Si usás npm: import { inject } from '@vercel/analytics'; inject();
-      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    <script>
+      window.va = window.va || function (...args) {
+        (window.vaq = window.vaq || []).push(args);
+      };
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
   </body>
