@@ -65,8 +65,102 @@ const projects = [
 
 <Layout title="DevHub | Agencia de Desarrollo de Software en Argentina — Landing Pages, E-commerce y Sistemas a Medida">
   
-<Hero/>
 
+<Hero/>
+  <!-- Productos DevHub -->
+<section class="py-20 bg-dark-primary relative overflow-hidden">
+  <div class="container mx-auto px-4">
+    <p class="text-center text-xs uppercase tracking-widest text-gray-500 mb-2 animate-on-scroll opacity-0">
+      Nuestros productos
+    </p>
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 animate-on-scroll opacity-0 font-display">
+      Software propio <span class="text-gray-400">para tu negocio</span>
+    </h2>
+    <p class="text-center text-gray-400 mb-16 animate-on-scroll opacity-0">
+      Soluciones listas para usar, desarrolladas por DevHub
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+
+      <!-- Turnos - Azul -->
+      <div class="animate-on-scroll opacity-0 bg-dark rounded-xl border border-dark-tertiary hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-2 overflow-hidden group">
+        <div class="h-1 bg-blue-600 w-full"></div>
+        <div class="p-8">
+          <div class="flex items-start justify-between mb-4">
+            <!-- Reemplazá esto con tu logo: <img src="/ruta/logo-turnos.png" class="w-10 h-10" alt="Turnos" /> -->
+              <div class="flex items-start justify-between mb-6">
+                <img src="/devhub-turnos.png" class="h-12 w-auto object-contain" alt="DevHub Turnos" />
+              </div>
+            <span class="text-xs px-3 py-1 bg-green-500/10 text-green-400 rounded-full border border-green-500/20">Disponible</span>
+          </div>
+          <span class="text-xs px-3 py-1 bg-blue-600/20 text-blue-300 rounded-full border border-blue-500/30 mb-4 inline-block">
+            Gestión de turnos
+          </span>
+          <h3 class="text-2xl font-bold text-blue-400 mb-3 font-display">DevHub Turnos</h3>
+          <p class="text-gray-400 mb-6">
+            Sistema online de reserva y gestión de turnos. Tus clientes reservan solos, vos te organizás sin estrés.
+          </p>
+          <ul class="space-y-2 mb-8">
+            {['Reservas online 24/7', 'Panel de administración', 'Recordatorios automáticos', 'Múltiples profesionales'].map(f => (
+              <li class="flex items-center gap-3 text-sm text-gray-400">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0"></span>
+                {f}
+              </li>
+            ))}
+          </ul>
+          <a
+            href="https://turnos.devhub.com.ar/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-500 transition-all duration-300"
+          >
+            <i class="fas fa-arrow-right text-sm"></i>
+            Ver sistema
+          </a>
+        </div>
+      </div>
+
+      <!-- POS - Rojo -->
+      <div class="animate-on-scroll opacity-0 bg-dark rounded-xl border border-dark-tertiary hover:border-red-500/50 transition-all duration-500 hover:-translate-y-2 overflow-hidden group" style="animation-delay: 0.1s">
+        <div class="h-1 bg-red-600 w-full"></div>
+        <div class="p-8">
+          <div class="flex items-start justify-between mb-4">
+            <!-- Reemplazá esto con tu logo: <img src="/ruta/logo-pos.png" class="w-10 h-10" alt="POS" /> -->
+              <div class="flex items-start justify-between mb-6">
+                <img src="/devhub-pos-logo.png" class="h-12 w-auto object-contain" alt="DevHub Turnos" />
+              </div>
+            <span class="text-xs px-3 py-1 bg-green-500/10 text-green-400 rounded-full border border-green-500/20">Disponible</span>
+          </div>
+          <span class="text-xs px-3 py-1 bg-red-600/20 text-red-300 rounded-full border border-red-500/30 mb-4 inline-block">
+            Punto de venta
+          </span>
+          <h3 class="text-2xl font-bold text-red-400 mb-3 font-display">DevHub POS</h3>
+          <p class="text-gray-400 mb-6">
+            Sistema de punto de venta completo para comercios. Vendé, gestioná stock e inventario y llevá el control.
+          </p>
+          <ul class="space-y-2 mb-8">
+            {['Ventas y caja rápida', 'Gestión de inventario', 'Reportes y estadísticas', 'Múltiples usuarios'].map(f => (
+              <li class="flex items-center gap-3 text-sm text-gray-400">
+                <span class="w-1.5 h-1.5 rounded-full bg-red-500 flex-shrink-0"></span>
+                {f}
+              </li>
+            ))}
+          </ul>
+          <a 
+            href="https://pos.devhub.com.ar/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-red-600 text-white font-bold rounded-lg hover:bg-red-500 transition-all duration-300"
+          >
+            <i class="fas fa-arrow-right text-sm"></i>
+            Ver sistema
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
   <!-- Servicios preview -->
   <section class="py-20 bg-dark relative overflow-hidden">
     <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
@@ -92,6 +186,8 @@ const projects = [
       </div>
     </div>
   </section>
+
+  
 
   <!-- Por qué DevHub - versión compacta -->
   <section class="py-20 bg-dark-secondary relative overflow-hidden">
