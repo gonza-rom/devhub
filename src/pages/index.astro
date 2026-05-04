@@ -67,7 +67,7 @@ const projects = [
   
 
 <Hero/>
-  <!-- Productos DevHub -->
+<!-- Productos DevHub -->
 <section class="py-20 bg-dark-primary relative overflow-hidden">
   <div class="container mx-auto px-4">
     <p class="text-center text-xs uppercase tracking-widest text-gray-500 mb-2 animate-on-scroll opacity-0">
@@ -80,17 +80,16 @@ const projects = [
       Soluciones listas para usar, desarrolladas por DevHub
     </p>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
       <!-- Turnos - Azul -->
       <div class="animate-on-scroll opacity-0 bg-dark rounded-xl border border-dark-tertiary hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-2 overflow-hidden group">
         <div class="h-1 bg-blue-600 w-full"></div>
         <div class="p-8">
           <div class="flex items-start justify-between mb-4">
-            <!-- Reemplazá esto con tu logo: <img src="/ruta/logo-turnos.png" class="w-10 h-10" alt="Turnos" /> -->
-              <div class="flex items-start justify-between mb-6">
-                <img src="/devhub-turnos.png" class="h-12 w-auto object-contain" alt="DevHub Turnos" />
-              </div>
+            <div class="flex items-start justify-between mb-6">
+              <img src="/devhub-turnos.png" class="h-12 w-auto object-contain" alt="DevHub Turnos" />
+            </div>
             <span class="text-xs px-3 py-1 bg-green-500/10 text-green-400 rounded-full border border-green-500/20">Disponible</span>
           </div>
           <span class="text-xs px-3 py-1 bg-blue-600/20 text-blue-300 rounded-full border border-blue-500/30 mb-4 inline-block">
@@ -108,7 +107,7 @@ const projects = [
               </li>
             ))}
           </ul>
-          <a
+          
             href="https://turnos.devhub.com.ar/"
             target="_blank"
             rel="noopener noreferrer"
@@ -125,10 +124,9 @@ const projects = [
         <div class="h-1 bg-red-600 w-full"></div>
         <div class="p-8">
           <div class="flex items-start justify-between mb-4">
-            <!-- Reemplazá esto con tu logo: <img src="/ruta/logo-pos.png" class="w-10 h-10" alt="POS" /> -->
-              <div class="flex items-start justify-between mb-6">
-                <img src="/devhub-pos-logo.png" class="h-12 w-auto object-contain" alt="DevHub Turnos" />
-              </div>
+            <div class="flex items-start justify-between mb-6">
+              <img src="/devhub-pos-logo.png" class="h-12 w-auto object-contain" alt="DevHub POS" />
+            </div>
             <span class="text-xs px-3 py-1 bg-green-500/10 text-green-400 rounded-full border border-green-500/20">Disponible</span>
           </div>
           <span class="text-xs px-3 py-1 bg-red-600/20 text-red-300 rounded-full border border-red-500/30 mb-4 inline-block">
@@ -146,7 +144,7 @@ const projects = [
               </li>
             ))}
           </ul>
-          <a 
+          
             href="https://pos.devhub.com.ar/"
             target="_blank"
             rel="noopener noreferrer"
@@ -155,6 +153,38 @@ const projects = [
             <i class="fas fa-arrow-right text-sm"></i>
             Ver sistema
           </a>
+        </div>
+      </div>
+
+      <!-- Gourmet - Dorado -->
+      <div class="animate-on-scroll opacity-0 bg-dark rounded-xl border border-dark-tertiary hover:border-yellow-500/50 transition-all duration-500 hover:-translate-y-2 overflow-hidden group" style="animation-delay: 0.2s">
+        <div class="h-1 bg-gradient-to-r from-amber-700 via-amber-500 to-yellow-400 w-full"></div>
+        <div class="p-8">
+          <div class="flex items-start justify-between mb-4">
+            <div class="flex items-start justify-between mb-6">
+              <img src="/devhub-gourmet.png" class="h-12 w-auto object-contain" alt="DevHub Gourmet" />
+            </div>
+            <span class="text-xs px-3 py-1 bg-yellow-500/10 text-yellow-400 rounded-full border border-yellow-500/20">Próximamente</span>
+          </div>
+          <span class="text-xs px-3 py-1 bg-amber-700/20 text-amber-300 rounded-full border border-amber-600/30 mb-4 inline-block">
+            Gestión gastronómica
+          </span>
+          <h3 class="text-2xl font-bold text-yellow-400 mb-3 font-display">DevHub Gourmet</h3>
+          <p class="text-gray-400 mb-6">
+            Llevá tu restaurante al siguiente nivel. Control total de mesas, pedidos y cobranzas desde un solo lugar.
+          </p>
+          <ul class="space-y-2 mb-8">
+            {['Control de mesas en tiempo real', 'Gestión de pedidos por mesa', 'Cobranzas y caja integradas', 'Carta digital para clientes'].map(f => (
+              <li class="flex items-center gap-3 text-sm text-gray-400">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0"></span>
+                {f}
+              </li>
+            ))}
+          </ul>
+          <div class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-yellow-500/10 text-yellow-500 font-bold rounded-lg border border-yellow-500/20 w-full cursor-default select-none">
+            <i class="fas fa-clock text-sm"></i>
+            Próximamente disponible
+          </div>
         </div>
       </div>
 
