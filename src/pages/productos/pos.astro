@@ -1,0 +1,210 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="DevHub POS — Sistema Punto de Venta para Negocios | DevHub Argentina">
+
+  <!-- Hero POS -->
+  <section class="pt-32 pb-20 bg-dark relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_50%,_rgba(220,38,38,0.08)_0%,_transparent_60%)]"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <!-- Texto -->
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-red-600/10 border border-red-500/30 rounded-full text-red-400 text-sm font-semibold mb-6">
+              <i class="fas fa-cash-register text-xs"></i>
+              Sistema Punto de Venta
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 font-display leading-tight">
+              <span class="text-red-400">DevHub</span><br />
+              <span class="text-white">POS</span>
+            </h1>
+            <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+              Controlá tus ventas, stock e inventario desde cualquier dispositivo. Un punto de venta profesional pensado para negocios físicos argentinos.
+            </p>
+            <div class="flex flex-wrap gap-4 mb-10">
+              <a href="https://devhub-pos.vercel.app/" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-6 py-3.5 bg-red-600 text-white font-bold rounded-xl hover:bg-red-500 transition-all duration-300 hover:scale-105">
+                <i class="fas fa-play"></i>
+                Ver demo en vivo
+              </a>
+              <a href="https://wa.me/3834944727" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-6 py-3.5 border-2 border-red-500/50 text-red-300 font-bold rounded-xl hover:bg-red-600/10 transition-all duration-300">
+                <i class="fab fa-whatsapp"></i>
+                Consultar plan
+              </a>
+            </div>
+            <!-- Stats -->
+            <div class="grid grid-cols-3 gap-4 pt-8 border-t border-dark-tertiary">
+              {[
+                { n: '100%', label: 'Desde el cel' },
+                { n: '0$', label: 'Sin comisiones' },
+                { n: '∞', label: 'Productos' },
+              ].map(({ n, label }) => (
+                <div>
+                  <div class="text-2xl font-bold text-red-400 font-display">{n}</div>
+                  <div class="text-gray-500 text-sm">{label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Mockup grande POS -->
+          <div class="relative">
+            <div class="bg-dark-secondary rounded-2xl border border-red-500/20 p-6 shadow-2xl shadow-red-500/5">
+              <!-- Barra superior -->
+              <div class="flex items-center justify-between mb-5 pb-4 border-b border-dark-tertiary">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 bg-red-600/20 rounded-lg flex items-center justify-center border border-red-500/30">
+                    <i class="fas fa-cash-register text-red-400 text-sm"></i>
+                  </div>
+                  <span class="font-bold text-white font-display">DevHub POS</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="bg-green-500/20 text-green-400 text-xs px-2.5 py-1 rounded-full border border-green-500/30 font-semibold">● En línea</span>
+                </div>
+              </div>
+
+              <!-- Lista de productos con búsqueda -->
+              <div class="bg-dark rounded-lg p-3 mb-4 border border-dark-tertiary">
+                <div class="flex items-center gap-2 mb-3">
+                  <i class="fas fa-search text-gray-600 text-sm"></i>
+                  <span class="text-gray-600 text-sm">Buscar producto o escanear...</span>
+                </div>
+                <div class="space-y-2">
+                  {[
+                    { nombre: 'Remera básica negra', sku: 'REM-001', precio: '$8.500', stock: 12 },
+                    { nombre: 'Pantalón jean slim', sku: 'PAN-023', precio: '$22.000', stock: 5 },
+                    { nombre: 'Zapatillas deportivas', sku: 'ZAP-047', precio: '$35.000', stock: 8 },
+                    { nombre: 'Cinturón cuero', sku: 'CIN-012', precio: '$6.500', stock: 15 },
+                  ].map(({ nombre, sku, precio, stock }) => (
+                    <div class="flex items-center justify-between p-2.5 bg-dark-secondary rounded-lg border border-dark-tertiary hover:border-red-500/30 transition-colors cursor-pointer">
+                      <div class="flex items-center gap-3">
+                        <div class="w-7 h-7 bg-red-600/10 rounded-lg flex items-center justify-center border border-red-500/20 flex-shrink-0">
+                          <i class="fas fa-tshirt text-red-500 text-xs"></i>
+                        </div>
+                        <div>
+                          <div class="text-white text-xs font-semibold">{nombre}</div>
+                          <div class="text-gray-600 text-[10px]">{sku} • Stock: {stock}</div>
+                        </div>
+                      </div>
+                      <div class="text-right">
+                        <div class="text-red-400 text-xs font-bold font-mono">{precio}</div>
+                        <button class="text-[9px] bg-red-600/20 text-red-400 px-1.5 py-0.5 rounded border border-red-500/30 hover:bg-red-600/40 mt-0.5">+ Agregar</button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <!-- Carrito y total -->
+              <div class="bg-dark rounded-lg p-3 border border-dark-tertiary">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-gray-500 text-xs uppercase tracking-wider">Venta actual</span>
+                  <span class="text-red-400 text-xs">3 productos</span>
+                </div>
+                <div class="flex items-baseline justify-between">
+                  <span class="text-gray-400 text-sm">Total a cobrar:</span>
+                  <span class="text-2xl font-bold text-white font-mono">$65.500</span>
+                </div>
+                <button class="w-full mt-3 bg-red-600 hover:bg-red-500 text-white font-bold py-3 rounded-xl text-sm transition-colors flex items-center justify-center gap-2">
+                  <i class="fas fa-credit-card"></i>
+                  Registrar venta
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Funcionalidades -->
+  <section class="py-20 bg-dark-secondary">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 font-display">
+        Todo lo que necesita <span class="text-red-400">tu negocio</span>
+      </h2>
+      <p class="text-center text-gray-400 mb-14 max-w-xl mx-auto">
+        Sin complicaciones, sin cursos. En 5 minutos ya estás vendiendo.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {[
+          { icon: 'fas fa-barcode', title: 'Punto de venta', desc: 'Registrá ventas rápidamente con búsqueda por nombre o código de barras.', color: 'red' },
+          { icon: 'fas fa-boxes', title: 'Control de stock', desc: 'El inventario se actualiza automáticamente con cada venta. Alertas de stock bajo.', color: 'red' },
+          { icon: 'fas fa-chart-bar', title: 'Reportes de ventas', desc: 'Visualizá cuánto vendiste por día, semana o mes. Exportable a Excel.', color: 'red' },
+          { icon: 'fas fa-cash-register', title: 'Cierre de caja', desc: 'Abrí y cerrá la caja con totales por medio de pago. Historial completo.', color: 'red' },
+          { icon: 'fas fa-tags', title: 'Categorías ilimitadas', desc: 'Organizá tus productos como quieras. Sin límite de categorías ni artículos.', color: 'red' },
+          { icon: 'fas fa-mobile-alt', title: 'Desde cualquier pantalla', desc: 'Celular, tablet o computadora. Diseño adaptable 100% responsive.', color: 'red' },
+        ].map(({ icon, title, desc }) => (
+          <div class="bg-dark p-6 rounded-xl border border-dark-tertiary hover:border-red-500/40 transition-all duration-300 group">
+            <div class="w-10 h-10 bg-red-600/15 rounded-xl flex items-center justify-center border border-red-500/25 mb-4 group-hover:bg-red-600/25 transition-colors">
+              <i class={`${icon} text-red-400`}></i>
+            </div>
+            <h3 class="font-bold text-white mb-2 font-display">{title}</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ¿Para quién es? -->
+  <section class="py-20 bg-dark">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 font-display">
+        ¿Para qué tipo de negocio es?
+      </h2>
+      <p class="text-center text-gray-400 mb-14">Cualquier negocio físico que venda productos</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mb-16">
+        {[
+          { icon: 'fas fa-tshirt', label: 'Ropa y moda' },
+          { icon: 'fas fa-laptop', label: 'Tecnología' },
+          { icon: 'fas fa-leaf', label: 'Dietética' },
+          { icon: 'fas fa-cut', label: 'Peluquería' },
+          { icon: 'fas fa-shoe-prints', label: 'Calzado' },
+          { icon: 'fas fa-paint-brush', label: 'Ferretería' },
+          { icon: 'fas fa-pills', label: 'Farmacia' },
+          { icon: 'fas fa-ellipsis-h', label: 'Y más...' },
+        ].map(({ icon, label }) => (
+          <div class="bg-dark-secondary p-4 rounded-xl border border-dark-tertiary text-center hover:border-red-500/40 transition-all duration-300">
+            <i class={`${icon} text-red-400 text-xl mb-2 block`}></i>
+            <span class="text-gray-400 text-sm">{label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-dark-secondary">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 font-display">
+        Incluido en el plan <span class="text-red-400">Landing + POS</span>
+      </h2>
+      <p class="text-gray-400 mb-8 max-w-xl mx-auto">
+        Por $50.000/mes tenés tu landing page profesional + acceso completo a DevHub POS + soporte incluido.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://devhub-pos.vercel.app/" target="_blank" rel="noopener noreferrer"
+          class="px-8 py-4 bg-red-600 text-white font-bold rounded-xl hover:bg-red-500 transition-all duration-300 hover:scale-105 flex items-center gap-3">
+          <i class="fas fa-play"></i>
+          Probar demo gratis
+        </a>
+        <a href="https://wa.me/3834944727" target="_blank" rel="noopener noreferrer"
+          class="px-8 py-4 border-2 border-red-500/50 text-red-300 font-bold rounded-xl hover:bg-red-600/10 transition-all duration-300 flex items-center gap-2">
+          <i class="fab fa-whatsapp"></i>
+          Hablar con un asesor
+        </a>
+      </div>
+      <p class="text-gray-600 text-sm mt-6">
+        ← <a href="/#productos" class="text-gray-500 hover:text-primary transition-colors">Volver a productos</a>
+        &nbsp;|&nbsp;
+        <a href="/#planes" class="text-gray-500 hover:text-primary transition-colors">Ver todos los planes →</a>
+      </p>
+    </div>
+  </section>
+
+</Layout>

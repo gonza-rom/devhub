@@ -1,0 +1,221 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="DevHub Gourmet — Sistema de Gestión para Restaurantes | DevHub Argentina">
+
+  <!-- Hero Gourmet -->
+  <section class="pt-32 pb-20 bg-dark relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,_rgba(217,119,6,0.08)_0%,_transparent_60%)]"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <!-- Texto -->
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-amber-600/10 border border-amber-500/30 rounded-full text-amber-400 text-sm font-semibold mb-6">
+              <i class="fas fa-utensils text-xs"></i>
+              Gestión Gastronómica
+            </div>
+            <div class="inline-block bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs px-3 py-1 rounded-full font-semibold mb-4">
+              ✦ Nuevo producto
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 font-display leading-tight">
+              <span class="text-amber-400">DevHub</span><br />
+              <span class="text-white">Gourmet</span>
+            </h1>
+            <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+              Control total de tu restaurante en tiempo real. Mesas, pedidos, cocina y cobranza integrados en una sola pantalla.
+            </p>
+            <div class="flex flex-wrap gap-4 mb-10">
+              <a href="https://wa.me/3834944727" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-6 py-3.5 bg-amber-600 text-white font-bold rounded-xl hover:bg-amber-500 transition-all duration-300 hover:scale-105">
+                <i class="fab fa-whatsapp"></i>
+                Consultar demo
+              </a>
+              <a href="/#planes"
+                class="inline-flex items-center gap-2 px-6 py-3.5 border-2 border-amber-500/50 text-amber-300 font-bold rounded-xl hover:bg-amber-600/10 transition-all duration-300">
+                <i class="fas fa-tags"></i>
+                Ver plan Premium
+              </a>
+            </div>
+            <!-- Stats -->
+            <div class="grid grid-cols-3 gap-4 pt-8 border-t border-dark-tertiary">
+              {[
+                { n: 'Real time', label: 'Estado de mesas' },
+                { n: 'QR', label: 'Carta digital' },
+                { n: '0%', label: 'Confusiones de pedidos' },
+              ].map(({ n, label }) => (
+                <div>
+                  <div class="text-xl font-bold text-amber-400 font-display">{n}</div>
+                  <div class="text-gray-500 text-sm">{label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Mockup Gourmet -->
+          <div class="relative">
+            <div class="bg-dark-secondary rounded-2xl border border-amber-500/20 p-6 shadow-2xl shadow-amber-500/5">
+              <!-- Header -->
+              <div class="flex items-center justify-between mb-5 pb-4 border-b border-dark-tertiary">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 bg-amber-600/20 rounded-lg flex items-center justify-center border border-amber-500/30">
+                    <i class="fas fa-utensils text-amber-400 text-sm"></i>
+                  </div>
+                  <span class="font-bold text-white font-display">DevHub Gourmet</span>
+                </div>
+                <span class="text-xs text-gray-500">Viernes 20:30hs</span>
+              </div>
+
+              <!-- Mapa de mesas -->
+              <div class="mb-4">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-gray-400 text-sm font-semibold">Salón principal</span>
+                  <div class="flex items-center gap-3 text-[10px]">
+                    <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-sm bg-amber-600/40 border border-amber-500/50 inline-block"></span><span class="text-gray-500">Ocupada</span></span>
+                    <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-sm bg-green-500/20 border border-green-500/30 inline-block"></span><span class="text-gray-500">Libre</span></span>
+                    <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-sm bg-blue-500/20 border border-blue-500/30 inline-block"></span><span class="text-gray-500">Reservada</span></span>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-4 gap-2 mb-4">
+                  {[
+                    { n: '1', estado: 'ocupada', personas: 4, cuenta: '$8.500' },
+                    { n: '2', estado: 'libre', personas: null, cuenta: null },
+                    { n: '3', estado: 'ocupada', personas: 2, cuenta: '$3.200' },
+                    { n: '4', estado: 'reservada', personas: 6, cuenta: null },
+                    { n: '5', estado: 'ocupada', personas: 3, cuenta: '$12.000' },
+                    { n: '6', estado: 'libre', personas: null, cuenta: null },
+                    { n: '7', estado: 'ocupada', personas: 5, cuenta: '$7.800' },
+                    { n: '8', estado: 'libre', personas: null, cuenta: null },
+                  ].map(({ n, estado, personas, cuenta }) => (
+                    <div class={`rounded-lg p-2 text-center cursor-pointer transition-all border ${
+                      estado === 'ocupada' ? 'bg-amber-600/25 border-amber-500/50' :
+                      estado === 'reservada' ? 'bg-blue-500/15 border-blue-500/30' :
+                      'bg-dark border-dark-tertiary hover:border-green-500/30'
+                    }`}>
+                      <div class={`font-bold text-sm ${estado === 'ocupada' ? 'text-amber-300' : estado === 'reservada' ? 'text-blue-300' : 'text-gray-600'}`}>
+                        {n}
+                      </div>
+                      {personas && <div class="text-[9px] text-gray-500">{personas} pers.</div>}
+                      {cuenta && <div class="text-[9px] text-amber-400 font-mono">{cuenta}</div>}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <!-- Pedido activo -->
+              <div class="bg-dark rounded-lg p-3 border border-amber-500/20">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-amber-400 text-xs font-bold">Mesa 5 — Pedido activo</span>
+                  <span class="text-gray-600 text-[10px]">20:15hs</span>
+                </div>
+                <div class="space-y-1.5">
+                  {[['Entraña c/ papas', '2x', '$4.800'], ['Empanadas x6', '1x', '$1.800'], ['Vino malbec', '1x', '$3.200']].map(([item, cant, precio]) => (
+                    <div class="flex justify-between text-[10px]">
+                      <span class="text-gray-400">{cant} {item}</span>
+                      <span class="text-white font-mono">{precio}</span>
+                    </div>
+                  ))}
+                </div>
+                <div class="mt-2 pt-2 border-t border-dark-tertiary flex justify-between">
+                  <span class="text-gray-500 text-[10px]">Total</span>
+                  <span class="text-amber-400 font-bold text-xs font-mono">$9.800</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Funcionalidades -->
+  <section class="py-20 bg-dark-secondary">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 font-display">
+        Control total de tu <span class="text-amber-400">operación gastronómica</span>
+      </h2>
+      <p class="text-center text-gray-400 mb-14 max-w-xl mx-auto">
+        Todo en una sola pantalla para que vos, los mozos y la cocina estén siempre sincronizados.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {[
+          { icon: 'fas fa-table', title: 'Mapa de mesas en vivo', desc: 'Visualizá en tiempo real cuáles están ocupadas, libres o reservadas. Un clic para ver el pedido de cada mesa.' },
+          { icon: 'fas fa-clipboard-list', title: 'Pedidos por mesa', desc: 'Cargá pedidos por mesa desde tablet o celular. Cada ítem va directo a la vista de cocina.' },
+          { icon: 'fas fa-qrcode', title: 'Carta digital por QR', desc: 'Tus clientes escanean el QR de la mesa y ven la carta actualizada con precios y fotos.' },
+          { icon: 'fas fa-fire', title: 'Vista para cocina', desc: 'La cocina recibe los pedidos en tiempo real. Sin papeles, sin confusiones, sin gritos.' },
+          { icon: 'fas fa-receipt', title: 'Cobranza integrada', desc: 'Cerrá la cuenta de cada mesa con división de pagos, descuentos y múltiples medios de pago.' },
+          { icon: 'fas fa-chart-pie', title: 'Reportes y caja', desc: 'Cierre de caja diario, platos más vendidos, horarios pico, comparativas semanales.' },
+        ].map(({ icon, title, desc }) => (
+          <div class="bg-dark p-6 rounded-xl border border-dark-tertiary hover:border-amber-500/40 transition-all duration-300 group">
+            <div class="w-10 h-10 bg-amber-600/15 rounded-xl flex items-center justify-center border border-amber-500/25 mb-4 group-hover:bg-amber-600/25 transition-colors">
+              <i class={`${icon} text-amber-400`}></i>
+            </div>
+            <h3 class="font-bold text-white mb-2 font-display">{title}</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Para qué tipo de local -->
+  <section class="py-20 bg-dark">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-14 font-display">¿Para qué tipo de local?</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+        {[
+          { icon: 'fas fa-burger', label: 'Restaurantes' },
+          { icon: 'fas fa-coffee', label: 'Cafeterías' },
+          { icon: 'fas fa-pizza-slice', label: 'Pizzerías' },
+          { icon: 'fas fa-wine-glass', label: 'Bares' },
+          { icon: 'fas fa-hotdog', label: 'Parrillas' },
+          { icon: 'fas fa-ice-cream', label: 'Heladerías' },
+          { icon: 'fas fa-bread-slice', label: 'Panaderías' },
+          { icon: 'fas fa-ellipsis-h', label: 'Y más...' },
+        ].map(({ icon, label }) => (
+          <div class="bg-dark-secondary p-4 rounded-xl border border-dark-tertiary text-center hover:border-amber-500/40 transition-all duration-300">
+            <i class={`${icon} text-amber-400 text-xl mb-2 block`}></i>
+            <span class="text-gray-400 text-sm">{label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-dark-secondary relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(217,119,6,0.06)_0%,_transparent_60%)]"></div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+      <div class="inline-block bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs px-3 py-1 rounded-full font-semibold mb-4">
+        Plan Premium
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 font-display">
+        Incluido en el plan <span class="text-amber-400">Landing + Gourmet</span>
+      </h2>
+      <p class="text-gray-400 mb-8 max-w-xl mx-auto">
+        Por $60.000/mes tenés tu landing con carta digital + DevHub Gourmet completo + soporte incluido. El sistema más completo para tu restaurante.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://wa.me/3834944727" target="_blank" rel="noopener noreferrer"
+          class="px-8 py-4 bg-amber-600 text-white font-bold rounded-xl hover:bg-amber-500 transition-all duration-300 hover:scale-105 flex items-center gap-3">
+          <i class="fab fa-whatsapp"></i>
+          Solicitar demo para mi local
+        </a>
+        <a href="/#planes"
+          class="px-8 py-4 border-2 border-amber-500/50 text-amber-300 font-bold rounded-xl hover:bg-amber-600/10 transition-all duration-300 flex items-center gap-2">
+          <i class="fas fa-tags"></i>
+          Ver todos los planes
+        </a>
+      </div>
+      <p class="text-gray-600 text-sm mt-6">
+        ← <a href="/#productos" class="text-gray-500 hover:text-primary transition-colors">Volver a productos</a>
+        &nbsp;|&nbsp;
+        <a href="/#planes" class="text-gray-500 hover:text-primary transition-colors">Ver todos los planes →</a>
+      </p>
+    </div>
+  </section>
+
+</Layout>

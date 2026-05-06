@@ -51,7 +51,7 @@ const projects = [
     title: 'Devhub POS',
     category: 'Sistema de Gestión',
     technologies: ['Next.js', 'Supabase', 'TypeScript'],
-    demoUrl: 'https://devhub-pos.vercel.app/',
+    demoUrl: 'https://pos.devhub.com.ar/',
   },
   {
     icon: 'fas fa-home',
@@ -61,24 +61,268 @@ const projects = [
     demoUrl: 'https://vista-montana.vercel.app/',
   },
 ];
+
+const productos = [
+  {
+    slug: 'pos',
+    nombre: 'DevHub POS',
+    tagline: 'Sistema punto de venta',
+    desc: 'Administrá ventas, stock e inventario desde cualquier dispositivo. Pensado para negocios físicos que quieren control total de su operación.',
+    color: 'red',
+    icon: 'fas fa-cash-register',
+    accentText: 'text-red-400',
+    accentBorder: 'border-red-500/30',
+    accentBg: 'bg-red-600/20',
+    accentHover: 'hover:border-red-500/60 hover:shadow-red-500/10',
+    accentCheck: 'text-red-500',
+    accentBtn: 'bg-red-600/20 text-red-300 border-red-500/30 hover:bg-red-600 hover:text-white hover:border-red-600',
+    accentGlow: 'from-red-950/60',
+    accentRadial: 'rgba(220,38,38,0.15)',
+    accentMockupBtn: 'bg-red-600/80',
+    badge: null,
+    demoUrl: 'https://pos.devhub.com.ar/',
+    demoLabel: 'Demo live',
+    demoIcon: 'fas fa-external-link-alt',
+    infoUrl: '/productos/pos',
+    features: [
+      'Punto de venta con escáner de código',
+      'Control de stock en tiempo real',
+      'Historial de ventas y reportes',
+      'Gestión de caja diaria',
+      'Múltiples categorías de productos',
+      'Acceso desde celular, tablet o PC',
+    ],
+    mockup: {
+      header: 'DevHub POS',
+      headerRight: { text: '● Activo', class: 'bg-green-500/20 text-green-400 border-green-500/30' },
+      lines: [['Remera básica', '$8.500'], ['Pantalón jean', '$22.000'], ['Zapatillas', '$35.000']],
+      total: { label: 'Total', value: '$65.500', class: 'text-red-400' },
+      btn: 'Cobrar',
+    },
+  },
+  {
+    slug: 'turnos',
+    nombre: 'DevHub Turnos',
+    tagline: 'Agenda online automática',
+    desc: 'Tus clientes reservan sus turnos online 24/7 sin que tengas que estar en el teléfono. Confirmaciones automáticas por WhatsApp.',
+    color: 'blue',
+    icon: 'fas fa-calendar-check',
+    accentText: 'text-blue-400',
+    accentBorder: 'border-blue-500/30',
+    accentBg: 'bg-blue-600/20',
+    accentHover: 'hover:border-blue-500/60 hover:shadow-blue-500/10',
+    accentCheck: 'text-blue-500',
+    accentBtn: 'bg-blue-600/20 text-blue-300 border-blue-500/30 hover:bg-blue-600 hover:text-white hover:border-blue-600',
+    accentGlow: 'from-blue-950/60',
+    accentRadial: 'rgba(37,99,235,0.15)',
+    accentMockupBtn: 'bg-blue-600/80',
+    badge: null,
+    demoUrl: 'https://turnos.devhub.com.ar/',
+    demoLabel: 'Demo live',
+    demoIcon: 'fas fa-external-link-alt',
+    infoUrl: '/productos/turnos',
+    features: [
+      'Reservas online las 24 horas',
+      'Confirmación automática por WhatsApp',
+      'Panel de agenda para el negocio',
+      'Gestión de servicios y duración',
+      'Control de disponibilidad horaria',
+      'Vista diaria, semanal y mensual',
+    ],
+    mockup: {
+      header: 'Agenda — Hoy',
+      headerRight: { text: 'Martes 15', class: 'text-gray-500' },
+      lines: [['9:00  María G.', 'Confirmado'], ['10:30 Carlos R.', 'Confirmado'], ['12:00 Ana L.', 'Pendiente']],
+      total: null,
+      btn: '+ Nuevo turno',
+    },
+  },
+  {
+    slug: 'gourmet',
+    nombre: 'DevHub Gourmet',
+    tagline: 'Control gastronómico total',
+    desc: 'Sistema completo para restaurantes y locales gastronómicos. Control de mesas, pedidos y cobranza desde una sola pantalla.',
+    color: 'amber',
+    icon: 'fas fa-utensils',
+    accentText: 'text-amber-400',
+    accentBorder: 'border-amber-500/30',
+    accentBg: 'bg-amber-600/20',
+    accentHover: 'hover:border-amber-500/70 hover:shadow-amber-500/10',
+    accentCheck: 'text-amber-500',
+    accentBtn: 'bg-amber-600/20 text-amber-300 border-amber-500/30 hover:bg-amber-600 hover:text-white hover:border-amber-600',
+    accentGlow: 'from-amber-950/60',
+    accentRadial: 'rgba(217,119,6,0.15)',
+    accentMockupBtn: 'bg-amber-600/80',
+    badge: 'Próximamente',
+    badgeClass: 'bg-amber-500/10 text-amber-300 border-amber-500/30',
+    demoUrl: 'https://wa.me/3834944727',
+    demoLabel: 'Consultar',
+    demoIcon: 'fab fa-whatsapp',
+    infoUrl: '/productos/gourmet',
+    features: [
+      'Control de mesas en tiempo real',
+      'Gestión de pedidos por mesa',
+      'Carta digital para clientes (QR)',
+      'Cobranzas y caja integradas',
+      'Historial y reportes de ventas',
+      'Ideal para mozos y administradores',
+    ],
+    mockup: {
+      header: 'Mesas',
+      headerRight: { text: 'Viernes noche', class: 'text-gray-500' },
+      lines: [['● 3 ocupadas', '3 libres']],
+      total: null,
+      btn: 'Ver mesas',
+      isMesas: true,
+    },
+  },
+];
 ---
 
 <Layout title="DevHub | Agencia de Desarrollo de Software en Argentina — Landing Pages, E-commerce y Sistemas a Medida">
 
-  <!-- Hero DevHub -->
-   <Hero />
-  <!-- Planes DevHub -->
-  <section class="py-20 bg-dark-primary relative overflow-hidden">
-    <div class="container mx-auto px-4">
-      <p class="text-center text-xs uppercase tracking-widest text-gray-500 mb-2 animate-on-scroll opacity-0">
-        Planes
-      </p>
+  <!-- ① Hero -->
+  <Hero />
+
+  <!-- ② Productos -->
+  <section class="py-20 bg-dark-secondary relative overflow-hidden" id="productos">
+    <div class="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <p class="text-center text-xs uppercase tracking-widest text-gray-500 mb-2 animate-on-scroll opacity-0">Plataformas</p>
       <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 animate-on-scroll opacity-0 font-display">
-        Elegí tu plan
+        Nuestros <span class="text-primary">Productos</span>
       </h2>
-      <p class="text-center text-gray-400 mb-16 animate-on-scroll opacity-0">
-        Todo lo que necesita tu negocio, en un solo lugar
+      <p class="text-center text-gray-400 mb-16 animate-on-scroll opacity-0 max-w-xl mx-auto">
+        Sistemas desarrollados por DevHub que potencian los planes. Conocé qué incluye cada uno antes de elegir.
       </p>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {productos.map((p, i) => (
+          <div
+            class={`animate-on-scroll opacity-0 group bg-dark rounded-2xl border border-dark-tertiary ${p.accentHover} transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl overflow-hidden flex flex-col ${p.slug === 'gourmet' ? 'border-amber-600/40' : ''} relative`}
+            style={`animation-delay: ${i * 0.1}s`}
+          >
+            {/* Badge (Nuevo / Próximamente) */}
+            {p.badge && (
+              <div class={`absolute top-3 right-3 z-20 text-xs px-3 py-1 rounded-full border font-semibold ${p.badgeClass}`}>
+                {p.badge}
+              </div>
+            )}
+
+            {/* Header con mini mockup */}
+            <div
+              class={`relative bg-gradient-to-br ${p.accentGlow} to-dark h-48 overflow-hidden flex items-center justify-center p-6`}
+              style={`background-image: radial-gradient(ellipse at center, ${p.accentRadial} 0%, transparent 70%)`}
+            >
+              <div class="relative z-10 w-full max-w-[200px]">
+                <div class={`bg-dark-secondary/90 rounded-xl border ${p.accentBorder} p-3 text-xs`}>
+                  <div class="flex items-center justify-between mb-3">
+                    <span class={`${p.accentText} font-bold text-[10px] uppercase tracking-wider`}>{p.mockup.header}</span>
+                    <span class={`text-[9px] px-2 py-0.5 rounded-full ${p.mockup.headerRight.class}`}>{p.mockup.headerRight.text}</span>
+                  </div>
+
+                  {/* Mesas mockup especial */}
+                  {p.mockup.isMesas ? (
+                    <div>
+                      <div class="grid grid-cols-3 gap-1.5 mb-3">
+                        {[{n:'1',o:false},{n:'2',o:true},{n:'3',o:true},{n:'4',o:false},{n:'5',o:true},{n:'6',o:false}].map(({n,o}) => (
+                          <div class={`rounded-lg py-1.5 text-center text-[10px] font-bold border ${o ? 'bg-amber-600/30 border-amber-500/50 text-amber-300' : 'bg-dark border-dark-tertiary text-gray-600'}`}>{n}</div>
+                        ))}
+                      </div>
+                      <div class="flex justify-between text-[9px]">
+                        <span class="text-amber-400">● 3 ocupadas</span>
+                        <span class="text-gray-500">3 libres</span>
+                      </div>
+                    </div>
+                  ) : (
+                    <div>
+                      <div class="space-y-1.5 mb-3">
+                        {p.mockup.lines.map(([label, value]) => (
+                          <div class="flex justify-between items-center">
+                            <span class="text-gray-400 text-[10px]">{label}</span>
+                            <span class={`text-[9px] px-1.5 py-0.5 rounded-full ${value === 'Confirmado' ? 'bg-green-500/20 text-green-400' : value === 'Pendiente' ? 'bg-yellow-500/20 text-yellow-400' : 'text-white text-[10px] font-mono'}`}>{value}</span>
+                          </div>
+                        ))}
+                      </div>
+                      {p.mockup.total && (
+                        <div class={`pt-2 border-t border-dark-tertiary flex justify-between mb-2`}>
+                          <span class="text-gray-500 text-[10px]">{p.mockup.total.label}</span>
+                          <span class={`font-bold text-[11px] font-mono ${p.mockup.total.class}`}>{p.mockup.total.value}</span>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  <div class={`mt-2 ${p.accentMockupBtn} text-white text-[10px] text-center py-1.5 rounded-lg font-semibold`}>
+                    {p.mockup.btn}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Contenido */}
+            <div class="p-7 flex flex-col flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <div class={`w-10 h-10 ${p.accentBg} rounded-xl flex items-center justify-center border ${p.accentBorder}`}>
+                  <i class={`${p.icon} ${p.accentText} text-lg`}></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white font-display">{p.nombre}</h3>
+                  <p class={`${p.accentText} text-xs font-semibold uppercase tracking-wider`}>{p.tagline}</p>
+                </div>
+              </div>
+
+              <p class="text-gray-400 text-sm mb-5 leading-relaxed">{p.desc}</p>
+
+              <ul class="space-y-2 mb-6 flex-1">
+                {p.features.map(f => (
+                  <li class="flex items-start gap-2.5 text-sm text-gray-300">
+                    <i class={`fas fa-check-circle ${p.accentCheck} text-xs mt-0.5 flex-shrink-0`}></i>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+
+              {/* Botones */}
+              <div class="flex items-center gap-3 pt-4 border-t border-dark-tertiary">
+                <a href={p.infoUrl}
+                  class={`flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 border font-semibold rounded-lg transition-all duration-300 text-sm ${p.accentBtn}`}>
+                  <i class="fas fa-info-circle"></i>
+                  Ver detalles
+                </a>
+                <a
+                  href={p.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class={`flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-dark-secondary text-gray-300 border border-dark-tertiary font-semibold rounded-lg transition-all duration-300 text-sm ${p.slug === 'gourmet' ? 'opacity-60 cursor-not-allowed pointer-events-none' : `hover:border-${p.color}-500/50 hover:text-white`}`}
+                >
+                  <i class={`${p.demoIcon} text-xs`}></i>
+                  {p.slug === 'gourmet' ? 'Próximamente' : p.demoLabel}
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 text-center animate-on-scroll opacity-0">
+        <p class="text-gray-500 text-sm mb-3">Cada producto se combina con tu landing page en nuestros planes</p>
+        <a href="#planes" class="inline-flex items-center gap-2 text-primary font-semibold hover:underline text-sm">
+          <i class="fas fa-arrow-down"></i>
+          Ver planes disponibles
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ③ Planes -->
+  <section id="planes" class="py-20 bg-dark-primary relative overflow-hidden">
+    <div class="container mx-auto px-4">
+      <p class="text-center text-xs uppercase tracking-widest text-gray-500 mb-2 animate-on-scroll opacity-0">Planes</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 animate-on-scroll opacity-0 font-display">Elegí tu plan</h2>
+      <p class="text-center text-gray-400 mb-16 animate-on-scroll opacity-0">Todo lo que necesita tu negocio, en un solo lugar</p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
@@ -86,12 +330,17 @@ const projects = [
         <div class="animate-on-scroll opacity-0 bg-dark rounded-xl border border-dark-tertiary hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-2 overflow-hidden flex flex-col">
           <div class="h-1 bg-blue-600 w-full"></div>
           <div class="p-8 flex flex-col flex-1">
-            <div class="flex items-start justify-between mb-6">
+            <div class="mb-6">
               <img src="/devhub-turnos.png" class="h-12 w-auto object-contain" alt="DevHub Turnos" />
             </div>
-            <span class="text-xs px-3 py-1 bg-blue-600/20 text-blue-300 rounded-full border border-blue-500/30 mb-4 inline-block w-fit">
-              Gestión de turnos
-            </span>
+            <div class="flex items-center gap-2 mb-4">
+              <span class="text-xs px-3 py-1 bg-blue-600/20 text-blue-300 rounded-full border border-blue-500/30">Gestión de turnos</span>
+              <a href="https://turnos.devhub.com.ar/" target="_blank" rel="noopener noreferrer"
+                class="text-xs px-2 py-1 bg-dark-secondary text-gray-500 rounded-full border border-dark-tertiary hover:text-blue-400 hover:border-blue-500/30 transition-colors flex items-center gap-1">
+                <i class="fas fa-external-link-alt text-[9px]"></i>
+                Ver demo
+              </a>
+            </div>
             <h3 class="text-2xl font-bold text-blue-400 mb-2 font-display">Landing + Turnos</h3>
             <div class="flex items-baseline gap-1 mb-4">
               <span class="text-4xl font-bold text-white">$50.000</span>
@@ -117,12 +366,17 @@ const projects = [
         <div class="animate-on-scroll opacity-0 bg-dark rounded-xl border border-dark-tertiary hover:border-red-500/50 transition-all duration-500 hover:-translate-y-2 overflow-hidden flex flex-col" style="animation-delay: 0.1s">
           <div class="h-1 bg-red-600 w-full"></div>
           <div class="p-8 flex flex-col flex-1">
-            <div class="flex items-start justify-between mb-6">
+            <div class="mb-6">
               <img src="/devhub-pos-logo.png" class="h-12 w-auto object-contain" alt="DevHub POS" />
             </div>
-            <span class="text-xs px-3 py-1 bg-red-600/20 text-red-300 rounded-full border border-red-500/30 mb-4 inline-block w-fit">
-              Punto de venta
-            </span>
+            <div class="flex items-center gap-2 mb-4">
+              <span class="text-xs px-3 py-1 bg-red-600/20 text-red-300 rounded-full border border-red-500/30">Punto de venta</span>
+              <a href="https://pos.devhub.com.ar/" target="_blank" rel="noopener noreferrer"
+                class="text-xs px-2 py-1 bg-dark-secondary text-gray-500 rounded-full border border-dark-tertiary hover:text-red-400 hover:border-red-500/30 transition-colors flex items-center gap-1">
+                <i class="fas fa-external-link-alt text-[9px]"></i>
+                Ver demo
+              </a>
+            </div>
             <h3 class="text-2xl font-bold text-red-400 mb-2 font-display">Landing + POS</h3>
             <div class="flex items-baseline gap-1 mb-4">
               <span class="text-4xl font-bold text-white">$50.000</span>
@@ -149,12 +403,16 @@ const projects = [
           <div class="absolute top-3 right-3 text-xs px-3 py-1 bg-amber-500/10 text-amber-300 rounded-full border border-amber-500/30">Premium</div>
           <div class="h-1 bg-gradient-to-r from-amber-700 via-amber-500 to-yellow-400 w-full"></div>
           <div class="p-8 flex flex-col flex-1">
-            <div class="flex items-start justify-between mb-6">
+            <div class="mb-6">
               <img src="/devhub-gourmet-bg.png" class="h-12 w-auto object-contain" alt="DevHub Gourmet" />
             </div>
-            <span class="text-xs px-3 py-1 bg-amber-700/20 text-amber-300 rounded-full border border-amber-600/30 mb-4 inline-block w-fit">
-              Gestión gastronómica
-            </span>
+            <div class="flex items-center gap-2 mb-4">
+              <span class="text-xs px-3 py-1 bg-amber-700/20 text-amber-300 rounded-full border border-amber-600/30">Gestión gastronómica</span>
+              <span class="text-xs px-2 py-1 bg-amber-500/10 text-amber-600 rounded-full border border-amber-500/20 flex items-center gap-1">
+                <i class="fas fa-clock text-[9px]"></i>
+                Próximamente
+              </span>
+            </div>
             <h3 class="text-2xl font-bold text-yellow-400 mb-2 font-display">Landing + Gourmet</h3>
             <div class="flex items-baseline gap-1 mb-4">
               <span class="text-4xl font-bold text-white">$60.000</span>
@@ -171,7 +429,7 @@ const projects = [
             </ul>
             <a href="https://wa.me/3834944727" target="_blank" rel="noopener noreferrer"
               class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-amber-600 text-white font-bold rounded-lg hover:bg-amber-500 transition-all duration-300">
-              Contratar plan
+              Consultar disponibilidad
             </a>
           </div>
         </div>
@@ -180,7 +438,7 @@ const projects = [
     </div>
   </section>
 
-  <!-- Servicios -->
+  <!-- ④ Servicios -->
   <section class="py-20 bg-dark relative overflow-hidden">
     <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
     <div class="container mx-auto px-4 relative z-10">
@@ -206,15 +464,13 @@ const projects = [
     </div>
   </section>
 
-  <!-- Por qué DevHub -->
+  <!-- ⑤ Por qué DevHub -->
   <section class="py-20 bg-dark-secondary relative overflow-hidden">
     <div class="container mx-auto px-4">
       <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 animate-on-scroll opacity-0 font-display">
         ¿Por qué <span class="text-primary">DevHub</span>?
       </h2>
-      <p class="text-center text-gray-400 mb-16 animate-on-scroll opacity-0">
-        La diferencia entre una plantilla y un sitio a medida
-      </p>
+      <p class="text-center text-gray-400 mb-16 animate-on-scroll opacity-0">La diferencia entre una plantilla y un sitio a medida</p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
         {[
           { icon: 'fas fa-tachometer-alt', stat: '+300%', title: 'Velocidad', desc: 'Hasta 10x más rápidos que Wix o Tienda Nube. Google premia la velocidad.' },
@@ -245,31 +501,23 @@ const projects = [
     </div>
   </section>
 
-  <!-- Proyectos -->
+  <!-- ⑥ Proyectos -->
   <section class="py-20 bg-dark relative overflow-hidden">
     <div class="container mx-auto px-4">
       <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 animate-on-scroll opacity-0 font-display">
         Proyectos <span class="text-primary">Reales</span>
       </h2>
-      <p class="text-center text-gray-400 mb-16 animate-on-scroll opacity-0">
-        Resultados concretos para negocios reales
-      </p>
+      <p class="text-center text-gray-400 mb-16 animate-on-scroll opacity-0">Resultados concretos para negocios reales</p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
         {projects.map((p, i) => (
-          <a
-            href={p.demoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <a href={p.demoUrl} target="_blank" rel="noopener noreferrer"
             class="group bg-dark-secondary p-6 rounded-xl border-2 border-transparent hover:border-primary transition-all duration-500 hover:-translate-y-3 hover:shadow-xl hover:shadow-primary/20 animate-on-scroll opacity-0 block"
-            style={`animation-delay: ${i * 0.12}s`}
-          >
+            style={`animation-delay: ${i * 0.12}s`}>
             <div class="flex items-start justify-between mb-4">
               <div class="text-4xl group-hover:scale-110 transition-transform duration-300">
                 <i class={`${p.icon} text-primary`}></i>
               </div>
-              <span class="text-xs px-3 py-1 bg-primary/20 text-primary rounded-full border border-primary/30">
-                {p.category}
-              </span>
+              <span class="text-xs px-3 py-1 bg-primary/20 text-primary rounded-full border border-primary/30">{p.category}</span>
             </div>
             <h3 class="text-xl font-bold text-primary mb-3 font-display">{p.title}</h3>
             <div class="flex flex-wrap gap-2 mb-4">
@@ -293,15 +541,13 @@ const projects = [
     </div>
   </section>
 
-  <!-- Blog -->
+  <!-- ⑦ Blog -->
   <section class="py-20 bg-dark-secondary relative overflow-hidden">
     <div class="container mx-auto px-4">
       <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 animate-on-scroll opacity-0 font-display">
         Del <span class="text-primary">Blog</span>
       </h2>
-      <p class="text-center text-gray-400 mb-16 animate-on-scroll opacity-0">
-        Recursos y guías para negocios que quieren crecer online
-      </p>
+      <p class="text-center text-gray-400 mb-16 animate-on-scroll opacity-0">Recursos y guías para negocios que quieren crecer online</p>
       <div class="max-w-3xl mx-auto">
         <a href="/blog/wix-vs-desarrollo-a-medida" class="group bg-dark p-8 rounded-2xl border-2 border-transparent hover:border-primary transition-all duration-500 hover:shadow-xl hover:shadow-primary/20 block animate-on-scroll opacity-0">
           <div class="flex flex-wrap gap-3 mb-4">
@@ -329,7 +575,7 @@ const projects = [
     </div>
   </section>
 
-  <!-- CTA Final -->
+  <!-- ⑧ CTA Final -->
   <section class="py-20 bg-dark relative overflow-hidden">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl"></div>
     <div class="container mx-auto px-4 text-center relative z-10">
@@ -340,19 +586,13 @@ const projects = [
         Contanos tu idea y te respondemos en menos de 24hs con una propuesta personalizada.
       </p>
       <div class="flex flex-wrap justify-center gap-4 animate-on-scroll opacity-0">
-        <a
-          href="https://wa.me/5493834944727"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="px-10 py-5 bg-primary text-dark font-bold rounded-xl text-lg hover:bg-primary-dark transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-primary/50 flex items-center gap-3"
-        >
+        <a href="https://wa.me/5493834944727" target="_blank" rel="noopener noreferrer"
+          class="px-10 py-5 bg-primary text-dark font-bold rounded-xl text-lg hover:bg-primary-dark transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-primary/50 flex items-center gap-3">
           <i class="fab fa-whatsapp text-xl"></i>
           Hablar por WhatsApp
         </a>
-        <a
-          href="/contacto"
-          class="px-10 py-5 border-2 border-primary text-primary font-bold rounded-xl text-lg hover:bg-primary/10 transition-all duration-300 hover:scale-105 flex items-center gap-3"
-        >
+        <a href="/contacto"
+          class="px-10 py-5 border-2 border-primary text-primary font-bold rounded-xl text-lg hover:bg-primary/10 transition-all duration-300 hover:scale-105 flex items-center gap-3">
           <i class="fas fa-paper-plane"></i>
           Enviar consulta
         </a>
@@ -376,6 +616,5 @@ const projects = [
       if (entry.isIntersecting) entry.target.classList.add('animate-on-scroll');
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
-
   document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 </script>
