@@ -66,59 +66,7 @@ const projects = [
 <Layout title="DevHub | Agencia de Desarrollo de Software en Argentina — Landing Pages, E-commerce y Sistemas a Medida">
 
   <!-- Hero DevHub -->
-  <section class="py-32 bg-dark-primary relative overflow-hidden">
-    <div class="container mx-auto px-4 max-w-5xl">
-
-      <div class="flex justify-center mb-12 animate-on-scroll opacity-0">
-        <div class="inline-flex items-center gap-4 px-5 py-2.5 border border-dark-tertiary rounded bg-dark">
-          <div class="flex items-center gap-2 text-xs text-green-400">
-            <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
-            Atención remota
-          </div>
-          <div class="w-px h-4 bg-dark-tertiary"></div>
-          <span class="text-xs text-gray-500 tracking-wide">Catamarca · Córdoba · Argentina</span>
-        </div>
-      </div>
-
-      <div class="text-center max-w-3xl mx-auto">
-
-        <div class="flex justify-center mb-6 animate-on-scroll opacity-0">
-          <img src="/logo.jpeg" alt="DevHub" class="h-16 md:h-20 w-auto object-contain" />
-        </div>
-
-        <p class="text-xs uppercase tracking-[0.2em] text-gray-600 mb-5 animate-on-scroll opacity-0">
-          Soluciones Digitales
-        </p>
-
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold font-display leading-[1.1] tracking-tight mb-6 animate-on-scroll opacity-0">
-          Transformamos tu negocio<br>
-          <span class="text-gray-500">en presencia digital.</span>
-        </h1>
-
-        <p class="text-base md:text-lg text-gray-400 leading-relaxed max-w-xl mx-auto mb-14 animate-on-scroll opacity-0">
-          Desarrollamos páginas web, sistemas de gestión y software a medida para empresas y profesionales de toda Argentina. Sin traslados, con resultados.
-        </p>
-
-        <div class="inline-grid grid-cols-3 border border-dark-tertiary rounded-xl overflow-hidden animate-on-scroll opacity-0 w-full max-w-lg mx-auto">
-          <div class="py-5 px-6 text-center border-r border-dark-tertiary">
-            <p class="text-3xl font-bold text-white font-display">+50</p>
-            <p class="text-xs uppercase tracking-widest text-gray-600 mt-1">Proyectos</p>
-          </div>
-          <div class="py-5 px-6 text-center border-r border-dark-tertiary">
-            <p class="text-3xl font-bold text-white font-display">100%</p>
-            <p class="text-xs uppercase tracking-widest text-gray-600 mt-1">Remoto</p>
-          </div>
-          <div class="py-5 px-6 text-center">
-            <p class="text-3xl font-bold text-white font-display">3</p>
-            <p class="text-xs uppercase tracking-widest text-gray-600 mt-1">Productos propios</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-git status
-
+   <Hero />
   <!-- Planes DevHub -->
   <section class="py-20 bg-dark-primary relative overflow-hidden">
     <div class="container mx-auto px-4">
@@ -308,7 +256,7 @@ git status
       </p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
         {projects.map((p, i) => (
-          
+          <a
             href={p.demoUrl}
             target="_blank"
             rel="noopener noreferrer"
