@@ -177,12 +177,202 @@ const productos = [
     },
   },
 ];
+
+const hackathonFeatures = [
+  'IA predictiva que anticipa lesiones hasta 72hs antes',
+  'Dashboard unificado para atletas, coaches y tutores',
+  'Monitoreo de sueño, nutrición y carga semanal',
+  'Alertas en tiempo real y métricas de rendimiento',
+  'Agenda deportiva y académica integrada',
+];
+
+const hackathonStack = ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase', 'IA/ML', 'Vercel'];
+
+const mockupStats = [
+  { label: 'Sueño', value: '7.2h', icon: 'fas fa-moon', color: 'text-blue-400' },
+  { label: 'Energía', value: '84%', icon: 'fas fa-bolt', color: 'text-yellow-400' },
+  { label: 'Carga', value: '↓34%', icon: 'fas fa-heart', color: 'text-red-400' },
+];
+
+const mockupRoles = [
+  { label: 'AT', color: 'bg-yellow-600' },
+  { label: 'CO', color: 'bg-blue-600' },
+  { label: 'TU', color: 'bg-green-600' },
+];
 ---
 
 <Layout title="DevHub | Agencia de Desarrollo de Software en Argentina — Landing Pages, E-commerce y Sistemas a Medida">
 
   <!-- ① Hero -->
   <Hero />
+
+  <!-- 🏆 Hackathon Win -->
+  <section class="py-16 bg-dark relative overflow-hidden" id="hackathon">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-yellow-500/8 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-0 left-0 w-64 h-64 bg-yellow-600/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 right-0 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="container mx-auto px-4 relative z-10">
+
+      <p class="text-center text-xs uppercase tracking-widest text-yellow-500/70 mb-3 animate-on-scroll opacity-0">
+        <i class="fas fa-trophy mr-2"></i>Logro reciente
+      </p>
+
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 animate-on-scroll opacity-0 font-display">
+        🥇 <span class="text-yellow-400">1er Puesto</span> — Sportstech Hackathon 2026
+      </h2>
+      <p class="text-center text-gray-400 mb-12 animate-on-scroll opacity-0 max-w-xl mx-auto">
+        Estadio Bicentenario · Organizado por <span class="text-white font-semibold">Experimental Global</span> · Mayo 2026
+      </p>
+
+      <div class="max-w-5xl mx-auto animate-on-scroll opacity-0">
+        <div class="bg-dark-secondary rounded-2xl border-2 border-yellow-500/40 hover:border-yellow-400/70 transition-all duration-500 overflow-hidden shadow-2xl shadow-yellow-500/10">
+
+          <div class="h-1.5 bg-gradient-to-r from-yellow-700 via-yellow-400 to-amber-500 w-full"></div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
+
+            <!-- Columna izquierda -->
+            <div class="p-8 md:p-10 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-yellow-500/10">
+              <div>
+                <div class="inline-flex items-center gap-2 bg-yellow-500/10 border border-yellow-500/30 text-yellow-300 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
+                  <i class="fas fa-medal"></i>
+                  Primer lugar · Sportstech Hackathon 2026
+                </div>
+
+                <div class="flex items-center gap-4 mb-6">
+                  <div class="w-14 h-14 bg-yellow-500/15 rounded-2xl flex items-center justify-center border border-yellow-500/30 flex-shrink-0">
+                    <i class="fas fa-bolt text-yellow-400 text-2xl"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-3xl font-bold text-white font-display">PULSO</h3>
+                    <p class="text-yellow-400 text-sm font-semibold uppercase tracking-wider">Elite Athletic Intelligence</p>
+                  </div>
+                </div>
+
+                <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                  Plataforma inteligente para atletas que unifica biometría en tiempo real, análisis predictivo de lesiones y gestión de carga de entrenamiento. Conecta tres roles en un mismo ecosistema: atletas, entrenadores y tutores.
+                </p>
+
+                <ul class="space-y-2 mb-8">
+                  {hackathonFeatures.map(f => (
+                    <li class="flex items-start gap-2.5 text-sm text-gray-300">
+                      <i class="fas fa-check-circle text-yellow-500 text-xs mt-0.5 flex-shrink-0"></i>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <p class="text-xs uppercase tracking-widest text-gray-600 mb-3">Stack utilizado</p>
+                <div class="flex flex-wrap gap-2 mb-8">
+                  {hackathonStack.map(t => (
+                    <span class="text-xs px-3 py-1 bg-dark rounded-full text-gray-400 border border-dark-tertiary">{t}</span>
+                  ))}
+                </div>
+
+                <div class="flex flex-wrap gap-3">
+                  <a
+                    href="https://pulso-amber.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 px-5 py-2.5 bg-yellow-500/15 text-yellow-300 border border-yellow-500/40 font-semibold rounded-lg hover:bg-yellow-500 hover:text-dark hover:border-yellow-500 transition-all duration-300 text-sm"
+                  >
+                    <i class="fas fa-external-link-alt text-xs"></i>
+                    Ver proyecto en vivo
+                  </a>
+                  <a
+                    href="https://wa.me/5493834944727"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 px-5 py-2.5 bg-dark text-gray-300 border border-dark-tertiary font-semibold rounded-lg hover:border-yellow-500/40 hover:text-white transition-all duration-300 text-sm"
+                  >
+                    <i class="fab fa-whatsapp text-green-400 text-xs"></i>
+                    Consultar
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Columna derecha: mockup -->
+            <div
+              class="p-8 md:p-10 flex flex-col justify-center items-center"
+              style="background-image: radial-gradient(ellipse at center, rgba(234,179,8,0.08) 0%, transparent 65%)"
+            >
+              <div class="w-full max-w-[280px]">
+                <div class="bg-dark rounded-xl border border-yellow-500/25 overflow-hidden shadow-2xl">
+
+                  <div class="bg-dark-secondary px-4 py-3 border-b border-yellow-500/15 flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <i class="fas fa-bolt text-yellow-400 text-xs"></i>
+                      <span class="text-white font-bold text-xs font-display">PULSO</span>
+                    </div>
+                    <span class="text-[9px] px-2 py-0.5 bg-green-500/20 text-green-400 border border-green-500/30 rounded-full">● Live</span>
+                  </div>
+
+                  <div class="p-4 space-y-3">
+                    <!-- Readiness -->
+                    <div class="bg-dark-secondary rounded-lg p-3 border border-yellow-500/15">
+                      <div class="flex items-center justify-between mb-1.5">
+                        <span class="text-[10px] text-gray-500 uppercase tracking-wider">Readiness</span>
+                        <span class="text-yellow-400 font-bold text-sm">98%</span>
+                      </div>
+                      <div class="h-1.5 bg-dark rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-yellow-600 to-yellow-400 rounded-full" style="width: 98%"></div>
+                      </div>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-2">
+                      {mockupStats.map(s => (
+                        <div class="bg-dark-secondary rounded-lg p-2 border border-dark-tertiary text-center">
+                          <i class={`${s.icon} ${s.color} text-[10px] mb-1`}></i>
+                          <div class={`text-[11px] font-bold ${s.color}`}>{s.value}</div>
+                          <div class="text-[9px] text-gray-600">{s.label}</div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <!-- Alerta -->
+                    <div class="bg-amber-500/10 border border-amber-500/30 rounded-lg p-2.5 flex items-start gap-2">
+                      <i class="fas fa-triangle-exclamation text-amber-400 text-xs mt-0.5 flex-shrink-0"></i>
+                      <div>
+                        <p class="text-amber-300 text-[10px] font-semibold">Alerta preventiva</p>
+                        <p class="text-amber-400/70 text-[9px]">Riesgo de sobrecarga detectado</p>
+                      </div>
+                    </div>
+
+                    <!-- Roles -->
+                    <div class="flex items-center justify-between bg-dark-secondary rounded-lg px-3 py-2 border border-dark-tertiary">
+                      <span class="text-[9px] text-gray-500">Ecosistema activo</span>
+                      <div class="flex -space-x-1.5">
+                        {mockupRoles.map(r => (
+                          <div class={`w-5 h-5 ${r.color} rounded-full flex items-center justify-center text-[7px] font-bold text-white border border-dark`}>{r.label}</div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Badge evento -->
+                <div class="mt-4 bg-dark-secondary rounded-xl border border-yellow-500/20 p-3 flex items-center gap-3">
+                  <div class="w-8 h-8 bg-yellow-500/15 rounded-lg flex items-center justify-center border border-yellow-500/30 flex-shrink-0">
+                    <i class="fas fa-trophy text-yellow-400 text-xs"></i>
+                  </div>
+                  <div>
+                    <p class="text-yellow-300 text-[11px] font-bold">🥇 1er lugar</p>
+                    <p class="text-gray-500 text-[9px]">Sportstech Hackathon 2026 · Experimental Global</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ② Productos -->
   <section class="py-20 bg-dark-secondary relative overflow-hidden" id="productos">
@@ -204,14 +394,12 @@ const productos = [
             class={`animate-on-scroll opacity-0 group bg-dark rounded-2xl border border-dark-tertiary ${p.accentHover} transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl overflow-hidden flex flex-col ${p.slug === 'gourmet' ? 'border-amber-600/40' : ''} relative`}
             style={`animation-delay: ${i * 0.1}s`}
           >
-            {/* Badge (Nuevo / Próximamente) */}
             {p.badge && (
               <div class={`absolute top-3 right-3 z-20 text-xs px-3 py-1 rounded-full border font-semibold ${p.badgeClass}`}>
                 {p.badge}
               </div>
             )}
 
-            {/* Header con mini mockup */}
             <div
               class={`relative bg-gradient-to-br ${p.accentGlow} to-dark h-48 overflow-hidden flex items-center justify-center p-6`}
               style={`background-image: radial-gradient(ellipse at center, ${p.accentRadial} 0%, transparent 70%)`}
@@ -223,7 +411,6 @@ const productos = [
                     <span class={`text-[9px] px-2 py-0.5 rounded-full ${p.mockup.headerRight.class}`}>{p.mockup.headerRight.text}</span>
                   </div>
 
-                  {/* Mesas mockup especial */}
                   {p.mockup.isMesas ? (
                     <div>
                       <div class="grid grid-cols-3 gap-1.5 mb-3">
@@ -262,7 +449,6 @@ const productos = [
               </div>
             </div>
 
-            {/* Contenido */}
             <div class="p-7 flex flex-col flex-1">
               <div class="flex items-center gap-3 mb-4">
                 <div class={`w-10 h-10 ${p.accentBg} rounded-xl flex items-center justify-center border ${p.accentBorder}`}>
@@ -285,7 +471,6 @@ const productos = [
                 ))}
               </ul>
 
-              {/* Botones */}
               <div class="flex items-center gap-3 pt-4 border-t border-dark-tertiary">
                 <a href={p.infoUrl}
                   class={`flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 border font-semibold rounded-lg transition-all duration-300 text-sm ${p.accentBtn}`}>
@@ -608,6 +793,20 @@ const productos = [
     to { opacity: 1; transform: translateY(0); }
   }
   .animate-on-scroll { animation: scroll-reveal 0.8s ease-out forwards; }
+
+  /* Hackathon gold shimmer en el borde */
+  #hackathon .border-yellow-500\/40 {
+    position: relative;
+  }
+  #hackathon .border-yellow-500\/40::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(234,179,8,0.3) 0%, transparent 40%, transparent 60%, rgba(234,179,8,0.15) 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
 </style>
 
 <script>
