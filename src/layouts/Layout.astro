@@ -2,6 +2,8 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Analytics from '@vercel/analytics/astro'
+import CodeBackground from '../components/Codebackground.astro';
+import '../styles/globals.css';
 
 interface Props {
   title: string;
@@ -36,9 +38,9 @@ const ogImage = image.startsWith('http') ? image : new URL(image, Astro.site || 
     <meta name="author" content="DevHub - Soluciones Digitales" />
     <link rel="canonical" href={canonicalURL} />
     <meta name="geo.region" content="AR" />
-  <meta name="geo.placename" content="Argentina" />
-  <meta property="og:locale" content="es_AR" />
-  <meta property="og:locale:alternate" content="es_AR" />
+    <meta name="geo.placename" content="Argentina" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:locale:alternate" content="es_AR" />
     <!-- Open Graph -->
     <meta property="og:type" content={type} />
     <meta property="og:url" content={canonicalURL} />
@@ -49,7 +51,6 @@ const ogImage = image.startsWith('http') ? image : new URL(image, Astro.site || 
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="DevHub - Soluciones Digitales" />
     <meta property="og:site_name" content="DevHub - Soluciones Digitales" />
-    <meta property="og:locale" content="es_AR" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -114,12 +115,15 @@ const ogImage = image.startsWith('http') ? image : new URL(image, Astro.site || 
     <link rel="preload" href="/logo-bg.png" as="image" />
   </head>
   <body class="bg-dark text-white transition-colors duration-300">
+    <CodeBackground />
     <Header />
     <main>
       <slot />
     </main>
     <Footer />
 
+    <Analytics />
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-primary z-[9999]" style="width: 0%; box-shadow: 0 0 10px var(--tw-shadow-color, theme(colors.primary));"></div>
     <!-- Vercel Analytics -->
     <script>
       window.va = window.va || function (...args) {
@@ -127,5 +131,13 @@ const ogImage = image.startsWith('http') ? image : new URL(image, Astro.site || 
       };
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
+    <script>
+      const bar = document.getElementById('scroll-progress');
+      window.addEventListener('scroll', () => {
+        const h = document.documentElement;
+        const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+        if (bar) bar.style.width = scrolled + '%';
+      }, { passive: true });
+    </script>
   </body>
 </html>

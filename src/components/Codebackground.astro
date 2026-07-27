@@ -1,0 +1,94 @@
+---
+// Fondo animado de código - estilo "matrix" en blanco y negro, nivel intermedio
+---
+
+<div id="code-bg-container" class="fixed inset-0 -z-10 overflow-hidden bg-dark pointer-events-none">
+  <canvas id="code-rain-canvas" class="absolute inset-0 w-full h-full opacity-40"></canvas>
+  <!-- Overlay leve solo para dar profundidad, no para tapar -->
+  <div class="absolute inset-0 bg-gradient-to-b from-dark/20 via-transparent to-dark/40"></div>
+</div>
+
+<script>
+  function initCodeRain() {
+    const canvas = document.getElementById('code-rain-canvas') as HTMLCanvasElement | null;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+
+    const chars = '01{}[]<>/;=+-*&|!?#$%()_devhubAstroNextJSTailwindReactNode'.split('');
+
+    const fontSize = 15;
+    let columns = Math.floor(width / fontSize);
+    let drops: number[] = new Array(columns).fill(1);
+
+    function resize() {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      if (!canvas || !ctx) return;
+      canvas.width = width;
+      canvas.height = height;
+      columns = Math.floor(width / fontSize);
+      drops = new Array(columns).fill(1);
+    }
+
+    window.addEventListener('resize', resize);
+
+    function draw() {
+      if (!ctx || !canvas) return;
+
+      ctx.fillStyle = 'rgba(10, 10, 10, 0.1)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.font = `${fontSize}px monospace`;
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = chars[Math.floor(Math.random() * chars.length)];
+
+        const brightness = Math.random();
+        if (brightness > 0.94) {
+          ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
+        } else if (brightness > 0.75) {
+          ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+        } else {
+          ctx.fillStyle = `rgba(220, 220, 220, ${0.2 + brightness * 0.3})`;
+        }
+
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    let animationId: number;
+    let lastTime = 0;
+    const fps = 22;
+    const interval = 1000 / fps;
+
+    function animate(currentTime: number) {
+      animationId = requestAnimationFrame(animate);
+      const delta = currentTime - lastTime;
+      if (delta > interval) {
+        lastTime = currentTime - (delta % interval);
+        draw();
+      }
+    }
+
+    animationId = requestAnimationFrame(animate);
+
+    document.addEventListener('astro:before-swap', () => {
+      cancelAnimationFrame(animationId);
+      window.removeEventListener('resize', resize);
+    });
+  }
+
+  initCodeRain();
+  document.addEventListener('astro:page-load', initCodeRain);
+</script>

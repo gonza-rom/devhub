@@ -11,10 +11,13 @@ interface Props {
 const { icon, title, description, technologies, price, priceNote } = Astro.props;
 ---
 
-<div class="group bg-dark-secondary p-8 rounded-xl shadow-lg border-2 border-transparent hover:border-primary transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/30 relative overflow-hidden h-full flex flex-col">
+<div class="service-card group bg-dark-secondary p-8 rounded-xl shadow-lg border-2 border-transparent hover:border-primary transition-all duration-500 hover:shadow-2xl hover:shadow-primary/30 relative overflow-hidden h-full flex flex-col" style="transform-style: preserve-3d; will-change: transform;">
   <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary-dark/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-  <div class="relative z-10 flex flex-col flex-1">
+  <!-- shine sweep -->
+  <div class="shine-sweep absolute inset-0 pointer-events-none"></div>
+
+  <div class="relative z-10 flex flex-col flex-1" style="transform: translateZ(30px);">
     <div class="text-5xl mb-4 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 inline-block">
       <i class={`${icon} text-primary`}></i>
     </div>
@@ -39,3 +42,36 @@ const { icon, title, description, technologies, price, priceNote } = Astro.props
 
   <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-primary/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 </div>
+
+<style>
+  .shine-sweep {
+    background: linear-gradient(115deg, transparent 20%, rgba(255,255,255,0.08) 40%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.08) 60%, transparent 80%);
+    background-size: 250% 250%;
+    background-position: 200% 200%;
+    transition: background-position 0.9s ease;
+  }
+  .service-card:hover .shine-sweep {
+    background-position: -50% -50%;
+  }
+</style>
+
+<script>
+  // tilt 3D con el mouse, respeta prefers-reduced-motion
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduceMotion) {
+    document.querySelectorAll('.service-card').forEach((card) => {
+      const el = card as HTMLElement;
+      el.addEventListener('mousemove', (e) => {
+        const rect = el.getBoundingClientRect();
+        const x = (e as MouseEvent).clientX - rect.left;
+        const y = (e as MouseEvent).clientY - rect.top;
+        const rotateX = ((y / rect.height) - 0.5) * -10;
+        const rotateY = ((x / rect.width) - 0.5) * 10;
+        el.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+      });
+      el.addEventListener('mouseleave', () => {
+        el.style.transform = `perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0px)`;
+      });
+    });
+  }
+</script>
