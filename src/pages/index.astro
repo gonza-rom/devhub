@@ -302,7 +302,8 @@ const mockupRoles = [
 <section class="relative overflow-hidden">
   <!-- Fondo Hyperspeed, ocupa toda la sección -->
   <div class="absolute inset-0 z-0 bg-dark">
-    <HyperspeedBG client:only="react" />
+    <HyperspeedBG client:media="(min-width: 768px)" />
+    <div class="md:hidden absolute inset-0 bg-dark"></div>
   </div>
 
   <!-- Overlay para que el texto no compita con las líneas -->
