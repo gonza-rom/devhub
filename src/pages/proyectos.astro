@@ -4,6 +4,28 @@ import Layout from '../layouts/Layout.astro';
 const projects = [
 
   {
+    image: 'proyectos/pulso.png',
+    title: 'Pulso',
+    description: 'Ecosistema digital SportsTech desarrollado para el Hackatón Provincial. Plataforma pensada para conectar y potenciar la experiencia de los usuarios dentro del ámbito deportivo.',
+    technologies: ['Next.js', 'React', 'Tailwind CSS', 'Vercel'],
+    demoUrl: 'https://pulso-amber.vercel.app/',
+    category: 'Web Corporativa',
+    highlights: ['Ecosistema SportsTech', 'Diseño mobile-first', 'Experiencia de usuario', 'Proyecto premiado'],
+    award: '🏆 1er Puesto — Hackatón Provincial SportsTech · Estadio Bicentenario Experimental Global 2026',
+    wip: false,
+  },
+  {
+    image: 'proyectos/nexo.png',
+    title: 'NexoEDU',
+    description: 'Plataforma EdTech desarrollada para el Nodo Tecnológico Provincial. Solución digital enfocada en potenciar la educación a través de la tecnología.',
+    technologies: ['Next.js', 'React', 'Tailwind CSS', 'Vercel'],
+    demoUrl: 'https://nexo-edu.netlify.app/',
+    category: 'Web Corporativa',
+    highlights: ['Plataforma EdTech', 'Diseño mobile-first', 'Enfoque educativo', 'Proyecto premiado'],
+    award: '🏆 1er Puesto — NexoEDU · EdTech Provincial · Nodo Tecnológico 2026',
+    wip: false,
+  },
+  {
     image: 'proyectos/cloe.png',
     title: 'Chloe Showroom',
     description: 'E-commerce de moda y showroom online. Catálogo de productos, carrito de compras y checkout optimizado para una experiencia de compra elegante y fluida.',
@@ -187,12 +209,22 @@ const categories = ['Todos', ...new Set(projects.map(p => p.category))];
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto" id="projects-grid">
         {projects.map((p, i) => (
           <div
-            class="group bg-dark-secondary rounded-xl shadow-lg shadow-primary/5 border-2 border-transparent hover:border-primary transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary/20 relative overflow-hidden animate-on-scroll opacity-0 project-card"
+            class={`group bg-dark-secondary rounded-xl shadow-lg shadow-primary/5 border-2 transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl relative overflow-hidden animate-on-scroll opacity-0 project-card ${
+              p.award
+                ? 'border-yellow-400/60 shadow-yellow-400/10 hover:border-yellow-400 hover:shadow-yellow-400/20'
+                : 'border-transparent hover:border-primary hover:shadow-primary/20'
+            }`}
             data-category={p.category}
-            style={`animation-delay: ${i * 0.1}s`}
+            style={`animation-delay: ${i * 0.1}s${p.award ? '; animation: scroll-reveal 0.8s ease-out forwards, award-glow 3s ease-in-out infinite' : ''}`}
           >
+            {p.award && (
+              <div class="absolute top-0 left-0 right-0 z-20 bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-500 text-dark text-xs font-bold text-center py-1.5 px-3 flex items-center justify-center gap-1.5 tracking-wide">
+                <i class="fas fa-trophy text-xs"></i>
+                <span class="truncate">{p.award}</span>
+              </div>
+            )}
             <!-- Screenshot -->
-            <div class="relative overflow-hidden h-48 bg-dark-secondary">
+            <div class={`relative overflow-hidden h-48 bg-dark-secondary ${p.award ? 'mt-8' : ''}`}>
               <img
                 src={p.image}
                 alt={`Screenshot de ${p.title}`}
@@ -294,6 +326,11 @@ const categories = ['Todos', ...new Set(projects.map(p => p.category))];
   }
   .animate-on-scroll { animation: scroll-reveal 0.8s ease-out forwards; }
   .project-card.hidden-card { display: none; }
+
+  @keyframes award-glow {
+    0%, 100% { box-shadow: 0 0 0 rgba(250, 204, 21, 0); }
+    50% { box-shadow: 0 0 24px rgba(250, 204, 21, 0.15); }
+  }
 </style>
 
 <script>
