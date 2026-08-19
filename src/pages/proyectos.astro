@@ -52,7 +52,7 @@ const projects = [
     technologies: ['Next.js', 'React', 'Tailwind CSS', 'SQL', 'Vercel'],
     demoUrl: 'https://www.jmrmarroquineria.com.ar/',
     category: 'E-commerce',
-    highlights: ['Catálogo de +100 productos', 'Carrito de compras', 'Checkout completo', 'Panel de admin'],
+    highlights: ['Catálogo de +100 productos', 'Carrito de compras', 'Checkout completo', 'Integrado con DevHub POS'],
     wip: false,
   },
   {
@@ -158,6 +158,68 @@ const projects = [
     highlights: ['Multi-tenant SaaS', 'Ventas en tiempo real', 'Control de stock y caja', 'Acceso desde cualquier dispositivo'],
     wip: false,
   },
+  {
+    image: 'proyectos/uck-demo.png',
+    title: 'Unión Catamarqueña de Karate-Do',
+    description: 'Propuesta de sede oficial para la federación de Karate-Do de Catamarca. Incluye calendario de torneos, ranking de atletas y directorio de dojos. Demo mostrada al cliente, proyecto no concretado.',
+    technologies: ['Next.js', 'React', 'Tailwind CSS', 'Vercel'],
+    demoUrl: 'https://demo-uck-do.netlify.app/',
+    category: 'Web Institucional',
+    highlights: ['Calendario de torneos', 'Ranking de atletas', 'Directorio de dojos', 'Panel de inicio de sesión'],
+    wip: false,
+    proposal: true,
+  },
+  {
+    image: 'proyectos/bonitta-studio.png',
+    title: 'Bonitta Studio',
+    description: 'Propuesta de sitio institucional para especialista en depilación láser y cera. Presentación de servicios, resultados y reserva de turnos. Demo mostrada al cliente, proyecto no concretado.',
+    technologies: ['Next.js', 'React', 'Tailwind CSS', 'Netlify'],
+    demoUrl: 'https://demo-bonittastudio.netlify.app/',
+    category: 'Web Institucional',
+    highlights: ['Reserva de turnos', 'Sección de servicios', '+1200 pacientes atendidos', 'Diseño elegante'],
+    wip: false,
+    proposal: true,
+  },
+  {
+    image: 'proyectos/fintrack.png',
+    title: 'Fintrack',
+    description: 'Sistema a medida para llevar el control de tus finanzas personales. Dashboard con estadísticas, categorías, cuentas, vehículos, empresas y control de deudas.',
+    technologies: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Vercel'],
+    demoUrl: 'https://financia-app-phi.vercel.app/',
+    category: 'Sistema de Gestión',
+    highlights: ['Dashboard financiero', 'Gráficos de movimientos', 'Control de deudas', 'Gestión multi-cuenta'],
+    wip: false,
+  },
+  {
+    image: 'proyectos/leocash.png',
+    title: 'LeoCash',
+    description: 'Sistema a medida para prestamista, con control de cobros y préstamos y sistema de puntos para clientes. Acceso privado mediante DNI o correo.',
+    technologies: ['Next.js', 'TypeScript', 'Supabase', 'Vercel'],
+    demoUrl: 'https://leocash-cobrosapp.vercel.app/',
+    category: 'Sistema de Gestión',
+    highlights: ['Control de préstamos', 'Gestión de cobros', 'Sistema de puntos', 'Acceso privado'],
+    wip: false,
+  },
+  {
+    image: 'proyectos/jlm-detailing.png',
+    title: 'JLM Detailing',
+    description: 'Landing page para servicio de detailing automotriz con reserva de turnos integrada mediante DevHub Turnos. Muestra servicios, galería y botón directo de reserva.',
+    technologies: ['Next.js', 'Tailwind CSS', 'DevHub Turnos', 'Vercel'],
+    demoUrl: 'https://demo-detailing-cta.vercel.app/',
+    category: 'Landing Page',
+    highlights: ['Reserva de turnos integrada', 'Galería de trabajos', '+500 autos detallados', 'Diseño premium oscuro'],
+    wip: false,
+  },
+  {
+    image: 'proyectos/devhub-turnos.png',
+    title: 'DevHub Turnos',
+    description: 'Sistema de turnos SaaS para negocios hecho por DevHub. Calendario de reservas 24/7, notificaciones automáticas y panel de gestión para el negocio.',
+    technologies: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Vercel'],
+    demoUrl: 'https://turnos.devhub.com.ar/',
+    category: 'Sistema de Gestión',
+    highlights: ['Reservas 24/7', 'Notificaciones automáticas', 'Panel de gestión', 'Multi-negocio'],
+    wip: false,
+  },
 ];
 
 
@@ -240,6 +302,12 @@ const categories = ['Todos', ...new Set(projects.map(p => p.category))];
                   En construcción
                 </span>
               )}
+              {p.proposal && (
+                <span class="absolute top-3 left-3 text-xs px-3 py-1 bg-blue-500/20 backdrop-blur-sm text-blue-400 rounded-full border border-blue-400/40 font-semibold flex items-center gap-1.5">
+                  <i class="fas fa-lightbulb text-xs"></i>
+                  Propuesta
+                </span>
+              )}
               <div class="absolute inset-0 bg-gradient-to-t from-dark-secondary/60 to-transparent"></div>
             </div>
 
@@ -285,7 +353,16 @@ const categories = ['Todos', ...new Set(projects.map(p => p.category))];
         ))}
       </div>
 
-      <div class="mt-12 text-center">
+      <div class="mt-10 text-center">
+        <button
+          id="load-more-btn"
+          class="px-8 py-3 border-2 border-primary/40 text-primary font-semibold rounded-full hover:bg-primary hover:text-dark transition-all duration-300 text-sm"
+        >
+          Cargar más proyectos
+        </button>
+      </div>
+
+      <div class="mt-8 text-center">
         <p class="text-gray-500 flex items-center justify-center gap-2 text-sm">
           <i class="fas fa-lock text-primary"></i>
           Código fuente protegido — No compartimos repositorios privados
@@ -340,29 +417,47 @@ const categories = ['Todos', ...new Set(projects.map(p => p.category))];
   }, { threshold: 0.1 });
   document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 
-  // Filtros
+  // Filtros + paginación
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('.project-card');
+  const cards = Array.from(document.querySelectorAll('.project-card')) as HTMLElement[];
+  const loadMoreBtn = document.getElementById('load-more-btn');
+
+  const PAGE_SIZE = 9;
+  const PAGE_STEP = 6;
+  let currentFilter = 'Todos';
+  let visibleCount = PAGE_SIZE;
+
+  function applyView() {
+    const matching = cards.filter(card => currentFilter === 'Todos' || card.getAttribute('data-category') === currentFilter);
+
+    cards.forEach(card => { card.style.display = 'none'; });
+    matching.slice(0, visibleCount).forEach(card => { card.style.display = ''; });
+
+    if (loadMoreBtn) {
+      loadMoreBtn.style.display = matching.length > visibleCount ? '' : 'none';
+    }
+  }
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      const filter = btn.getAttribute('data-filter');
+      currentFilter = btn.getAttribute('data-filter') || 'Todos';
+      visibleCount = PAGE_SIZE;
 
       filterBtns.forEach(b => {
         b.classList.remove('bg-primary', 'border-primary', 'text-dark');
-        b.classList.add('border-dark-tertiary', 'text-gray-400');
+        b.classList.add('border-dark-tertiary', 'text-gray-400', 'hover:border-primary', 'hover:text-primary');
       });
       btn.classList.add('bg-primary', 'border-primary', 'text-dark');
-      btn.classList.remove('border-dark-tertiary', 'text-gray-400');
+      btn.classList.remove('border-dark-tertiary', 'text-gray-400', 'hover:border-primary', 'hover:text-primary');
 
-      cards.forEach(card => {
-        const cat = card.getAttribute('data-category');
-        if (filter === 'Todos' || cat === filter) {
-          (card as HTMLElement).style.display = '';
-        } else {
-          (card as HTMLElement).style.display = 'none';
-        }
-      });
+      applyView();
     });
   });
+
+  loadMoreBtn?.addEventListener('click', () => {
+    visibleCount += PAGE_STEP;
+    applyView();
+  });
+
+  applyView();
 </script>
