@@ -33,9 +33,9 @@ const productos = [
     features: ['Reservas online 24/7', 'Confirmación por WhatsApp', 'Panel de agenda', 'Múltiples servicios'],
     badge: null,
     mockupLines: [
-      { label: '9:00  María G.', value: '✓' },
-      { label: '10:30 Carlos R.', value: '✓' },
-      { label: '12:00 Ana L.', value: '⏳' },
+      { label: '9:00  María G.', status: 'done' },
+      { label: '10:30 Carlos R.', status: 'done' },
+      { label: '12:00 Ana L.', status: 'pending' },
     ],
     mockupTotal: null,
     mockupBtn: '+ Nuevo turno',
@@ -198,7 +198,11 @@ const comparativa = [
                         {p.mockupLines.map(line => (
                           <div class="flex justify-between items-center">
                             <span class="text-gray-400 text-[11px]">{line.label}</span>
-                            <span class={`text-[11px] font-mono font-semibold ${line.value === '✓' ? 'text-green-400' : line.value === '⏳' ? 'text-yellow-400' : 'text-white'}`}>{line.value}</span>
+                            {line.status ? (
+                              <i class={`fas ${line.status === 'done' ? 'fa-check text-green-400' : 'fa-clock text-yellow-400'} text-[11px]`}></i>
+                            ) : (
+                              <span class="text-[11px] font-mono font-semibold text-white">{line.value}</span>
+                            )}
                           </div>
                         ))}
                       </div>

@@ -1,32 +1,42 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+const projectImages = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/proyectos/*.{png,jpg,jpeg,webp}',
+  { eager: true }
+);
+
+function getProjectImage(filename: string) {
+  return projectImages[`/src/assets/proyectos/${filename}`].default;
+}
 
 const projects = [
 
   {
-    image: 'proyectos/pulso.png',
+    image: 'pulso.png',
     title: 'Pulso',
     description: 'Ecosistema digital SportsTech desarrollado para el Hackatón Provincial en el Estadio Bicentenario. Plataforma pensada para conectar y potenciar la experiencia de los usuarios dentro del ámbito deportivo.',
     technologies: ['Next.js', 'React', 'Tailwind CSS', 'Vercel'],
     demoUrl: 'https://pulso-amber.vercel.app/',
     category: 'Hackathon',
     highlights: ['Ecosistema SportsTech', 'Diseño mobile-first', 'Experiencia de usuario', 'Proyecto premiado'],
-    award: '🏆 1er Puesto — Hackatón Provincial SportsTech · Estadio Bicentenario Experimental Global 2026',
+    award: '1er Puesto — Hackatón Provincial SportsTech · Estadio Bicentenario Experimental Global 2026',
     wip: false,
   },
   {
-    image: 'proyectos/nexo.png',
+    image: 'nexo.png',
     title: 'NexoEDU',
     description: 'Plataforma EdTech desarrollada en el Nodo Tecnológico Provincial. Solución digital enfocada en potenciar la educación a través de la tecnología.',
     technologies: ['Next.js', 'React', 'Tailwind CSS', 'Vercel'],
     demoUrl: 'https://nexo-edu.netlify.app/',
     category: 'Hackathon',
     highlights: ['Plataforma EdTech', 'Diseño mobile-first', 'Enfoque educativo', 'Proyecto premiado'],
-    award: '🏆 1er Puesto — NexoEDU · EdTech Provincial · Nodo Tecnológico 2026',
+    award: '1er Puesto — NexoEDU · EdTech Provincial · Nodo Tecnológico 2026',
     wip: false,
   },
   {
-    image: 'proyectos/cloe.png',
+    image: 'cloe.png',
     title: 'Chloe Showroom',
     description: 'E-commerce de moda y showroom online. Catálogo de productos, carrito de compras y checkout optimizado para una experiencia de compra elegante y fluida.',
     technologies: ['Next.js', 'React', 'Tailwind CSS', 'Vercel'],
@@ -36,7 +46,7 @@ const projects = [
     wip: false,
   },
   {
-    image: 'proyectos/ard.png',
+    image: 'ard.png',
     title: 'ARD Suplementos',
     description: 'E-commerce de suplementos deportivos y nutricionales. Catálogo de productos, carrito de compras y checkout optimizado para vender online las 24 horas.',
     technologies: ['Next.js', 'React', 'Tailwind CSS', 'Vercel'],
@@ -46,7 +56,7 @@ const projects = [
     wip: false,
   },
   {
-    image: 'proyectos/jmr.png',
+    image: 'jmr.png',
     title: 'JMR E-commerce',
     description: 'E-commerce completo para marroquinería con catálogo profesional, carrito de compras, checkout optimizado y administración de productos para vender online las 24 horas.',
     technologies: ['Next.js', 'React', 'Tailwind CSS', 'SQL', 'Vercel'],
@@ -56,7 +66,7 @@ const projects = [
     wip: false,
   },
   {
-    image: 'proyectos/hoky.png',
+    image: 'hoky.png',
     title: 'Hoky Indumentarias',
     description: 'E-commerce completo para marca de indumentaria. Catálogo profesional, carrito de compras, checkout optimizado y experiencia mobile-first pensada para convertir visitas en ventas.',
     technologies: ['Next.js', 'Tailwind CSS', 'JavaScript', 'SEO', 'Vercel'],
@@ -69,7 +79,7 @@ const projects = [
     wip: false,
   },
  {
-    image: 'proyectos/tokio.png',
+    image: 'tokio.png',
     title: 'Tokyo Deco',
     description: 'E-commerce de decoración con estética japonesa. Catálogo de productos, carrito de compras y checkout optimizado para una experiencia de compra fluida.',
     technologies: ['Next.js', 'React', 'Tailwind CSS', 'Vercel'],
@@ -79,7 +89,7 @@ const projects = [
     wip: false,
   },
  {
-    image: 'proyectos/demo.png',
+    image: 'demo.png',
     title: 'Crossfit Benefits',
     description: 'Demo de ecosistema digital para socios de box de CrossFit. Plataforma pensada para centralizar beneficios, promociones y comunicación con los miembros.',
     technologies: ['Next.js', 'React', 'Tailwind CSS', 'Vercel'],
@@ -89,7 +99,7 @@ const projects = [
     wip: false,
   },
  {
-    image: 'proyectos/good-flight.png',
+    image: 'good-flight.png',
     title: 'Good Flight – Curso TCP',
     description: 'Landing page institucional para academia de formación aeronáutica. Presenta el curso de Tripulante de Cabina de Pasajeros con título oficial ANAC, cronograma de materias, galería de prácticas reales e inscripción vía WhatsApp.',
     technologies: ['HTML', 'CSS', 'JavaScript', 'Responsive', 'Netlify'],
@@ -99,7 +109,7 @@ const projects = [
     wip: false,
   },
   {
-    image: 'proyectos/jmr-pos.png',
+    image: 'jmr-pos.png',
     title: 'JMR Gestión de Stock',
     description: 'Sistema de gestión de inventario en tiempo real para la misma empresa. Control de stock, alertas de bajo inventario y reportes para optimizar el negocio.',
     technologies: ['Next.js', 'Supabase', 'React', 'TypeScript', 'Vercel'],
@@ -109,7 +119,7 @@ const projects = [
     wip: false,
   },
   {
-    image: 'proyectos/black-burguer.png',
+    image: 'black-burguer.png',
     title: 'BlackBurger Catálogo',
     description: 'Landing page de menú digital para hamburguesería artesanal. Catálogo de productos con imágenes, descripciones y precios fáciles de actualizar.',
     technologies: ['HTML', 'CSS', 'JavaScript', 'Responsive', 'Netlify'],
@@ -119,7 +129,7 @@ const projects = [
     wip: false,
   },
   {
-    image: 'proyectos/vista-montana.png',
+    image: 'vista-montana.png',
     title: 'Vista Montaña Hospedaje',
     description: 'Sitio de alquileres vacacionales con galería de imágenes, info detallada de cabañas y sistema de consultas vía WhatsApp para facilitar reservas.',
     technologies: ['Next.js', 'React', 'Tailwind CSS', 'WhatsApp API', 'Vercel'],
@@ -129,7 +139,7 @@ const projects = [
     wip: false,
   },
   {
-    image: 'proyectos/devhub.png',
+    image: 'devhub.png',
     title: 'DevHub Institucional',
     description: 'El sitio que estás viendo ahora. Web corporativa con portfolio de proyectos, equipo y formulario de contacto. Optimizado para conversión y velocidad máxima.',
     technologies: ['Astro', 'Tailwind CSS', 'JavaScript', 'SEO', 'Vercel'],
@@ -139,7 +149,7 @@ const projects = [
     wip: false,
   },
   {
-    image: 'proyectos/gonzalo-portfolio.png',
+    image: 'gonzalo-portfolio.png',
     title: 'Portfolio Personal',
     description: 'Portfolio personal de desarrollador web fullstack. Presentación de proyectos, skills y experiencia. Diseño moderno optimizado para velocidad y conversión.',
     technologies: ['Astro', 'Tailwind CSS', 'JavaScript', 'SEO', 'Vercel'],
@@ -149,7 +159,7 @@ const projects = [
     wip: false,
   },
    {
-    image: 'proyectos/devhub-pos.png',
+    image: 'devhub-pos.png',
     title: 'DevHub POS',
     description: 'Sistema de punto de venta SaaS multi-tenant. Gestión de ventas, productos, stock y caja en tiempo real. Pensado para negocios que necesitan control total desde cualquier dispositivo.',
     technologies: ['Next.js', 'TypeScript', 'Supabase', 'Cloudinary', 'Tailwind CSS'],
@@ -159,7 +169,7 @@ const projects = [
     wip: false,
   },
   {
-    image: 'proyectos/uck-demo.png',
+    image: 'uck-demo.png',
     title: 'Unión Catamarqueña de Karate-Do',
     description: 'Propuesta de sede oficial para la federación de Karate-Do de Catamarca. Incluye calendario de torneos, ranking de atletas y directorio de dojos. Demo mostrada al cliente, proyecto no concretado.',
     technologies: ['Next.js', 'React', 'Tailwind CSS', 'Vercel'],
@@ -170,7 +180,7 @@ const projects = [
     proposal: true,
   },
   {
-    image: 'proyectos/bonitta-studio.png',
+    image: 'bonitta-studio.png',
     title: 'Bonitta Studio',
     description: 'Propuesta de sitio institucional para especialista en depilación láser y cera. Presentación de servicios, resultados y reserva de turnos. Demo mostrada al cliente, proyecto no concretado.',
     technologies: ['Next.js', 'React', 'Tailwind CSS', 'Netlify'],
@@ -181,7 +191,7 @@ const projects = [
     proposal: true,
   },
   {
-    image: 'proyectos/fintrack.png',
+    image: 'fintrack.png',
     title: 'Fintrack',
     description: 'Sistema a medida para llevar el control de tus finanzas personales. Dashboard con estadísticas, categorías, cuentas, vehículos, empresas y control de deudas.',
     technologies: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Vercel'],
@@ -191,7 +201,7 @@ const projects = [
     wip: false,
   },
   {
-    image: 'proyectos/leocash.png',
+    image: 'leocash.png',
     title: 'LeoCash',
     description: 'Sistema a medida para prestamista, con control de cobros y préstamos y sistema de puntos para clientes. Acceso privado mediante DNI o correo.',
     technologies: ['Next.js', 'TypeScript', 'Supabase', 'Vercel'],
@@ -201,7 +211,7 @@ const projects = [
     wip: false,
   },
   {
-    image: 'proyectos/jlm-detailing.png',
+    image: 'jlm-detailing.png',
     title: 'JLM Detailing',
     description: 'Landing page para servicio de detailing automotriz con reserva de turnos integrada mediante DevHub Turnos. Muestra servicios, galería y botón directo de reserva.',
     technologies: ['Next.js', 'Tailwind CSS', 'DevHub Turnos', 'Vercel'],
@@ -211,7 +221,7 @@ const projects = [
     wip: false,
   },
   {
-    image: 'proyectos/devhub-turnos.png',
+    image: 'devhub-turnos.png',
     title: 'DevHub Turnos',
     description: 'Sistema de turnos SaaS para negocios hecho por DevHub. Calendario de reservas 24/7, notificaciones automáticas y panel de gestión para el negocio.',
     technologies: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Vercel'],
@@ -287,9 +297,12 @@ const categories = ['Todos', ...new Set(projects.map(p => p.category))];
             )}
             <!-- Screenshot -->
             <div class={`relative overflow-hidden h-48 bg-dark-secondary ${p.award ? 'mt-8' : ''}`}>
-              <img
-                src={p.image}
+              <Image
+                src={getProjectImage(p.image)}
                 alt={`Screenshot de ${p.title}`}
+                width={640}
+                format="webp"
+                quality={70}
                 class={`w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105 ${p.wip ? 'opacity-50' : ''}`}
                 loading="lazy"
               />

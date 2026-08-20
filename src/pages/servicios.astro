@@ -271,19 +271,23 @@ const faqs = [
           </thead>
           <tbody>
             {[
-              ['Velocidad de carga', '90-100/100 🚀', '40-60/100 🐌'],
-              ['Propietario del código', '✅ 100% tuyo', '❌ Es de ellos'],
-              ['SEO técnico', '✅ Completo', '⚠️ Básico y limitado'],
-              ['Costo mensual', '✅ $0/mes', '❌ $25.000-$80.000/mes'],
-              ['Funcionalidades', '✅ Sin límites', '❌ Bloqueadas por plan'],
-              ['Diseño', '✅ Único y a medida', '⚠️ Plantilla que usan todos'],
-              ['Escalabilidad', '✅ Ilimitada', '❌ Depende del plan'],
-              ['Si la plataforma cierra', '✅ Tu sitio sigue', '❌ Perdés todo'],
-            ].map(([feat, devhub, template]) => (
+              { feat: 'Velocidad de carga', devhub: { icon: 'fa-bolt', text: '90-100/100' }, template: { icon: 'fa-clock', text: '40-60/100' } },
+              { feat: 'Propietario del código', devhub: { icon: 'fa-check', text: '100% tuyo' }, template: { icon: 'fa-xmark', text: 'Es de ellos' } },
+              { feat: 'SEO técnico', devhub: { icon: 'fa-check', text: 'Completo' }, template: { icon: 'fa-triangle-exclamation', text: 'Básico y limitado' } },
+              { feat: 'Costo mensual', devhub: { icon: 'fa-check', text: '$0/mes' }, template: { icon: 'fa-xmark', text: '$25.000-$80.000/mes' } },
+              { feat: 'Funcionalidades', devhub: { icon: 'fa-check', text: 'Sin límites' }, template: { icon: 'fa-xmark', text: 'Bloqueadas por plan' } },
+              { feat: 'Diseño', devhub: { icon: 'fa-check', text: 'Único y a medida' }, template: { icon: 'fa-triangle-exclamation', text: 'Plantilla que usan todos' } },
+              { feat: 'Escalabilidad', devhub: { icon: 'fa-check', text: 'Ilimitada' }, template: { icon: 'fa-xmark', text: 'Depende del plan' } },
+              { feat: 'Si la plataforma cierra', devhub: { icon: 'fa-check', text: 'Tu sitio sigue' }, template: { icon: 'fa-xmark', text: 'Perdés todo' } },
+            ].map(row => (
               <tr class="border-t border-dark-tertiary hover:bg-dark/50 transition-colors">
-                <td class="p-4 text-gray-300 text-sm">{feat}</td>
-                <td class="p-4 text-center bg-primary/5 border-x-2 border-primary/50 text-sm font-medium text-green-400">{devhub}</td>
-                <td class="p-4 text-center text-sm text-gray-500">{template}</td>
+                <td class="p-4 text-gray-300 text-sm">{row.feat}</td>
+                <td class="p-4 text-center bg-primary/5 border-x-2 border-primary/50 text-sm font-medium text-green-400">
+                  <i class={`fas ${row.devhub.icon} mr-1.5`}></i>{row.devhub.text}
+                </td>
+                <td class="p-4 text-center text-sm text-gray-500">
+                  <i class={`fas ${row.template.icon} mr-1.5 text-gray-600`}></i>{row.template.text}
+                </td>
               </tr>
             ))}
           </tbody>
